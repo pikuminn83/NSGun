@@ -5,14 +5,11 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
 
-    public GameObject Enemy;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int EnemyScore = 0;
 
+    public UIManager _uiManager;
     // Update is called once per frame
+
     void Update()
     {
         
@@ -22,10 +19,17 @@ public class EnemyManager : MonoBehaviour
         //Œ»İ‚ÍƒvƒŒƒCƒ„[‚ğBullet‚É‚µ‚Ä‚¢‚é
         if (Hit.gameObject.CompareTag("Bullet"))
         {
-            Destroy(this.Enemy);
+           
+            EnemyScoreAdd();
         }
         
     }
-
+    public void EnemyScoreAdd()
+    {
+        GameObject _uiObj = GameObject.Find("Score");
+        _uiManager = _uiObj.GetComponent<UIManager>();
+        _uiManager.SumScore();
+        Destroy(this.gameObject);
+    }
 
 }
