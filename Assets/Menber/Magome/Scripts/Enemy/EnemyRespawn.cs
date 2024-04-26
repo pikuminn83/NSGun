@@ -18,15 +18,16 @@ public class EnemyRespawn : MonoBehaviour
         MaxY = Mathf.Max(Pos1.transform.position.y,Pos2.transform.position.y);
         Miny = Mathf.Min(Pos1.transform.position.y,Pos2.transform.position.y);
 
-        float PosX = Random.Range(MaxX,Minx);
-        float PosY = Random.Range(MaxY,Miny);
 
-        Instantiate(Respwan[0], new Vector3(PosX,PosY,0),Quaternion.identity);
+        float PosX = Random.Range(MaxX, Minx);
+        float PosY = Random.Range(MaxY, Miny);
+
+        Instantiate(Respwan[0], new Vector3(PosX, PosY, 0), Quaternion.identity);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
