@@ -26,6 +26,7 @@ public class EnemyManager : MonoBehaviour
     }
     public void EnemyScoreAdd()
     {
+        
         GameObject _uiObj = GameObject.Find("Score");
         _uiManager = _uiObj.GetComponent<UIManager>();
         _uiManager.SumScore();

@@ -8,11 +8,22 @@ public class PlayerSystem : MonoBehaviour
     [SerializeField, Header("移動速度")]
     private float PlayerSpeed = 1.0f;
 
-    
-    public void Move(InputAction.CallbackContext context)
+    private Vector3 _velocity;
+
+    public void OnMove(InputAction.CallbackContext context)
     {
+        // MoveActionの入力値を取得
+        var axis = context.ReadValue<Vector2>();
+
+        // 移動速度を保持
+        _velocity = new Vector3(axis.x,axis.y,0);
         Debug.Log("S");
         
+    }
+    private void Update()
+    {
+        // オブジェクト移動
+        transform.position += _velocity * Time.deltaTime;
     }
     public void Attack(InputAction.CallbackContext context)
     {
