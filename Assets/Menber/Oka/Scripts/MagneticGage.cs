@@ -25,8 +25,9 @@ public class MagneticGage : MonoBehaviour
 
             float a = Time.deltaTime;
 
-            gage.fillAmount += a/100;
+            gage.fillAmount += a/10;
         }
         
     }
+
 }

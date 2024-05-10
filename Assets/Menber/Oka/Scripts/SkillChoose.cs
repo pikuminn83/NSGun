@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEditor.Timeline.TimelinePlaybackControls;
+using UnityEngine.UI;
 
 public class SkillChoose : MonoBehaviour
 {
 
     int skillnum = 0;
+    public Image gage;
+
 
     // Start is called before the first frame update
     void Start()
     {
-
+        gage.GetComponent<MagneticGage>();
     }
 
     // Update is called once per frame
@@ -31,40 +34,60 @@ public class SkillChoose : MonoBehaviour
             skillnum--;
         }
     }
+    public void Use(InputAction.CallbackContext context)
+    {
+        if(context.phase == InputActionPhase.Performed)
+        {
+            if (gage.fillAmount >= 0.3f&&skillnum%3==0)
+            {
+                Debug.Log("MagLiquid”­“®");
+                gage.fillAmount -= 0.3f;
+            }
+            if (gage.fillAmount >= 0.3f)
+            {
+                if (skillnum % 3 == 1 || skillnum % 3 == -2)
+
+                { Debug.Log("RailGun”­“®");
+                    gage.fillAmount -= 0.3f;
+                } 
+            }
+            if (gage.fillAmount >= 0.3f)
+            {
+                if (skillnum % 3 == 2 || skillnum % 3 == -1)
+                {
+                    Debug.Log("UniqueMagnet”­“®");
+                    gage.fillAmount -= 0.3f;
+                }
+            }
+        }
+
+    }
 
 
     // ‘I‘ð’†‚ÌƒXƒLƒ‹
-    private SkillFactory.SkillKind selectedSkillKind;
+
 
     private void Update()
     {
 
-        
-        if (skillnum%3==0)
+
+        if (skillnum % 3 == 0)
         {
             Debug.Log("Skill [MagLiquid] Selected!");
-            this.selectedSkillKind = SkillFactory.SkillKind.MagLiquid;
         }
 
-        if (skillnum%3==1)
+        if (skillnum % 3 == 1||skillnum%3 ==-2)
         {
             Debug.Log("Skill [RailGun] Selected!");
-            this.selectedSkillKind = SkillFactory.SkillKind.RailGun;
         }
 
-        if (skillnum%3==2)
+        if (skillnum % 3 == 2 || skillnum %3 ==-1)
         {
             Debug.Log("Skill [UniqueMagnet] Selected!");
-            this.selectedSkillKind = SkillFactory.SkillKind.UniqueMagnet;
         }
-
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            var skillFactory = new SkillFactory();
-            var skill = skillFactory.Create(this.selectedSkillKind);
-            skill.Play();
-        }
-        Debug.Log(skillnum);
+        Debug.Log(skillnum%3);
+        
+        
     }
 
     
