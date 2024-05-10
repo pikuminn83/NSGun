@@ -5,8 +5,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerSystem : MonoBehaviour
 {
-    [SerializeField, Header("ˆÚ“®‘¬“x")]
-    private float PlayerSpeed = 1.0f;
+    //[SerializeField, Header("ˆÚ“®‘¬“x")]
+    //private float PlayerSpeed = 1.0f;
 
     private Vector3 _velocity;
 

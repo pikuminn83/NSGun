@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     public float GameSetTimer =0.0f;
     void Start()
     {
+        AllScore = 0;
         ScoreText.text = "Score:" + AllScore;
     }
     void FixedUpdate()
