@@ -5,13 +5,19 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
 
-    public int EnemyScore = 0;
+    public int Person_EnemyScore = 0;
+    public int HP=0;
 
     public UIManager _uiManager;
 
     [SerializeField]
     private float explosionRadius; // 爆発半径
 
+    void Start()
+    {
+        GameObject _uiObj = GameObject.Find("Score");
+        _uiManager = _uiObj.GetComponent<UIManager>();
+    }
     void Update()
     {
 
@@ -26,12 +32,12 @@ public class EnemyManager : MonoBehaviour
         }
 
     }
-    public void EnemyScoreAdd()
+    public void BulletSpecial()
     {
 
-        GameObject _uiObj = GameObject.Find("Score");
-        _uiManager = _uiObj.GetComponent<UIManager>();
-        //_uiManager.SumScore();
+    }
+    public void EnemyScoreAdd()
+    {
         // 爆風の範囲内のオブジェクトを検出
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
         foreach (Collider2D collider in colliders)
@@ -39,12 +45,15 @@ public class EnemyManager : MonoBehaviour
             //敵を倒した時のポイント加算
             if (collider.gameObject.CompareTag("Enemy"))
             {
-                _uiManager.SumScore();
-                Destroy(collider.gameObject);
+                HP--;
+                if(HP == 0)
+                {
+                    _uiManager._EnemyScore = Person_EnemyScore;
+                   _uiManager.SumScore();
+                   Destroy(this.gameObject);
+                }
             }
-
         }
-
     }
 
 }

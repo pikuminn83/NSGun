@@ -889,7 +889,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c42451ef31602440b8cf22741e58c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Score: {fileID: 5469442076240324791, guid: bd93458a465a02649a4b5bb05eeb5f20, type: 3}
+  _Score: {fileID: 1729384110685576284, guid: 92c0ad0739e71694fa2e4c49a27c8761, type: 3}
+  _Score2: {fileID: 3994931925192339684, guid: bd93458a465a02649a4b5bb05eeb5f20, type: 3}
   ScoreText: {fileID: 846514226}
   TimerText: {fileID: 1136614276}
   GameSetTimer: 20
@@ -940,7 +941,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f3cc01d9398f34d8d8a95b864be883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerSpeed: 1
 --- !u!212 &2114701878
 SpriteRenderer:
   m_ObjectHideFlags: 0

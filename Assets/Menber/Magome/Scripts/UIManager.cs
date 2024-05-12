@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
 {
     public EnemyManager _Score;
 
+    public int _EnemyScore = 0;
     public TextMeshProUGUI ScoreText;
     private int AllScore = 0;
 
@@ -18,9 +19,12 @@ public class UIManager : MonoBehaviour
     {
         AllScore = 0;
         ScoreText.text = "Score:" + AllScore;
+
+ 
     }
     void FixedUpdate()
     {
+
         Timer += Time.deltaTime;
         TimerText.text = "TImer:" + Timer.ToString("F1");
         if (Timer > GameSetTimer)
@@ -31,7 +35,6 @@ public class UIManager : MonoBehaviour
     //スコアの加算
     public void SumScore()
     {
-        int _EnemyScore = _Score.EnemyScore;
         AllScore += _EnemyScore;
         //textにスコア表示
         ScoreText.text = "Score:"+AllScore;
