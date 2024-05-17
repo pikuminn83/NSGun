@@ -45,7 +45,7 @@ public class SkillChoose : MonoBehaviour
             }
             if (gage.fillAmount >= 0.3f)
             {
-                if (skillnum % 3 == 1 || skillnum % 3 == -2)
+                if (skillnum % 3 == 1 && skillnum % 3 == -2)
 
                 { Debug.Log("RailGun”­“®");
                     gage.fillAmount -= 0.3f;
@@ -53,7 +53,7 @@ public class SkillChoose : MonoBehaviour
             }
             if (gage.fillAmount >= 0.3f)
             {
-                if (skillnum % 3 == 2 || skillnum % 3 == -1)
+                if (skillnum % 3 == 2 && skillnum % 3 == -1)
                 {
                     Debug.Log("UniqueMagnet”­“®");
                     gage.fillAmount -= 0.3f;

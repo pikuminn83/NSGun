@@ -1,6 +1,7 @@
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
 
 public class Player : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class Player : MonoBehaviour
     //ロケットのオブジェクトをアタッチする場所
     public GameObject Rocket;
     public Image gage;
+    public bool Nflag;
+    public bool Sflag;
     
 
 
@@ -32,12 +35,14 @@ public class Player : MonoBehaviour
 
     public void RailChange_To_N(InputAction.CallbackContext context)
     {
+
         if (context.performed)
         {
-            if (gage.fillAmount >= 0.05f)
+            if (gage.fillAmount >= 0.05f&&Nflag==false)
             {
                 rb2.gravityScale = -3.0f;
                 gage.fillAmount -= 0.05f;
+
             }
         }
     }
@@ -45,7 +50,7 @@ public class Player : MonoBehaviour
     {
         if (context.performed)
         {
-            if (gage.fillAmount >= 0.05f)
+            if (gage.fillAmount >= 0.05f&&Sflag == false)
             {
                 rb2.gravityScale = +3.0f;
                 gage.fillAmount -= 0.05f;
@@ -73,7 +78,6 @@ public class Player : MonoBehaviour
     }
     void zero()
     {
-        Debug.Log("zero");
         rb2.gravityScale = 0.0f;
     }
 

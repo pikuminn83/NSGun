@@ -417,7 +417,7 @@
                 {
                     "name": "",
                     "id": "ea079d86-e647-42b6-af17-20eaa555b1fa",
-                    "path": "<Gamepad>/buttonNorth",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -449,8 +449,30 @@
                 },
                 {
                     "name": "",
+                    "id": "a7de0c8b-3a19-442f-b118-27b03868ec23",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "d51b2d7c-f458-46e4-9962-151105ec9ca5",
                     "path": "<Keyboard>/g",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rocket",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6f5ebdfb-afd1-4da3-8371-2384e9d5b64e",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

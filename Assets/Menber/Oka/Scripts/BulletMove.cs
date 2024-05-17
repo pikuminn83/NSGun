@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletMove : MonoBehaviour
 {
-    public float BulletMoveSpeed = 5.0f;
+    public float BulletMoveSpeed = 50.0f;
     float a = 0;
     // Start is called before the first frame update
     void Start()
@@ -15,9 +15,9 @@ public class BulletMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(BulletMoveSpeed * Time.deltaTime,0,0);
+        transform.Translate(BulletMoveSpeed * Time.deltaTime, 0, 0);
         a += Time.deltaTime;
-        if (a > 3)
+        if (a > 1)
         {
             Destroy(this.gameObject);
         }

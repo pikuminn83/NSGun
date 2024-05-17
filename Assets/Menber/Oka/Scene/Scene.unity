@@ -201,7 +201,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &269550593
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -321,6 +321,8 @@ MonoBehaviour:
   Bullet: {fileID: 6874475422756590391, guid: 5ada909f8be7cc2408a1657dd01e7cae, type: 3}
   Rocket: {fileID: 8977187795474880894, guid: 2290f2f909cc1d141977796f73e096a9, type: 3}
   gage: {fileID: 1308971842}
+  Nflag: 0
+  Sflag: 0
 --- !u!114 &269550597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,6 +438,7 @@ GameObject:
   - component: {fileID: 416920236}
   - component: {fileID: 416920235}
   - component: {fileID: 416920237}
+  - component: {fileID: 416920238}
   m_Layer: 0
   m_Name: NRail
   m_TagString: Untagged
@@ -555,6 +558,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &416920238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416920234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50b94ca4addf4fd4a8d931098a91c292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 269550596}
 --- !u!1 &437004678
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,8 +912,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -708, y: 468}
-  m_SizeDelta: {x: 800, y: 100}
+  m_AnchoredPosition: {x: -225.75455, y: 204.99274}
+  m_SizeDelta: {x: 774.6774, y: 73.1592}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1308971841
 MonoBehaviour:
@@ -961,6 +977,7 @@ GameObject:
   - component: {fileID: 1744052453}
   - component: {fileID: 1744052452}
   - component: {fileID: 1744052454}
+  - component: {fileID: 1744052455}
   m_Layer: 0
   m_Name: SRail
   m_TagString: Untagged
@@ -1080,6 +1097,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1744052455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744052451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa38925776b420488e0da97f17aa046, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 269550596}
 --- !u!1 &1785070737
 GameObject:
   m_ObjectHideFlags: 0

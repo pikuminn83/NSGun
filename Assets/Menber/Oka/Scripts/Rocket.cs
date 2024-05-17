@@ -30,7 +30,7 @@ public class Rocket : MonoBehaviour
     {
         transform.Translate(RocketSpeed * Time.deltaTime, 0, 0);
         a += Time.deltaTime;
-        if (a > 3)
+        if (a > 1)
         {
             Destroy(this.gameObject);
         }
