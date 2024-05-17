@@ -5,18 +5,24 @@ using UnityEngine;
 public class EnemyRespawn : MonoBehaviour
 {
     //Mobのリスポーン地点
-    public List<GameObject> RespwanMob = new List<GameObject>();
+    public List<GameObject> MobRespwan = new List<GameObject>();
     public Transform MobPos1;
     public Transform MobPos2;
     //Bossのリスポーン地点
-    public List<GameObject> RespwanBoss = new List<GameObject>();
+    public List<GameObject> BossRespwan = new List<GameObject>();
     public Transform BossPos1;
     public Transform BossPos2;
 
     float MaxX, Minx, MaxY, Miny;
+    float BossMaxX, BossMinx, BossMaxY, BossMiny;
 
-    float frame;
-    public float generateFrame = 0;
+    float Mobframe;
+    public float MobgenerateFrame = 0;
+
+    float BossTime;
+    public int BossgenerateFrame = 0;
+
+    bool BossLive = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,23 +30,36 @@ public class EnemyRespawn : MonoBehaviour
         Minx = Mathf.Min(MobPos1.transform.position.x, MobPos2.transform.position.x);
         MaxY = Mathf.Max(MobPos1.transform.position.y, MobPos2.transform.position.y);
         Miny = Mathf.Min(MobPos1.transform.position.y, MobPos2.transform.position.y);
+
+        BossMaxX = Mathf.Max(BossPos1.transform.position.x, BossPos2.transform.position.x);
+        BossMinx = Mathf.Min(BossPos1.transform.position.x, BossPos2.transform.position.x);
+        BossMaxY = Mathf.Max(BossPos1.transform.position.y, BossPos2.transform.position.y);
+        BossMiny = Mathf.Min(BossPos1.transform.position.y, BossPos2.transform.position.y);
     }
 
     // Update is called once per frame
     void Update()
     {
-        ++frame;
 
-        if (frame > generateFrame)
+        ++Mobframe;
+
+        if (Mobframe > MobgenerateFrame)
         {
-            frame = 0;
-            int index = Random.Range(0, RespwanMob.Count);
-            float PosX = Random.Range(MaxX, Minx);
-            float PosY = Random.Range(MaxY, Miny);
+            Mobframe = 0;
+            int Mobindex = Random.Range(0, MobRespwan.Count);
+            float MobPosX = Random.Range(MaxX, Minx);
+            float MobPosY = Random.Range(MaxY, Miny);
 
-            Instantiate(RespwanMob[index], new Vector3(PosX, PosY, 0), Quaternion.identity);
+            Instantiate(MobRespwan[Mobindex], new Vector3(MobPosX, MobPosY, 0), Quaternion.identity);
         }
-        
-    
+        BossTime += Time.deltaTime;
+        if (BossTime > BossgenerateFrame && BossLive == false)
+        {
+            float BossPosX = Random.Range(BossMaxX, BossMinx);
+            float BossPosY = Random.Range(BossMaxY, BossMiny);
+
+            Instantiate(BossRespwan[0], new Vector3(BossPosX, BossPosY, 0), Quaternion.identity);
+            BossLive = true;
+        }
     }
 }

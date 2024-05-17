@@ -20,8 +20,4 @@ public class EnemyWood : MonoBehaviour
         // オブジェクト移動
         this.transform.position -= _EnemyMove * Time.deltaTime;
     }
-    private void OnBecameInvisible()
-    {
-       // Destroy(this.gameObject);
-    }
 }
