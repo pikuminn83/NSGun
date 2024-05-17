@@ -7,6 +7,7 @@ public class Resalut : MonoBehaviour
 {
     public TextMeshProUGUI ResultText;
     public TextMeshProUGUI RankText;
+    public TextMeshProUGUI ConoboText;
 
     public int ResulutAreaSS;
     public int ResulutAreaS;
@@ -16,7 +17,8 @@ public class Resalut : MonoBehaviour
     void Start()
     {
         int resruto = PlayerPrefs.GetInt("SCORE");
-
+        int conbo = PlayerPrefs.GetInt("CONBO");
+        ConoboText.text = "MaxCono:" + conbo;
         ResultText.text = "ResultScore:" + resruto;
         if(ResulutAreaSS<=resruto)
         {

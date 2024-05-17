@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2894670021691411317}
   - component: {fileID: 1729384110685576284}
   - component: {fileID: 4258211993086931985}
+  - component: {fileID: 7910556613960509448}
   m_Layer: 0
   m_Name: Enemy2
   m_TagString: Enemy
@@ -98,10 +99,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a03b0959a4941f24ab58f5c232ca4e56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Person_EnemyScore: 1
+  Person_EnemyScore: 300
   HP: 1
   _uiManager: {fileID: 0}
   explosionRadius: 10
+  OutsideCamera: 0
 --- !u!61 &4258211993086931985
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -147,3 +149,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &7910556613960509448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5894818405537397165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dc4a3ce0bde15149b47983a537e1e63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 2

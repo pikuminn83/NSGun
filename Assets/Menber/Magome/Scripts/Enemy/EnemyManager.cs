@@ -55,5 +55,14 @@ public class EnemyManager : MonoBehaviour
             }
         }
     }
+    public void OnBecameInvisible()
+    {
+        _uiManager.EnemyOutsideCamera();
+        Destroy(this.gameObject);
+    }
+    public void OnBecameVisible()
+    {
+        _uiManager.EnemyInCamera();
+    }
 
 }
