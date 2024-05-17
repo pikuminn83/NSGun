@@ -304,9 +304,9 @@ MonoBehaviour:
   ResultText: {fileID: 1435865501}
   RankText: {fileID: 1169609602}
   ConoboText: {fileID: 457990598}
-  ResulutAreaSS: 500
-  ResulutAreaS: 400
-  ResulutAreaA: 300
+  ResulutAreaSS: 2000
+  ResulutAreaS: 1000
+  ResulutAreaA: 500
   ResulutAreaB: 200
 --- !u!1 &885299829
 GameObject:

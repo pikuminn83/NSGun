@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-
+    //“Gˆê‘Ì•ª‚ÌƒXƒRƒA
     public int Person_EnemyScore = 0;
+    //“GHP
     public int HP=0;
 
     public UIManager _uiManager;
@@ -54,15 +55,6 @@ public class EnemyManager : MonoBehaviour
                 }
             }
         }
-    }
-    public void OnBecameInvisible()
-    {
-        _uiManager.EnemyOutsideCamera();
-        Destroy(this.gameObject);
-    }
-    public void OnBecameVisible()
-    {
-        _uiManager.EnemyInCamera();
     }
 
 }

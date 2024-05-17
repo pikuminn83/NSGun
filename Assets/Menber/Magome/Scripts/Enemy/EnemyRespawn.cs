@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class EnemyRespawn : MonoBehaviour
 {
-    public List<GameObject> Respwan = new List<GameObject>();
-
-    public Transform Pos1;
-    public Transform Pos2;
+    //Mobのリスポーン地点
+    public List<GameObject> RespwanMob = new List<GameObject>();
+    public Transform MobPos1;
+    public Transform MobPos2;
+    //Bossのリスポーン地点
+    public List<GameObject> RespwanBoss = new List<GameObject>();
+    public Transform BossPos1;
+    public Transform BossPos2;
 
     float MaxX, Minx, MaxY, Miny;
 
@@ -16,10 +20,10 @@ public class EnemyRespawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        MaxX = Mathf.Max(Pos1.transform.position.x, Pos2.transform.position.x);
-        Minx = Mathf.Min(Pos1.transform.position.x, Pos2.transform.position.x);
-        MaxY = Mathf.Max(Pos1.transform.position.y, Pos2.transform.position.y);
-        Miny = Mathf.Min(Pos1.transform.position.y, Pos2.transform.position.y);
+        MaxX = Mathf.Max(MobPos1.transform.position.x, MobPos2.transform.position.x);
+        Minx = Mathf.Min(MobPos1.transform.position.x, MobPos2.transform.position.x);
+        MaxY = Mathf.Max(MobPos1.transform.position.y, MobPos2.transform.position.y);
+        Miny = Mathf.Min(MobPos1.transform.position.y, MobPos2.transform.position.y);
     }
 
     // Update is called once per frame
@@ -30,11 +34,11 @@ public class EnemyRespawn : MonoBehaviour
         if (frame > generateFrame)
         {
             frame = 0;
-            int index = Random.Range(0, Respwan.Count);
+            int index = Random.Range(0, RespwanMob.Count);
             float PosX = Random.Range(MaxX, Minx);
             float PosY = Random.Range(MaxY, Miny);
 
-            Instantiate(Respwan[index], new Vector3(PosX, PosY, 0), Quaternion.identity);
+            Instantiate(RespwanMob[index], new Vector3(PosX, PosY, 0), Quaternion.identity);
         }
         
     
