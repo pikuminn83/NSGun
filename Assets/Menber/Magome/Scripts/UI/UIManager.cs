@@ -29,7 +29,7 @@ public class UIManager : MonoBehaviour
     private int TopConboCount = 0;
     //コンボ倍率の変化する値
     public int WidthConboCount;
-
+    //初期スコア
     public int _EnemyScore = 0;
     void Start()
     {

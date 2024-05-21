@@ -16,11 +16,11 @@ public class EnemyRespawn : MonoBehaviour
     float MaxX, Minx, MaxY, Miny;
     float BossMaxX, BossMinx, BossMaxY, BossMiny;
 
-    float Mobframe;
-    public float MobgenerateFrame = 0;
+    float MobTime;
+    public float MobgenerateTime = 0;
 
     float BossTime;
-    public int BossgenerateFrame = 0;
+    public int BossgenerateTime = 0;
 
     bool BossLive = false;
     // Start is called before the first frame update
@@ -41,11 +41,11 @@ public class EnemyRespawn : MonoBehaviour
     void Update()
     {
 
-        ++Mobframe;
+        MobTime += Time.deltaTime;
 
-        if (Mobframe > MobgenerateFrame)
+        if (MobTime > MobgenerateTime)
         {
-            Mobframe = 0;
+            MobTime = 0;
             int Mobindex = Random.Range(0, MobRespwan.Count);
             float MobPosX = Random.Range(MaxX, Minx);
             float MobPosY = Random.Range(MaxY, Miny);
@@ -53,7 +53,7 @@ public class EnemyRespawn : MonoBehaviour
             Instantiate(MobRespwan[Mobindex], new Vector3(MobPosX, MobPosY, 0), Quaternion.identity);
         }
         BossTime += Time.deltaTime;
-        if (BossTime > BossgenerateFrame && BossLive == false)
+        if (BossTime > BossgenerateTime && BossLive == false)
         {
             float BossPosX = Random.Range(BossMaxX, BossMinx);
             float BossPosY = Random.Range(BossMaxY, BossMiny);

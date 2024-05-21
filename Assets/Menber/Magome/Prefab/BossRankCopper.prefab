@@ -304,7 +304,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4201619826644713138}
-  - component: {fileID: 475766985976502352}
+  - component: {fileID: 1846372716081467838}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -327,7 +327,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2216408131134871070}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &475766985976502352
+--- !u!114 &1846372716081467838
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -339,7 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f23f7195240101d41923711ea28a9bce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletObj: {fileID: 4474691317175620545, guid: 2433db3b838567641abbe9617d2c9c51, type: 3}
+  BulletSpeed: 2
 --- !u!1 &8454168665062128585
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,6 +386,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0116e76a405052c4d9e2aaccd9dca082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletObj: {fileID: 0}
+  BulletObj: {fileID: 4474691317175620545, guid: 2433db3b838567641abbe9617d2c9c51, type: 3}
   Speed: 1
   LiveGenerateTime: 5

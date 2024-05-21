@@ -6,15 +6,17 @@ public class CopperEnemy : MonoBehaviour
 {
     [SerializeField]
     GameObject BulletObj;
+    float BulletTime;
 
     private Vector2 pos;
     public int Speed;
 
     float LiveTimer;
     public float LiveGenerateTime;
+
     void Start()
     {
-        Instantiate(BulletObj, this.transform.position, Quaternion.identity);
+        
     }
     // Update is called once per frame
     void Update()
@@ -32,7 +34,13 @@ public class CopperEnemy : MonoBehaviour
         {
             Speed = 1;
         }
-
+        BulletTime += Time.deltaTime;
+       //íeÇÃèoåª
+       if(BulletTime > 5)
+       {
+            Instantiate(BulletObj, this.transform.position, Quaternion.identity);
+            BulletTime = 0;
+       }
 
         //É{ÉXÇÃê∂ë∂éûä‘
         LiveTimer += Time.deltaTime;

@@ -1184,8 +1184,8 @@ MonoBehaviour:
   - {fileID: 8454168665062128585, guid: 6ddf229f2e4178e42a76ca2224c426cd, type: 3}
   BossPos1: {fileID: 1225503800}
   BossPos2: {fileID: 1324924393}
-  MobgenerateFrame: 350
-  BossgenerateFrame: 10
+  MobgenerateTime: 3
+  BossgenerateTime: 10
 --- !u!4 &1902493719
 Transform:
   m_ObjectHideFlags: 0
