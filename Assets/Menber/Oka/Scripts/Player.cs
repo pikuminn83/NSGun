@@ -2,6 +2,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
+using static UnityEditor.PlayerSettings;
 
 public class Player : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class Player : MonoBehaviour
     public bool Nflag;
     public bool Sflag;
     
+    
 
 
 
@@ -30,7 +32,7 @@ public class Player : MonoBehaviour
     {
         rb2 = GetComponent<Rigidbody2D>();
         gage.GetComponent<MagneticGage>();
-
+        
     }
 
     public void RailChange_To_N(InputAction.CallbackContext context)
@@ -38,7 +40,7 @@ public class Player : MonoBehaviour
 
         if (context.performed)
         {
-            if (gage.fillAmount >= 0.05f&&Nflag==false)
+            if (gage.fillAmount >= 0.09f&&Nflag==false)
             {
                 rb2.gravityScale = -3.0f;
                 gage.fillAmount -= 0.05f;
@@ -50,36 +52,15 @@ public class Player : MonoBehaviour
     {
         if (context.performed)
         {
-            if (gage.fillAmount >= 0.05f&&Sflag == false)
+            if (gage.fillAmount >= 0.09f&&Sflag == false)
             {
                 rb2.gravityScale = +3.0f;
                 gage.fillAmount -= 0.05f;
             }
         }
     }
-    public void Zerogravity (InputAction.CallbackContext context)
-    {
-        if(context.performed)
-        {
-
-           
-
-            
-            if (gage.fillAmount >= 0.1f)
-            {
-
-                rb2.gravityScale /=12.0f;
-                gage.fillAmount -= 0.05f;
-                Invoke("zero", 0.5f);
-                
-                
-            }
-        }
-    }
-    void zero()
-    {
-        rb2.gravityScale = 0.0f;
-    }
+    
+    
 
     // コールバックの登録・解除
     private void Awake()
@@ -125,9 +106,16 @@ public class Player : MonoBehaviour
         transform.position = pos;
         if (gage.fillAmount <= 0.03)
         {
-            rb2.gravityScale = -3.0f;
+            if (pos.y > -0.75)
+            {
+                rb2.gravityScale = -3.0f;
+            }
+            if (pos.y < -0.75)
+            {
+                rb2.gravityScale = 3.0f;
+            }
         }
-        Debug.Log(rb2.gravityScale);
+      
     }
     public void Atack(InputAction.CallbackContext context)
     {
@@ -163,5 +151,6 @@ public class Player : MonoBehaviour
             }
         }
     }
+   
 }
 
