@@ -8,8 +8,15 @@ using UnityEngine.UI;
 public class SkillChoose : MonoBehaviour
 {
 
-    int skillnum = 0;
+    public int skillnum = 0;
     public Image gage;
+    float cooltime_a;
+    float cooltime_b;
+    float cooltime_c;
+    //クールタイム用のフラグ
+    public bool flag_a = true;
+    public bool flag_b = true;
+    public bool flag_c = true;
 
 
     // Start is called before the first frame update
@@ -38,27 +45,22 @@ public class SkillChoose : MonoBehaviour
     {
         if(context.phase == InputActionPhase.Performed)
         {
-            if (gage.fillAmount >= 0.3f&&skillnum%3==0)
+            if (skillnum%3==0&&(int)cooltime_a>=15)
             {
                 Debug.Log("MagLiquid発動");
-                gage.fillAmount -= 0.3f;
+                cooltime_a = 0;
             }
-            if (gage.fillAmount >= 0.3f)
+            if ((skillnum % 3 == 1 || skillnum % 3 == -2) && (int)cooltime_b >= 20)
             {
-                if (skillnum % 3 == 1 && skillnum % 3 == -2)
-
-                { Debug.Log("RailGun発動");
-                    gage.fillAmount -= 0.3f;
-                } 
-            }
-            if (gage.fillAmount >= 0.3f)
+                Debug.Log("RailGun発動");
+                cooltime_b = 0;
+            } 
+            if ((skillnum % 3 == 2 || skillnum % 3 == -1) && (int)cooltime_c >= 10)
             {
-                if (skillnum % 3 == 2 && skillnum % 3 == -1)
-                {
-                    Debug.Log("UniqueMagnet発動");
-                    gage.fillAmount -= 0.3f;
-                }
+                Debug.Log("UniqueMagnet発動");
+                cooltime_c = 0;
             }
+            
         }
 
     }
@@ -70,23 +72,10 @@ public class SkillChoose : MonoBehaviour
     private void Update()
     {
 
+        cooltime_a += Time.deltaTime;
+        cooltime_b += Time.deltaTime;
+        cooltime_c += Time.deltaTime;
 
-        if (skillnum % 3 == 0)
-        {
-            Debug.Log("Skill [MagLiquid] Selected!");
-        }
-
-        if (skillnum % 3 == 1||skillnum%3 ==-2)
-        {
-            Debug.Log("Skill [RailGun] Selected!");
-        }
-
-        if (skillnum % 3 == 2 || skillnum %3 ==-1)
-        {
-            Debug.Log("Skill [UniqueMagnet] Selected!");
-        }
-        Debug.Log(skillnum%3);
-        
         
     }
 
