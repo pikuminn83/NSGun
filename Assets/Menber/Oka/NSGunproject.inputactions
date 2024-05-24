@@ -103,15 +103,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "Decide",
-                    "type": "Button",
-                    "id": "e3bb250c-9523-443c-a429-58cc2485536f",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -554,7 +545,6 @@
                     "action": "Zerogravity",
                     "isComposite": false,
                     "isPartOfComposite": true
-
                 }
             ]
         },

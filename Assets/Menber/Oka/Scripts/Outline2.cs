@@ -1,26 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Skill1 : MonoBehaviour
+public class Outline2 : MonoBehaviour
 {
     SkillChoose skill;
-    Image skill1;
+    Outline outline;
     // Start is called before the first frame update
     void Start()
     {
         GameObject skillmanager = GameObject.Find("SkillManager");
         skill = skillmanager.GetComponent<SkillChoose>();
-        skill1 = GetComponent<Image>();
+        outline = this.gameObject.GetComponent<Outline>();
     }
-
 
     // Update is called once per frame
     void Update()
     {
-        
-        skill1.fillAmount = skill.cooltime_a / 15;
+        if (skill.skillnum % 3 == 1 || skill.skillnum % 3 == -2)
+        {
+            outline.effectColor = Color.black;
+        }
+        else
+        {
+            outline.effectColor = Color.clear;
+        }
     }
 }
