@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Menber/Magome/Scenes/MainGame.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Menber/Magome/Scenes/EndGame.unity
+    path: Assets/Menber/Oka/Scene/EndGame.unity
     guid: a31ee982e9eb27143a546994168e37e7
   m_configObjects: {}
