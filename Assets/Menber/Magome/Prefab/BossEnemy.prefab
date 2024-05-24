@@ -160,5 +160,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0116e76a405052c4d9e2aaccd9dca082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BulletObj: {fileID: 4474691317175620545, guid: 2433db3b838567641abbe9617d2c9c51, type: 3}
   Speed: 3
   LiveGenerateTime: 15
