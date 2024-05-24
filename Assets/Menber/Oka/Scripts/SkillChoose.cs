@@ -15,6 +15,8 @@ public class SkillChoose : MonoBehaviour
     public float cooltime_c = 10.0f;
     Rigidbody2D playerrb2;
     Transform playertf;
+    Player player;
+    Vector3 bulletpoint;
     
 
 
@@ -25,6 +27,10 @@ public class SkillChoose : MonoBehaviour
         GameObject p = GameObject.Find("Player");
         playerrb2 = p.GetComponent<Rigidbody2D>();
         playertf = p.GetComponent<Transform>();
+        player = p.GetComponent<Player>();
+        
+
+
     }
 
     // Update is called once per frame
@@ -57,7 +63,9 @@ public class SkillChoose : MonoBehaviour
             {
                 Debug.Log("RailGun”­“®");
                 playerrb2.gravityScale = 0.0f;
+                player.Railgun();
                 Invoke("Delay", 3);
+                Invoke("Destroy", 3);
                 cooltime_b = 0;
             } 
             if ((skillnum % 3 == 2 || skillnum % 3 == -1) && (int)cooltime_c >= 10)
@@ -81,7 +89,7 @@ public class SkillChoose : MonoBehaviour
             playerrb2.gravityScale = 3.0f;
         }
     }
-
+   
 
     // ‘I‘ð’†‚ÌƒXƒLƒ‹
 

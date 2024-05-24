@@ -14,10 +14,13 @@ public class Player : MonoBehaviour
     float MoveY;
     //弾を発射する位置
     Vector3 bulletpoint;
+    Vector3 razerpoint;
     //弾のオブジェクトをアタッチする場所
     public GameObject Bullet;
     //ロケットのオブジェクトをアタッチする場所
     public GameObject Rocket;
+    //レールガンのオブジェクトをアタッチする場所
+    public GameObject RailGun;
     public Image gage;
     public bool Nflag;
     public bool Sflag;
@@ -150,6 +153,12 @@ public class Player : MonoBehaviour
                 gage.fillAmount -= 0.05f;
             }
         }
+    }
+    public void Railgun()
+    {
+        razerpoint = transform.Find("Razerpoint").localPosition;
+        GameObject childObject = Instantiate(RailGun, transform.position + razerpoint, Quaternion.identity);
+        childObject.transform.parent = this.transform;
     }
    
 }

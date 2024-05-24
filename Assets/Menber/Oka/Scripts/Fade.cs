@@ -28,7 +28,7 @@ public class Fade : MonoBehaviour
     }
     private void ChangeScene()
     {
-        SceneManager.LoadScene("Scene");
+        SceneManager.LoadScene("GamePlayScene");
     }
     public void PushButton()
     {
