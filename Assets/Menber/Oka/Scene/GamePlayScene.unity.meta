@@ -1,7 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 1f293e4 (Merge branch 'main' into feature/magome/Enemy)
 guid: f56ae66e180279243becd39acc7f2aa4
-
 DefaultImporter:
   externalObjects: {}
   userData: 
