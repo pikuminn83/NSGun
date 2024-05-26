@@ -1,8 +1,6 @@
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
-using static UnityEditor.PlayerSettings;
 
 public class Player : MonoBehaviour
 {
