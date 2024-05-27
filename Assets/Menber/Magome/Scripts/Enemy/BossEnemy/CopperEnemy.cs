@@ -26,11 +26,11 @@ public class CopperEnemy : MonoBehaviour
         // （ポイント）マイナスをかけることで逆方向に移動する。
         transform.Translate(transform.up * Time.deltaTime * 3 * Speed);
 
-        if (pos.y > 2)
+        if (pos.y > 1)
         {
             Speed = -1;
         }
-        if (pos.y < -2)
+        if (pos.y < -3)
         {
             Speed = 1;
         }

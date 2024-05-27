@@ -23,8 +23,6 @@ public class Fadein : MonoBehaviour
 
         fade.color -= new Color(0.0f, 0.0f, 0.0f, 0.004f);
 
-
-
     }
 
 
