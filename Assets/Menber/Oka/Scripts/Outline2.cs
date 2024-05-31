@@ -20,7 +20,7 @@ public class Outline2 : MonoBehaviour
     {
         if (skill.skillnum % 3 == 1 || skill.skillnum % 3 == -2)
         {
-            outline.effectColor = Color.black;
+            outline.effectColor = Color.red;
         }
         else
         {
