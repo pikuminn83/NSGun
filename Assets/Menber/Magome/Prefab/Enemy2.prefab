@@ -103,7 +103,7 @@ MonoBehaviour:
   HP: 1
   _uiManager: {fileID: 0}
   explosionRadius: 10
-  OutsideCamera: 0
+  explosionEnemy: {fileID: 1729384110685576284}
 --- !u!61 &4258211993086931985
 BoxCollider2D:
   m_ObjectHideFlags: 0

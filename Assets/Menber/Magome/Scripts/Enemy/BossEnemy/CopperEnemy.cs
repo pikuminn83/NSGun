@@ -14,10 +14,6 @@ public class CopperEnemy : MonoBehaviour
     float LiveTimer;
     public float LiveGenerateTime;
 
-    void Start()
-    {
-        
-    }
     // Update is called once per frame
     void Update()
     {
@@ -25,7 +21,6 @@ public class CopperEnemy : MonoBehaviour
 
         // （ポイント）マイナスをかけることで逆方向に移動する。
         transform.Translate(transform.up * Time.deltaTime * 3 * Speed);
-
         if (pos.y > 2)
         {
             Speed = -1;
@@ -44,9 +39,10 @@ public class CopperEnemy : MonoBehaviour
 
         //ボスの生存時間
         LiveTimer += Time.deltaTime;
+        //ボスがフィールドにいるときの行動
         if (LiveTimer > LiveGenerateTime)
         {
-            // X方向に移動する。
+            // +X方向に移動する。
             transform.Translate(transform.right * Time.deltaTime * 3 * 1);
 
             if (pos.x > 11)
@@ -59,9 +55,14 @@ public class CopperEnemy : MonoBehaviour
         {
             if (pos.x > 5)
             {
-                // X方向に移動する。
+                // +X方向に移動する。
                 transform.Translate(transform.right * Time.deltaTime * 3 * -1);
             }
         }
+    }
+    //OnDestroyは自分が消えたことを検知する
+    private void OnDestroy()
+    {
+        EnemyRespawn.instance.BossNotLive();
     }
 }
