@@ -39,10 +39,10 @@ public class CopperEnemy : MonoBehaviour
 
         //ボスの生存時間
         LiveTimer += Time.deltaTime;
-        //ボスがフィールドにいるときの行動
+
         if (LiveTimer > LiveGenerateTime)
         {
-            // +X方向に移動する。
+            // //ボスがフィールドから出る時の行動
             transform.Translate(transform.right * Time.deltaTime * 3 * 1);
 
             if (pos.x > 11)
@@ -53,6 +53,7 @@ public class CopperEnemy : MonoBehaviour
         }
         else
         {
+            //ボスがフィールドにいるときの行動
             if (pos.x > 5)
             {
                 // +X方向に移動する。

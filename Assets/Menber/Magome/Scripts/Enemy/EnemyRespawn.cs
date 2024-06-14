@@ -5,11 +5,14 @@ using UnityEngine;
 public class EnemyRespawn : MonoBehaviour
 {
     //Mobのリスポーン地点
-    public List<GameObject> MobRespwan = new List<GameObject>();
+    public List<GameObject> MobObj = new List<GameObject>();
     public Transform MobPos1;
     public Transform MobPos2;
     //Bossのリスポーン地点
-    public List<GameObject> BossRespwan = new List<GameObject>();
+    public List<GameObject> BossObj = new List<GameObject>();
+    //GoldBossスポーン地点
+    public GameObject GoldBossRespwan;
+
     public Transform BossPos1;
     public Transform BossPos2;
 
@@ -21,7 +24,7 @@ public class EnemyRespawn : MonoBehaviour
 
     float BossTime;
     public int CopperBossgenerateTime = 0;
-    public int SilverBossgenerateTime = 0;
+    public int GoldBossgenerateTime = 0;
     //ボスがステージにいるかの確認
     private bool BossLive = false;
     // ボスの出てきた回数
@@ -58,11 +61,11 @@ public class EnemyRespawn : MonoBehaviour
         if (MobTime > MobgenerateTime && BossLive ==false)
         {
             MobTime = 0;
-            int Mobindex = Random.Range(0, MobRespwan.Count);
+            int Mobindex = Random.Range(0, MobObj.Count);
             float MobPosX = Random.Range(MaxX, Minx);
             float MobPosY = Random.Range(MaxY, Miny);
 
-            Instantiate(MobRespwan[Mobindex], new Vector3(MobPosX, MobPosY, 0), Quaternion.identity);
+            Instantiate(MobObj[Mobindex], new Vector3(MobPosX, MobPosY, 0), Quaternion.identity);
         }
         BossTime += Time.deltaTime;
         switch (BossAppearCount)
@@ -73,19 +76,20 @@ public class EnemyRespawn : MonoBehaviour
                     float BossPosX = Random.Range(BossMaxX, BossMinx);
                     float BossPosY = Random.Range(BossMaxY, BossMiny);
 
-                    Instantiate(BossRespwan[0], new Vector3(BossPosX, BossPosY, 0), Quaternion.identity);
+                    Instantiate(BossObj[0], new Vector3(BossPosX, BossPosY, 0), Quaternion.identity);
                     BossAppearCount = 1;
                     BossLive = true;
                 }
                 break;
             case 1:
-                if (BossTime > SilverBossgenerateTime && BossAppearCount == 1)
+                if (BossTime > GoldBossgenerateTime && BossAppearCount == 1)
                 {
                     float BossPosX = Random.Range(BossMaxX, BossMinx);
                     float BossPosY = Random.Range(BossMaxY, BossMiny);
 
-                    Instantiate(BossRespwan[1], new Vector3(BossPosX, BossPosY, 0), Quaternion.identity);
+                    Instantiate(BossObj[1], GoldBossRespwan.transform.position, Quaternion.identity);
                     BossAppearCount = 2;
+                    BossLive = true;
                 }
                 break;
         }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SilverEnemy : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +15,10 @@ public class SilverEnemy : MonoBehaviour
     void Update()
     {
         
+    }
+    //OnDestroy‚Í©•ª‚ªÁ‚¦‚½‚±‚Æ‚ğŒŸ’m‚·‚é
+    private void OnDestroy()
+    {
+        EnemyRespawn.instance.BossNotLive();
     }
 }
