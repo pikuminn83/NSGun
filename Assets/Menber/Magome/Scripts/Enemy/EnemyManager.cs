@@ -4,28 +4,32 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    //“Gˆê‘Ì•ª‚ÌƒXƒRƒA
+    //ï¿½Gï¿½ï¿½Ì•ï¿½ï¿½ÌƒXï¿½Rï¿½A
     public int Person_EnemyScore = 0;
-    //“GHP
+    //ï¿½GHP
+
     public int HP=0;
+
 
     public UIManager _uiManager;
 
     [SerializeField]
-    private float explosionRadius; // ”š”­”¼Œa
+    private float explosionRadius; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½a
+
 
     void Start()
     {
         GameObject _uiObj = GameObject.Find("Score");
         _uiManager = _uiObj.GetComponent<UIManager>();
     }
+
     void Update()
     {
 
     }
     public void OnCollisionEnter2D(Collision2D Hit)
     {
-        //Œ»İ‚ÍƒvƒŒƒCƒ„[‚ğBullet‚É‚µ‚Ä‚¢‚é
+        //ï¿½ï¿½ï¿½İ‚Íƒvï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½ï¿½Bulletï¿½É‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½
         if (Hit.gameObject.CompareTag("Bullet"))
         {
 
@@ -36,14 +40,17 @@ public class EnemyManager : MonoBehaviour
     public void BulletSpecial()
     {
 
+
+
     }
     public void EnemyScoreAdd()
     {
-        // ”š•—‚Ì”ÍˆÍ“à‚ÌƒIƒuƒWƒFƒNƒg‚ğŒŸo
+
+        // ï¿½ï¿½ï¿½ï¿½ï¿½Ì”ÍˆÍ“ï¿½ï¿½ÌƒIï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½ï¿½ï¿½o
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
         foreach (Collider2D collider in colliders)
         {
-            //“G‚ğ“|‚µ‚½‚Ìƒ|ƒCƒ“ƒg‰ÁZ
+            //ï¿½Gï¿½ï¿½|ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìƒ|ï¿½Cï¿½ï¿½ï¿½gï¿½ï¿½ï¿½Z
             if (collider.gameObject.CompareTag("Enemy"))
             {
                 HP--;

@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class EnemyRespawn : MonoBehaviour
 {
-    //Mob‚ÌƒŠƒXƒ|[ƒ“’n“_
+    //Mobï¿½Ìƒï¿½ï¿½Xï¿½|ï¿½[ï¿½ï¿½ï¿½nï¿½_
+
     public List<GameObject> MobRespwan = new List<GameObject>();
     public Transform MobPos1;
     public Transform MobPos2;
-    //Boss‚ÌƒŠƒXƒ|[ƒ“’n“_
+    //Bossï¿½Ìƒï¿½ï¿½Xï¿½|ï¿½[ï¿½ï¿½ï¿½nï¿½_
     public List<GameObject> BossRespwan = new List<GameObject>();
+
     public Transform BossPos1;
     public Transform BossPos2;
 
@@ -20,6 +22,7 @@ public class EnemyRespawn : MonoBehaviour
     public float MobgenerateTime = 0;
 
     float BossTime;
+
     public int BossgenerateTime = 0;
 
     bool BossLive = false;
@@ -43,6 +46,7 @@ public class EnemyRespawn : MonoBehaviour
 
         MobTime += Time.deltaTime;
 
+
         if (MobTime > MobgenerateTime)
         {
             MobTime = 0;
@@ -62,4 +66,5 @@ public class EnemyRespawn : MonoBehaviour
             BossLive = true;
         }
     }
+
 }

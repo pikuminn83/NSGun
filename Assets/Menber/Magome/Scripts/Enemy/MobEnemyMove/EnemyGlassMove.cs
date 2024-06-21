@@ -5,58 +5,59 @@ using UnityEngine;
 public class EnemyGlassMove : MonoBehaviour
 {
 
-    //‚»‚ê‚¼‚ê‚ÌˆÊ’u‚ğ•Û‘¶‚·‚é•Ï”
-    //ƒXƒ^[ƒg’n“_
+
+    //ï¿½ï¿½ï¿½ê‚¼ï¿½ï¿½ÌˆÊ’uï¿½ï¿½Û‘ï¿½ï¿½ï¿½ï¿½ï¿½Ïï¿½
+    //ï¿½Xï¿½^ï¿½[ï¿½gï¿½nï¿½_
     private Vector2 charaPos;
     public Vector2 CharaPos { set { charaPos = value; } }
-    //ƒS[ƒ‹’n“_
+    //ï¿½Sï¿½[ï¿½ï¿½ï¿½nï¿½_
     private Vector2 playerPos;
     public Vector2 PlayerPos { set { playerPos = value; } }
-    //’†Œp’n“_
+    //ï¿½ï¿½ï¿½pï¿½nï¿½_
     private Vector2 greenPos;
     public Vector2 GreenPos { set { greenPos = value; } }
-    //i‚ŞŠ„‡‚ğŠÇ—‚·‚é•Ï”
+    //ï¿½iï¿½ŞŠï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç—ï¿½ï¿½ï¿½ï¿½ï¿½Ïï¿½
     float time;
 
     private float currentTime = 0;
     private float targetTime = 0;
     private int count;
 
-    //’†Œp’n“_1
+    //ï¿½ï¿½ï¿½pï¿½nï¿½_1
     public GameObject greenPoint;
-    //’†Œp’n“_2
+    //ï¿½ï¿½ï¿½pï¿½nï¿½_2
     public GameObject greenPoint1;
     // Update is called once per frame
     void Update()
     {
-        //’e‚Ìi‚ŞŠ„‡‚ğTime.deltaTime‚ÅŒˆ‚ß‚é
+        //ï¿½eï¿½Ìiï¿½ŞŠï¿½ï¿½ï¿½ï¿½ï¿½Time.deltaTimeï¿½ÅŒï¿½ï¿½ß‚ï¿½
         time += Time.deltaTime;
 
-        //“ñŸƒxƒWƒF‹Èü
-        //ƒXƒ^[ƒg’n“_‚©‚ç’†Œp’n“_‚Ü‚Å‚ÌƒxƒNƒgƒ‹ã‚ğ’Ê‚é“_‚ÌŒ»İ‚ÌˆÊ’u
+        //ï¿½ñŸƒxï¿½Wï¿½Fï¿½Èï¿½
+        //ï¿½Xï¿½^ï¿½[ï¿½gï¿½nï¿½_ï¿½ï¿½ï¿½ç’†ï¿½pï¿½nï¿½_ï¿½Ü‚Å‚Ìƒxï¿½Nï¿½gï¿½ï¿½ï¿½ï¿½ï¿½Ê‚ï¿½_ï¿½ÌŒï¿½ï¿½İ‚ÌˆÊ’u
         var a = Vector3.Lerp(charaPos, greenPos, time);
-        //’†Œp’n“_‚©‚çƒ^[ƒQƒbƒg‚Ü‚Å‚ÌƒxƒNƒgƒ‹ã‚ğ’Ê‚é“_‚ÌŒ»İ‚ÌˆÊ’u
+        //ï¿½ï¿½ï¿½pï¿½nï¿½_ï¿½ï¿½ï¿½ï¿½^ï¿½[ï¿½Qï¿½bï¿½gï¿½Ü‚Å‚Ìƒxï¿½Nï¿½gï¿½ï¿½ï¿½ï¿½ï¿½Ê‚ï¿½_ï¿½ÌŒï¿½ï¿½İ‚ÌˆÊ’u
         var b = Vector3.Lerp(greenPos, playerPos, time);
-        //ã‚Ì“ñ‚Â‚Ì“_‚ğŒ‹‚ñ‚¾ƒxƒNƒgƒ‹ã‚ğ’Ê‚é“_‚ÌŒ»İ‚ÌˆÊ’ui’e‚ÌˆÊ’uj
+        //ï¿½ï¿½Ì“ï¿½Â‚Ì“_ï¿½ï¿½ï¿½ï¿½ï¿½ñ‚¾ƒxï¿½Nï¿½gï¿½ï¿½ï¿½ï¿½ï¿½Ê‚ï¿½_ï¿½ÌŒï¿½ï¿½İ‚ÌˆÊ’uï¿½iï¿½eï¿½ÌˆÊ’uï¿½j
         this.transform.position = Vector3.Lerp(a, b, time);
 
 
 
 
-        //’e‚ğ0.1•b‚²‚Æ‚É‘Å‚¿o‚·‚½‚ß‚Ì‚à‚Ì
+        //ï¿½eï¿½ï¿½0.1ï¿½bï¿½ï¿½ï¿½Æ‚É‘Å‚ï¿½ï¿½oï¿½ï¿½ï¿½ï¿½ï¿½ß‚Ì‚ï¿½ï¿½ï¿½
         currentTime += Time.deltaTime;
         if (targetTime < currentTime)
         {
             currentTime = 0;
-            //“G‚ÌˆÊ’u‚ğ•Û‘¶
+            //ï¿½Gï¿½ÌˆÊ’uï¿½ï¿½Û‘ï¿½
             var pos = this.gameObject.transform.position;
-            //’e‚Ì‰ŠúˆÊ’u‚ğ“G‚ÌˆÊ’u‚É‚·‚é
+            //ï¿½eï¿½Ìï¿½ï¿½ï¿½ï¿½Ê’uï¿½ï¿½Gï¿½ÌˆÊ’uï¿½É‚ï¿½ï¿½ï¿½
             this.transform.position = pos;
-            //ƒXƒ^[ƒg’n“_‚ğ’e‚ÌƒXƒNƒŠƒvƒg‚É“n‚·
+            //ï¿½Xï¿½^ï¿½[ï¿½gï¿½nï¿½_ï¿½ï¿½eï¿½ÌƒXï¿½Nï¿½ï¿½ï¿½vï¿½gï¿½É“nï¿½ï¿½
             CharaPos = this.transform.position;
-            //’e‚ğˆê‚Â‘Å‚¿o‚·‚½‚Ñ‚É’†Œp’n“_‚ğ•Ï‚¦‚é
+            //ï¿½eï¿½ï¿½ï¿½ï¿½Â‘Å‚ï¿½ï¿½oï¿½ï¿½ï¿½ï¿½ï¿½Ñ‚É’ï¿½ï¿½pï¿½nï¿½_ï¿½ï¿½Ï‚ï¿½ï¿½ï¿½
             count++;
-            //’†Œp’n“_‚ğ’e‚ÌƒXƒNƒŠƒvƒg‚É“n‚·
+            //ï¿½ï¿½ï¿½pï¿½nï¿½_ï¿½ï¿½eï¿½ÌƒXï¿½Nï¿½ï¿½ï¿½vï¿½gï¿½É“nï¿½ï¿½
             if (count % 2 == 1)
             {
                 GreenPos = greenPoint.transform.position;
@@ -65,7 +66,7 @@ public class EnemyGlassMove : MonoBehaviour
             {
                 GreenPos = greenPoint1.transform.position;
             }
-            //ƒvƒŒƒCƒ„[iƒ^[ƒQƒbƒgj‚ÌˆÊ’u‚ğ’e‚ÌƒXƒNƒŠƒvƒg‚É“n‚·
+            //ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½iï¿½^ï¿½[ï¿½Qï¿½bï¿½gï¿½jï¿½ÌˆÊ’uï¿½ï¿½eï¿½ÌƒXï¿½Nï¿½ï¿½ï¿½vï¿½gï¿½É“nï¿½ï¿½
             //PlayerPos = player.transform.position;
         }
 

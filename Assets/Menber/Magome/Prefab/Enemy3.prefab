@@ -12,9 +12,15 @@ GameObject:
   - component: {fileID: 8069119313434741154}
   - component: {fileID: 1135707368691321470}
   - component: {fileID: 1317112215023915495}
+
+
+  m_Name: Rocket
+  m_TagString: Bullet
+
   m_Layer: 0
   m_Name: Enemy3
   m_TagString: Enemy
+
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,7 +108,9 @@ MonoBehaviour:
   HP: 1
   _uiManager: {fileID: 0}
   explosionRadius: 10
+
   OutsideCamera: 0
+
 --- !u!61 &1317112215023915495
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -148,3 +156,4 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+

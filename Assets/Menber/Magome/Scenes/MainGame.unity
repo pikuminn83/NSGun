@@ -491,6 +491,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+
 --- !u!1 &828888307
 GameObject:
   m_ObjectHideFlags: 0
@@ -949,7 +950,9 @@ Transform:
   m_GameObject: {fileID: 1225503799}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+
   m_LocalPosition: {x: -0.91, y: 2, z: 0}
+
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -980,7 +983,9 @@ Transform:
   m_GameObject: {fileID: 1324924392}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+
   m_LocalPosition: {x: 0.16, y: -2, z: 0}
+
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1160,7 +1165,9 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+
   m_IsActive: 1
+
 --- !u!114 &1902493718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1173,19 +1180,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97608137302d5664eac3d7e66d552e42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+
   MobRespwan:
+
   - {fileID: 5469442076240324776, guid: bd93458a465a02649a4b5bb05eeb5f20, type: 3}
   - {fileID: 5894818405537397165, guid: 92c0ad0739e71694fa2e4c49a27c8761, type: 3}
   - {fileID: 7504156755176161065, guid: 181602085c419e042a4d9f386396f50a, type: 3}
   - {fileID: 3446174746347164504, guid: ea5ba2aa115b271438bba71180db5391, type: 3}
   MobPos1: {fileID: 1935184882}
   MobPos2: {fileID: 828888308}
+
   BossRespwan:
   - {fileID: 4799568696133722567, guid: 9f1792ca464e21e4481b16ba67316fcf, type: 3}
   BossPos1: {fileID: 1225503800}
   BossPos2: {fileID: 1324924393}
   MobgenerateTime: 3
   BossgenerateTime: 10
+
 --- !u!4 &1902493719
 Transform:
   m_ObjectHideFlags: 0
@@ -1203,6 +1214,7 @@ Transform:
   - {fileID: 828888308}
   - {fileID: 1225503800}
   - {fileID: 1324924393}
+
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1935184881
@@ -1230,12 +1242,15 @@ Transform:
   m_GameObject: {fileID: 1935184881}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+
   m_LocalPosition: {x: -0.97, y: 3.02, z: 0}
+
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1902493719}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+
 --- !u!1 &2034101642
 GameObject:
   m_ObjectHideFlags: 0
@@ -1268,7 +1283,9 @@ MonoBehaviour:
   _enemyEnd: {fileID: 460471661}
   ScoreText: {fileID: 846514226}
   TimerText: {fileID: 1136614276}
+
   GameSetTimer: 30
+
   ConboText: {fileID: 1013196741}
   WidthConboCount: 1
   _EnemyScore: 0
@@ -1300,9 +1317,11 @@ GameObject:
   - component: {fileID: 2114701877}
   - component: {fileID: 2114701880}
   - component: {fileID: 2114701881}
+
   m_Layer: 0
   m_Name: Player
   m_TagString: Bullet
+
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1380,7 +1399,9 @@ Transform:
   m_GameObject: {fileID: 2114701876}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+
   m_LocalPosition: {x: 0, y: -0.1, z: 0}
+
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1448,6 +1469,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1455,7 +1477,9 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 1813899184}
   - {fileID: 2114701879}
+
   - {fileID: 1902493719}
   - {fileID: 2034101644}
   - {fileID: 784169656}
   - {fileID: 460471660}
+

@@ -123,6 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+
 --- !u!1 &262554116
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,6 +320,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 285446775}
   m_CullTransparentMesh: 1
+
 --- !u!1 &457990596
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,6 +502,7 @@ MonoBehaviour:
   ResultText: {fileID: 1435865501}
   RankText: {fileID: 1169609602}
   ConoboText: {fileID: 457990598}
+
   ResulutAreaSS: 50000
   ResulutAreaS: 10000
   ResulutAreaA: 5000
@@ -594,6 +597,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+
 --- !u!1 &885299829
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,12 +692,14 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+
   - {fileID: 262554117}
   - {fileID: 1435865500}
   - {fileID: 1169609601}
   - {fileID: 457990597}
   - {fileID: 285446776}
   - {fileID: 836705116}
+
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1061,6 +1067,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+
 --- !u!1 &1942598304
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,6 +1364,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1364,4 +1372,6 @@ SceneRoots:
   - {fileID: 1840598572}
   - {fileID: 560481641}
   - {fileID: 885299833}
+
   - {fileID: 1966068182}
+

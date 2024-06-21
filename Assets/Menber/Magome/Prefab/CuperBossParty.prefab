@@ -133,9 +133,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Person_EnemyScore: 500
+
   HP: 20
   _uiManager: {fileID: 0}
   explosionRadius: 2
+
 --- !u!61 &2902351126153024894
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -296,9 +298,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Person_EnemyScore: 500
+
   HP: 20
   _uiManager: {fileID: 0}
   explosionRadius: 2
+
 --- !u!61 &2133184403674226553
 BoxCollider2D:
   m_ObjectHideFlags: 0
