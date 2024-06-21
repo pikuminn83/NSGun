@@ -4,6 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
+
+  - Bullet
+  - Enemy
+  - Walltop
   - BulletSpecial
   - Bullet
   - WallTop

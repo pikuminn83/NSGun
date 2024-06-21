@@ -12,22 +12,24 @@ public class EnemyGlassMove : MonoBehaviour
     {
         if(Wallhit == false)
         {
-            // ˆÚ“®‘¬“x‚ğ•Û
+            // ï¿½Ú“ï¿½ï¿½ï¿½ï¿½xï¿½ï¿½Ûï¿½
             _EnemyMove = new Vector3(Speed, Speed, 0);
-            // ƒIƒuƒWƒFƒNƒgˆÚ“®
+            // ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ú“ï¿½
             this.transform.position -= _EnemyMove * Time.deltaTime;
         }
         if(Wallhit == true)
         {
-            // ˆÚ“®‘¬“x‚ğ•Û
+            // ï¿½Ú“ï¿½ï¿½ï¿½ï¿½xï¿½ï¿½Ûï¿½
             _EnemyMove = new Vector3(Speed, -Speed, 0);
-            // ƒIƒuƒWƒFƒNƒgˆÚ“®
+            // ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ú“ï¿½
             this.transform.position -= _EnemyMove * Time.deltaTime;
         }
     }
     void OnCollisionEnter2D(Collision2D hit)
     {
-        if(hit.gameObject.CompareTag("WallTop"))
+
+        if(hit.gameObject.CompareTag("Walltop"))
+
         {
             Wallhit = false;
         }

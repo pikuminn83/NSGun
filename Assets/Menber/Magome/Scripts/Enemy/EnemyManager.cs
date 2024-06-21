@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    //“Gˆê‘Ì•ª‚ÌƒXƒRƒA
+    //ï¿½Gï¿½ï¿½Ì•ï¿½ï¿½ÌƒXï¿½Rï¿½A
     public int Person_EnemyScore = 0;
-    //“GHP
+    //ï¿½GHP
     public int HP = 0;
 
     public UIManager _uiManager;
 
     [SerializeField]
-    private float explosionRadius; // ”š”­”¼Œa
+    private float explosionRadius; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½a
     [SerializeField]
     public EnemyManager explosionEnemy;
 
@@ -23,19 +23,23 @@ public class EnemyManager : MonoBehaviour
     }
     public void OnCollisionEnter2D(Collision2D Hit)
     {
-        //Bullet‚Ìê‡“–‚½‚Á‚½ƒIƒuƒWƒFƒNƒg‚¾‚¯‚ğÁ‚·
-        //©•ª‚ÌƒXƒRƒA‚ğUIManager‚Éƒvƒ‰ƒX‚·‚é
+        //Bulletï¿½Ìê‡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ÌƒXï¿½Rï¿½Aï¿½ï¿½UIManagerï¿½Éƒvï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½
         if (Hit.gameObject.CompareTag("Bullet"))
         {
             HP--;
             EnemyScoreAdd();
         }
-        else if(Hit.gameObject.CompareTag("BulletSpecial"))
+
+        if(Hit.gameObject.CompareTag("BulletSpecial"))
+
         {
            Debug.Log("BulletSpecial");
            BulletSpecial();
         }
-        else if(Hit.gameObject.CompareTag("Player"))
+
+        if(Hit.gameObject.CompareTag("Player"))
+
         {
             Debug.Log("Player Hit");
         }
@@ -43,19 +47,19 @@ public class EnemyManager : MonoBehaviour
     }
     public void BulletSpecial()
     {
-        // ”š•—‚Ì”ÍˆÍ“à‚ÌƒIƒuƒWƒFƒNƒg‚ğŒŸo
+        // ï¿½ï¿½ï¿½ï¿½ï¿½Ì”ÍˆÍ“ï¿½ï¿½ÌƒIï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½ï¿½ï¿½o
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
         foreach (Collider2D colliderAll in colliders)
         {
             if(colliderAll.gameObject.CompareTag("Enemy"))
             {
-                //ü‚è‚É”š”­ƒ_ƒ[ƒW
-                //–GlassRankEnemyParty‚ÍƒoƒO‚Å4‘Ì‚Ü‚Å‚µ‚©“|‚¹‚È‚¢ŒãXŒŸØ‚ÆC³
+                //ï¿½ï¿½ï¿½ï¿½É”ï¿½ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½[ï¿½W
+                //ï¿½ï¿½GlassRankEnemyPartyï¿½Íƒoï¿½Oï¿½ï¿½4ï¿½Ì‚Ü‚Å‚ï¿½ï¿½ï¿½ï¿½|ï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½Ø‚ÆCï¿½ï¿½
                 explosionEnemy = colliderAll.gameObject.GetComponent<EnemyManager>();
                 explosionEnemy.HP--;
                 EnemyScoreAdd();
                 Destroy(colliderAll.gameObject);
-               // Debug.Log($"ŒŸo‚³‚ê‚½ƒIƒuƒWƒFƒNƒg {colliderAll.name}");
+               // Debug.Log($"ï¿½ï¿½ï¿½oï¿½ï¿½ï¿½ê‚½ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½g {colliderAll.name}");
             }
 
         }
