@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//Copper‚Í“º
+//Copperï¿½Í“ï¿½
 public class CopperEnemy : MonoBehaviour
 {
     [SerializeField]
@@ -14,35 +14,45 @@ public class CopperEnemy : MonoBehaviour
     float LiveTimer;
     public float LiveGenerateTime;
 
+
+    void Start()
+    {
+        
+    }
+
     // Update is called once per frame
     void Update()
     {
         pos = this.transform.position;
 
-        // iƒ|ƒCƒ“ƒgjƒ}ƒCƒiƒX‚ğ‚©‚¯‚é‚±‚Æ‚Å‹t•ûŒü‚ÉˆÚ“®‚·‚éB
+        // ï¿½iï¿½|ï¿½Cï¿½ï¿½ï¿½gï¿½jï¿½}ï¿½Cï¿½iï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é‚±ï¿½Æ‚Å‹tï¿½ï¿½ï¿½ï¿½ï¿½ÉˆÚ“ï¿½ï¿½ï¿½ï¿½ï¿½B
         transform.Translate(transform.up * Time.deltaTime * 3 * Speed);
-        if (pos.y > 2)
+
+
+        if (pos.y > 1)
         {
             Speed = -1;
         }
-        if (pos.y < -2)
+        if (pos.y < -3)
+
         {
             Speed = 1;
         }
         BulletTime += Time.deltaTime;
-       //’e‚ÌoŒ»
+       //ï¿½eï¿½Ìoï¿½ï¿½
        if(BulletTime > 5)
        {
             Instantiate(BulletObj, this.transform.position, Quaternion.identity);
             BulletTime = 0;
        }
 
-        //ƒ{ƒX‚Ì¶‘¶ŠÔ
+        //ï¿½{ï¿½Xï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         LiveTimer += Time.deltaTime;
 
         if (LiveTimer > LiveGenerateTime)
         {
-            // //ƒ{ƒX‚ªƒtƒB[ƒ‹ƒh‚©‚ço‚é‚Ìs“®
+            // Xï¿½ï¿½ï¿½ï¿½ï¿½ÉˆÚ“ï¿½ï¿½ï¿½ï¿½ï¿½B
+
             transform.Translate(transform.right * Time.deltaTime * 3 * 1);
 
             if (pos.x > 11)
@@ -53,17 +63,15 @@ public class CopperEnemy : MonoBehaviour
         }
         else
         {
-            //ƒ{ƒX‚ªƒtƒB[ƒ‹ƒh‚É‚¢‚é‚Æ‚«‚Ìs“®
+
             if (pos.x > 5)
             {
-                // +X•ûŒü‚ÉˆÚ“®‚·‚éB
+                // Xï¿½ï¿½ï¿½ï¿½ï¿½ÉˆÚ“ï¿½ï¿½ï¿½ï¿½ï¿½B
+
                 transform.Translate(transform.right * Time.deltaTime * 3 * -1);
             }
         }
     }
-    //OnDestroy‚Í©•ª‚ªÁ‚¦‚½‚±‚Æ‚ğŒŸ’m‚·‚é
-    private void OnDestroy()
-    {
-        EnemyRespawn.instance.BossNotLive();
-    }
+
+
 }

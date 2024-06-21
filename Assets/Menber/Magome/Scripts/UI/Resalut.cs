@@ -18,7 +18,9 @@ public class Resalut : MonoBehaviour
     {
         int resruto = PlayerPrefs.GetInt("SCORE");
         int conbo = PlayerPrefs.GetInt("CONBO");
-        ConoboText.text = "MaxConbo:" + conbo;
+
+        ConoboText.text = "MaxCono:" + conbo;
+
         ResultText.text = "ResultScore:" + resruto;
         if(ResulutAreaSS<=resruto)
         {
@@ -45,6 +47,13 @@ public class Resalut : MonoBehaviour
             RankText.text = "Rank:" + "C";
             Debug.Log("C");
         }
+    }
+
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 
 }

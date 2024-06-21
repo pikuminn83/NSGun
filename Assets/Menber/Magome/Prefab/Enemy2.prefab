@@ -14,8 +14,13 @@ GameObject:
   - component: {fileID: 4258211993086931985}
   - component: {fileID: 7910556613960509448}
   m_Layer: 0
+
+  m_Name: Bullet
+  m_TagString: Bullet
+
   m_Name: Enemy2
   m_TagString: Enemy
+
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,7 +108,9 @@ MonoBehaviour:
   HP: 1
   _uiManager: {fileID: 0}
   explosionRadius: 10
-  explosionEnemy: {fileID: 1729384110685576284}
+
+  OutsideCamera: 0
+
 --- !u!61 &4258211993086931985
 BoxCollider2D:
   m_ObjectHideFlags: 0

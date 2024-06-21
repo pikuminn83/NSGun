@@ -51,9 +51,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Decide",
+                    "name": "Decision",
                     "type": "Button",
-                    "id": "e3bb250c-9523-443c-a429-58cc2485536f",
+                    "id": "0c3b37fb-f13b-4514-bb37-96bbc8cc981f",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -311,6 +311,73 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Decide",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+
+                },
+                {
+                    "name": "modifier",
+                    "id": "89a820ff-a2c6-4a63-bbea-b45b1577e1cb",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Zerogravity",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "949e82a8-b6a7-4561-a442-a1b6245386e7",
+                    "path": "<Keyboard>/n",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Zerogravity",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "One Modifier",
+                    "id": "35238ac7-aab0-490b-b927-8b8713659f68",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Zerogravity",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "9e886c66-5d93-4b64-80b3-e93a0cdf7a66",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Zerogravity",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "7efca42d-c3ac-4fb8-8bea-ba641000690d",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Zerogravity",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "cc10bbfb-26f7-4088-8866-bb96643e3668",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Decision",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -4,72 +4,64 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    //“Gˆê‘Ì•ª‚ÌƒXƒRƒA
+    //ï¿½Gï¿½ï¿½Ì•ï¿½ï¿½ÌƒXï¿½Rï¿½A
     public int Person_EnemyScore = 0;
-    //“GHP
-    public int HP = 0;
+    //ï¿½GHP
+
+    public int HP=0;
+
 
     public UIManager _uiManager;
 
     [SerializeField]
-    private float explosionRadius; // ”š”­”¼Œa
-    [SerializeField]
-    public EnemyManager explosionEnemy;
+    private float explosionRadius; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½a
+
 
     void Start()
     {
         GameObject _uiObj = GameObject.Find("Score");
         _uiManager = _uiObj.GetComponent<UIManager>();
     }
+
+    void Update()
+    {
+
+    }
     public void OnCollisionEnter2D(Collision2D Hit)
     {
-        //Bullet‚Ìê‡“–‚½‚Á‚½ƒIƒuƒWƒFƒNƒg‚¾‚¯‚ğÁ‚·
-        //©•ª‚ÌƒXƒRƒA‚ğUIManager‚Éƒvƒ‰ƒX‚·‚é
+        //ï¿½ï¿½ï¿½İ‚Íƒvï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½ï¿½Bulletï¿½É‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½
         if (Hit.gameObject.CompareTag("Bullet"))
         {
-            HP--;
+
             EnemyScoreAdd();
-        }
-        if(Hit.gameObject.CompareTag("BulletSpecial"))
-        {
-           Debug.Log("BulletSpecial");
-           BulletSpecial();
-        }
-        if(Hit.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Player Hit");
         }
 
     }
     public void BulletSpecial()
     {
-        // ”š•—‚Ì”ÍˆÍ“à‚ÌƒIƒuƒWƒFƒNƒg‚ğŒŸo
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
-        foreach (Collider2D colliderAll in colliders)
-        {
-            if(colliderAll.gameObject.CompareTag("Enemy"))
-            {
-                //ü‚è‚É”š”­ƒ_ƒ[ƒW
-                //–GlassRankEnemyParty‚ÍƒoƒO‚Å4‘Ì‚Ü‚Å‚µ‚©“|‚¹‚È‚¢ŒãXŒŸØ‚ÆC³
-                explosionEnemy = colliderAll.gameObject.GetComponent<EnemyManager>();
-                explosionEnemy.HP--;
-                EnemyScoreAdd();
-                Destroy(colliderAll.gameObject);
-               // Debug.Log($"ŒŸo‚³‚ê‚½ƒIƒuƒWƒFƒNƒg {colliderAll.name}");
-            }
 
-        }
+
 
     }
     public void EnemyScoreAdd()
     {
-        if (HP == 0)
-        {
-            _uiManager._EnemyScore = Person_EnemyScore;
-            _uiManager.SumScore();
-            Destroy(this.gameObject);
-        }
 
+        // ï¿½ï¿½ï¿½ï¿½ï¿½Ì”ÍˆÍ“ï¿½ï¿½ÌƒIï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½ï¿½ï¿½o
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
+        foreach (Collider2D collider in colliders)
+        {
+            //ï¿½Gï¿½ï¿½|ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìƒ|ï¿½Cï¿½ï¿½ï¿½gï¿½ï¿½ï¿½Z
+            if (collider.gameObject.CompareTag("Enemy"))
+            {
+                HP--;
+                if(HP == 0)
+                {
+                    _uiManager._EnemyScore = Person_EnemyScore;
+                   _uiManager.SumScore();
+                   Destroy(this.gameObject);
+                }
+            }
+        }
     }
 
 }

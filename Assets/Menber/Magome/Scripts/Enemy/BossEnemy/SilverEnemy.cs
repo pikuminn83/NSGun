@@ -1,22 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SilverEnemy : MonoBehaviour
 {
 
+    SkillChoose skill;
+    Image skill2;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject skillmanager = GameObject.Find("SkillManager");
+        skill = skillmanager.GetComponent<SkillChoose>();
+        skill2 = GetComponent<Image>();
     }
+
 
     // Update is called once per frame
     void Update()
     {
-        
+        skill2.fillAmount = skill.cooltime_b / 20;
     }
-    //OnDestroy‚Í©•ª‚ªÁ‚¦‚½‚±‚Æ‚ğŒŸ’m‚·‚é
+    //OnDestroyï¿½Íï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ï¿½ï¿½mï¿½ï¿½ï¿½ï¿½
     private void OnDestroy()
     {
         EnemyRespawn.instance.BossNotLive();

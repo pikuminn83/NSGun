@@ -148,7 +148,7 @@ MonoBehaviour:
   HP: 1
   _uiManager: {fileID: 0}
   explosionRadius: 2
-  explosionEnemy: {fileID: 3994931925192339684}
+
 --- !u!114 &3843762167845511397
 MonoBehaviour:
   m_ObjectHideFlags: 0
