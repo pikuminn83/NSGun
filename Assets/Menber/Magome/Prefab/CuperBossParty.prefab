@@ -133,11 +133,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Person_EnemyScore: 500
-
-  HP: 20
+  HP: 1
   _uiManager: {fileID: 0}
-  explosionRadius: 2
-
+  explosionRadius: 10
+  explosionEnemy: {fileID: 3954648574075370011}
 --- !u!61 &2902351126153024894
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -298,11 +297,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Person_EnemyScore: 500
-
-  HP: 20
+  HP: 1
   _uiManager: {fileID: 0}
-  explosionRadius: 2
-
+  explosionRadius: 10
+  explosionEnemy: {fileID: 324219798463456812}
 --- !u!61 &2133184403674226553
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -101,9 +101,8 @@ MonoBehaviour:
   Person_EnemyScore: 100
   HP: 1
   _uiManager: {fileID: 0}
-
-  explosionRadius: 0
-
+  explosionRadius: 10
+  explosionEnemy: {fileID: 3610986092644470159}
 --- !u!61 &4854911498540890111
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -250,9 +249,8 @@ MonoBehaviour:
   Person_EnemyScore: 100
   HP: 1
   _uiManager: {fileID: 0}
-
-  explosionRadius: 0
-
+  explosionRadius: 10
+  explosionEnemy: {fileID: 6313920311489667199}
 --- !u!61 &8161792702968930537
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -450,9 +448,8 @@ MonoBehaviour:
   Person_EnemyScore: 100
   HP: 1
   _uiManager: {fileID: 0}
-
-  explosionRadius: 0
-
+  explosionRadius: 10
+  explosionEnemy: {fileID: 5177194154062834628}
 --- !u!61 &2505545869803040373
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -599,9 +596,8 @@ MonoBehaviour:
   Person_EnemyScore: 100
   HP: 1
   _uiManager: {fileID: 0}
-
-  explosionRadius: 0
-
+  explosionRadius: 10
+  explosionEnemy: {fileID: 7130122876665275011}
 --- !u!61 &6442507176306111624
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -748,9 +744,8 @@ MonoBehaviour:
   Person_EnemyScore: 100
   HP: 1
   _uiManager: {fileID: 0}
-
-  explosionRadius: 0
-
+  explosionRadius: 10
+  explosionEnemy: {fileID: 5406368482559711402}
 --- !u!61 &1873586659936236386
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -897,9 +892,8 @@ MonoBehaviour:
   Person_EnemyScore: 100
   HP: 1
   _uiManager: {fileID: 0}
-
-  explosionRadius: 0
-
+  explosionRadius: 10
+  explosionEnemy: {fileID: 9217264437601370015}
 --- !u!61 &4014674220495151664
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class EnemyRespawn : MonoBehaviour
 {
-    //Mobï¿½Ìƒï¿½ï¿½Xï¿½|ï¿½[ï¿½ï¿½ï¿½nï¿½_
-
-    public List<GameObject> MobRespwan = new List<GameObject>();
+    //Mob‚ÌƒŠƒXƒ|[ƒ“’n“_
+    public List<GameObject> MobObj = new List<GameObject>();
     public Transform MobPos1;
     public Transform MobPos2;
-    //Bossï¿½Ìƒï¿½ï¿½Xï¿½|ï¿½[ï¿½ï¿½ï¿½nï¿½_
-    public List<GameObject> BossRespwan = new List<GameObject>();
+    //Boss‚ÌƒŠƒXƒ|[ƒ“’n“_
+    public List<GameObject> BossObj = new List<GameObject>();
+    //GoldBossƒXƒ|[ƒ“’n“_
+    public GameObject GoldBossRespwan;
 
     public Transform BossPos1;
     public Transform BossPos2;
@@ -22,10 +23,21 @@ public class EnemyRespawn : MonoBehaviour
     public float MobgenerateTime = 0;
 
     float BossTime;
+    public int CopperBossgenerateTime = 0;
+    public int GoldBossgenerateTime = 0;
+    //ƒ{ƒX‚ªƒXƒe[ƒW‚É‚¢‚é‚©‚ÌŠm”F
+    private bool BossLive = false;
+    // ƒ{ƒX‚Ìo‚Ä‚«‚½‰ñ”
+    int BossAppearCount = 0;
 
-    public int BossgenerateTime = 0;
-
-    bool BossLive = false;
+    public static EnemyRespawn instance;
+    public void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -46,25 +58,44 @@ public class EnemyRespawn : MonoBehaviour
 
         MobTime += Time.deltaTime;
 
-
-        if (MobTime > MobgenerateTime)
+        if (MobTime > MobgenerateTime && BossLive ==false)
         {
             MobTime = 0;
-            int Mobindex = Random.Range(0, MobRespwan.Count);
+            int Mobindex = Random.Range(0, MobObj.Count);
             float MobPosX = Random.Range(MaxX, Minx);
             float MobPosY = Random.Range(MaxY, Miny);
 
-            Instantiate(MobRespwan[Mobindex], new Vector3(MobPosX, MobPosY, 0), Quaternion.identity);
+            Instantiate(MobObj[Mobindex], new Vector3(MobPosX, MobPosY, 0), Quaternion.identity);
         }
         BossTime += Time.deltaTime;
-        if (BossTime > BossgenerateTime && BossLive == false)
+        switch (BossAppearCount)
         {
-            float BossPosX = Random.Range(BossMaxX, BossMinx);
-            float BossPosY = Random.Range(BossMaxY, BossMiny);
+            case 0:
+                if (BossTime > CopperBossgenerateTime&&BossAppearCount==0)
+                {
+                    float BossPosX = Random.Range(BossMaxX, BossMinx);
+                    float BossPosY = Random.Range(BossMaxY, BossMiny);
 
-            Instantiate(BossRespwan[0], new Vector3(BossPosX, BossPosY, 0), Quaternion.identity);
-            BossLive = true;
+                    Instantiate(BossObj[0], new Vector3(BossPosX, BossPosY, 0), Quaternion.identity);
+                    BossAppearCount = 1;
+                    BossLive = true;
+                }
+                break;
+            case 1:
+                if (BossTime > GoldBossgenerateTime && BossAppearCount == 1)
+                {
+                    float BossPosX = Random.Range(BossMaxX, BossMinx);
+                    float BossPosY = Random.Range(BossMaxY, BossMiny);
+
+                    Instantiate(BossObj[1], GoldBossRespwan.transform.position, Quaternion.identity);
+                    BossAppearCount = 2;
+                    BossLive = true;
+                }
+                break;
         }
     }
-
+    public void BossNotLive()
+    {
+        BossLive = false;
+    }
 }

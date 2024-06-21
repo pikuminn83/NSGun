@@ -7,19 +7,12 @@ public class EnemyWood : MonoBehaviour
     Vector3 _EnemyMove;
     public float Speed;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-
     // Update is called once per frame
     void Update()
     {
-        // ï¿½Ú“ï¿½ï¿½ï¿½ï¿½xï¿½ï¿½Ûï¿½
+        // ˆÚ“®‘¬“x‚ğ•Û
         _EnemyMove = new Vector3(Speed, 0, 0);
-        // ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ú“ï¿½
+        // ƒIƒuƒWƒFƒNƒgˆÚ“®
         this.transform.position -= _EnemyMove * Time.deltaTime;
     }
 }
