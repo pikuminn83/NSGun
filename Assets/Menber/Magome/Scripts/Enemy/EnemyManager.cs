@@ -55,7 +55,7 @@ public class EnemyManager : MonoBehaviour
                 explosionEnemy.HP--;
                 EnemyScoreAdd();
                 Destroy(colliderAll.gameObject);
-                Debug.Log($"検出されたオブジェクト {colliderAll.name}");
+               // Debug.Log($"検出されたオブジェクト {colliderAll.name}");
             }
 
         }
