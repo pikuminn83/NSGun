@@ -59,7 +59,9 @@ public class EnemyManager : MonoBehaviour
                 explosionEnemy.HP--;
                 EnemyScoreAdd();
                 Destroy(colliderAll.gameObject);
-               // Debug.Log($"���o���ꂽ�I�u�W�F�N�g {colliderAll.name}");
+
+                Debug.Log($"���o���ꂽ�I�u�W�F�N�g {colliderAll.name}");
+
             }
 
         }
