@@ -3,9 +3,11 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
 using static UnityEditor.PlayerSettings;
+using JetBrains.Annotations;
 
 public class Player : MonoBehaviour
 {
+    
     Rigidbody2D rb2;
     // InputActionAssetへの参照
     [SerializeField] private InputActionReference _moveAction;
@@ -21,10 +23,12 @@ public class Player : MonoBehaviour
     public GameObject Rocket;
     //レールガンのオブジェクトをアタッチする場所
     public GameObject RailGun;
+    //特殊磁石のオブジェクトをアタッチする場所
+    public GameObject UniqueMagnet;
     public Image gage;
     public bool Nflag;
     public bool Sflag;
-    
+    UniqueMagnet um;
     
 
 
@@ -35,6 +39,7 @@ public class Player : MonoBehaviour
     {
         rb2 = GetComponent<Rigidbody2D>();
         gage.GetComponent<MagneticGage>();
+        um = UniqueMagnet.GetComponent<UniqueMagnet>();
         
     }
 
@@ -91,7 +96,7 @@ public class Player : MonoBehaviour
         // 2軸入力を受け取る
         var move = context.ReadValue<Vector2>();
 
-        print($"move:{move}");
+        
 
         MoveX = move.x;
         MoveY = move.y;
@@ -99,26 +104,30 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
-        Vector2 pos = transform.position;
-        pos.x += MoveX / 100;
+        
+           
+            Vector2 pos = transform.position;
+            pos.x += MoveX / 25;
 
-        if (rb2.gravityScale == 0)
-        {
-            pos.y += MoveY / 100;
-        }
-        transform.position = pos;
-        if (gage.fillAmount <= 0.03)
-        {
-            if (pos.y > -0.75)
+            if (rb2.gravityScale == 0)
             {
-                rb2.gravityScale = -3.0f;
+                pos.y += MoveY / 25 ;
             }
-            if (pos.y < -0.75)
+            transform.position = pos;
+            if (gage.fillAmount <= 0.03)
             {
-                rb2.gravityScale = 3.0f;
+                if (pos.y > -0.75)
+                {
+                    rb2.gravityScale = -3.0f;
+                }
+                if (pos.y < -0.75)
+                {
+                    rb2.gravityScale = 3.0f;
+                }
             }
-        }
-      
+            
+        
+        
     }
     public void Atack(InputAction.CallbackContext context)
     {
@@ -160,6 +169,14 @@ public class Player : MonoBehaviour
         GameObject childObject = Instantiate(RailGun, transform.position + razerpoint, Quaternion.identity);
         childObject.transform.parent = this.transform;
     }
-   
+    public void Uniquemagnet()
+    {
+        bulletpoint = transform.Find("Bulletpoint").localPosition;
+        Instantiate(UniqueMagnet, transform.position + bulletpoint, Quaternion.identity);
+        
+
+    }
+    
+
 }
 

@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RailGunDestroy : MonoBehaviour
+public class RailGun : MonoBehaviour
 {
-    float a = 0;
+    float a = 0; //Œø‰ÊŠÔ—p
     private void Update()
     {
         a += Time.deltaTime;
-        if (a > 3)
+        if (a > 3)     //O•b‚½‚Á‚½‚çŒø‰Ê‚ğI—¹‚·‚é
         {
             Destroy(this.gameObject);
         }

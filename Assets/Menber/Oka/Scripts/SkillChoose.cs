@@ -64,13 +64,12 @@ public class SkillChoose : MonoBehaviour
                 Debug.Log("RailGun”­“®");
                 playerrb2.gravityScale = 0.0f;
                 player.Railgun();
-                Invoke("Delay", 3);
-                Invoke("Destroy", 3);
                 cooltime_b = 0;
             } 
             if ((skillnum % 3 == 2 || skillnum % 3 == -1) && (int)cooltime_c >= 10)
             {
                 Debug.Log("UniqueMagnet”­“®");
+                player.Uniquemagnet();
                 cooltime_c = 0;
             }
             
