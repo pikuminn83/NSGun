@@ -104,6 +104,7 @@ MonoBehaviour:
   _uiManager: {fileID: 0}
   explosionRadius: 10
   explosionEnemy: {fileID: 1729384110685576284}
+  Deathparticl: {fileID: 2830412268615100687, guid: 37051ad14becf9a4198d5e99967a3404, type: 3}
 --- !u!61 &4258211993086931985
 BoxCollider2D:
   m_ObjectHideFlags: 0

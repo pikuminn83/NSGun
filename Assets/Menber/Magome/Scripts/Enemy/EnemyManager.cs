@@ -16,6 +16,7 @@ public class EnemyManager : MonoBehaviour
     [SerializeField]
     public EnemyManager explosionEnemy;
 
+    public ParticleSystem Deathparticl;
     void Start()
     {
         GameObject _uiObj = GameObject.Find("Score");
@@ -37,11 +38,9 @@ public class EnemyManager : MonoBehaviour
            Debug.Log("BulletSpecial");
            BulletSpecial();
         }
-
         if(Hit.gameObject.CompareTag("Player"))
-
         {
-            Debug.Log("Player Hit");
+            _uiManager.CountConbo = 1;
         }
 
     }
@@ -71,6 +70,7 @@ public class EnemyManager : MonoBehaviour
     {
         if (HP == 0)
         {
+            Deathparticl.Play(true);
             _uiManager._EnemyScore = Person_EnemyScore;
             _uiManager.SumScore();
             Destroy(this.gameObject);

@@ -19,8 +19,9 @@ public class UIManager : MonoBehaviour
     public float GameSetTimer = 0.0f;
     //コンボ表示のテキスト
     public TextMeshProUGUI ConboText;
+    [NonReorderable]
     //コンボ倍率の初期値
-    private int CountConbo = 1;
+    public int CountConbo = 1;
     //コンボ数
     private int WidthAddConboCount;
     //Hit時のコンボカウント
@@ -29,6 +30,7 @@ public class UIManager : MonoBehaviour
     private int TopConboCount = 0;
     //コンボ倍率の変化する値
     public int WidthConboCount;
+    [NonReorderable]
     //初期スコア
     public int _EnemyScore = 0;
     void Start()
