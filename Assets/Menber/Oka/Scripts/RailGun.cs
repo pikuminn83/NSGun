@@ -8,7 +8,7 @@ public class RailGun : MonoBehaviour
     private void Update()
     {
         a += Time.deltaTime;
-        if (a > 3)     //O•b‚½‚Á‚½‚çŒø‰Ê‚ğI—¹‚·‚é
+        if (a > 1)     //1•b‚½‚Á‚½‚çŒø‰Ê‚ğI—¹‚·‚é
         {
             Destroy(this.gameObject);
         }

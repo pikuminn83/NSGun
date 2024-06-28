@@ -29,8 +29,13 @@ public class Player : MonoBehaviour
     public bool Nflag;
     public bool Sflag;
     UniqueMagnet um;
-    
-
+    public GameObject skillmanager;
+    SkillChoose sc;
+    GameObject Enemy;
+    Transform tf;
+    bool Rotation = true;
+    float tfz = 0;
+    SpriteRenderer sprite;
 
 
 
@@ -40,7 +45,10 @@ public class Player : MonoBehaviour
         rb2 = GetComponent<Rigidbody2D>();
         gage.GetComponent<MagneticGage>();
         um = UniqueMagnet.GetComponent<UniqueMagnet>();
-        
+        sc = skillmanager.GetComponent<SkillChoose>();
+        Enemy = GameObject.FindGameObjectWithTag("Enemy");
+        tf = GetComponent<Transform>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     public void RailChange_To_N(InputAction.CallbackContext context)
@@ -52,7 +60,7 @@ public class Player : MonoBehaviour
             {
                 rb2.gravityScale = -3.0f;
                 gage.fillAmount -= 0.05f;
-
+                Rotation = true;
             }
         }
     }
@@ -64,11 +72,22 @@ public class Player : MonoBehaviour
             {
                 rb2.gravityScale = +3.0f;
                 gage.fillAmount -= 0.05f;
+                Rotation = false;
             }
         }
     }
-    
-    
+    //public void ZeroGravity(InputAction.CallbackContext context)
+    //{
+    //    if (context.phase == InputActionPhase.Performed)
+    //    {
+    //        if(gage.fillAmount >0.1f)
+    //        {
+    //            rb2.gravityScale = 0.0f;
+    //        }
+    //    }
+    //}
+
+
 
     // コールバックの登録・解除
     private void Awake()
@@ -107,11 +126,11 @@ public class Player : MonoBehaviour
         
            
             Vector2 pos = transform.position;
-            pos.x += MoveX / 25;
+            pos.x += MoveX / 100;
 
             if (rb2.gravityScale == 0)
             {
-                pos.y += MoveY / 25 ;
+                pos.y += MoveY / 100 ;
             }
             transform.position = pos;
             if (gage.fillAmount <= 0.03)
@@ -125,8 +144,32 @@ public class Player : MonoBehaviour
                     rb2.gravityScale = 3.0f;
                 }
             }
+        if (Rotation)
+        {
+
+            tfz = Mathf.Clamp(tfz, 0.0f, 180.0f);
+            tf.eulerAngles = new Vector3(0, 0, tfz);
+            tfz -= 0.5f;
+            if(tfz < 1.0)
+            {
+                tfz = 0;
+            }
             
-        
+        }
+        else
+        {
+            tfz = Mathf.Clamp(tfz, 0.0f, 180.0f);
+            tf.eulerAngles = new Vector3(0,0,tfz);
+            tfz += 0.5f;
+            if (tfz > 179)
+            {
+                tfz = 180;
+            }
+        }
+        if(tfz == 180)
+        { sprite.flipX = true; }
+        if (tfz == 0)
+        { sprite.flipX = false; }
         
     }
     public void Atack(InputAction.CallbackContext context)
@@ -176,7 +219,18 @@ public class Player : MonoBehaviour
         
 
     }
-    
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (sc.MagLiquid)
+        {
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                Destroy(collision.gameObject);
+            }
+
+        }
+    }
+
 
 }
 

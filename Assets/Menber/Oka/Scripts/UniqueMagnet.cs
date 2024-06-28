@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 public class UniqueMagnet : MonoBehaviour
 {
-    GameObject Enemy;
+    GameObject[] Enemys;
     GameObject player;
     Player playerscript;
     float MoveX;
@@ -18,7 +18,7 @@ public class UniqueMagnet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Enemy = GameObject.FindGameObjectWithTag("Enemy");
+        Enemys = GameObject.FindGameObjectsWithTag("Enemy");
         
 
     }
@@ -27,9 +27,10 @@ public class UniqueMagnet : MonoBehaviour
     void Update()
     {
 
-        
+        foreach (GameObject Enemy in Enemys)
+        {
             Enemy.transform.position = Vector2.MoveTowards(Enemy.transform.position, this.transform.position, speed * Time.deltaTime);
-
+        }
             time += Time.deltaTime;
             if (time > 5)
             {

@@ -17,7 +17,8 @@ public class SkillChoose : MonoBehaviour
     Transform playertf;
     Player player;
     Vector3 bulletpoint;
-    
+    public bool MagLiquid;
+    float MLtime;
 
 
     // Start is called before the first frame update
@@ -28,7 +29,6 @@ public class SkillChoose : MonoBehaviour
         playerrb2 = p.GetComponent<Rigidbody2D>();
         playertf = p.GetComponent<Transform>();
         player = p.GetComponent<Player>();
-        
 
 
     }
@@ -49,6 +49,7 @@ public class SkillChoose : MonoBehaviour
             skillnum--;
         }
     }
+   
     public void Use(InputAction.CallbackContext context)
     {
         if(context.phase == InputActionPhase.Performed)
@@ -56,7 +57,7 @@ public class SkillChoose : MonoBehaviour
             if (skillnum%3==0&&(int)cooltime_a>=15)
             {
                 Debug.Log("MagLiquid”­“®");
-                
+                MagLiquid = true;
                 cooltime_a = 0;
             }
             if ((skillnum % 3 == 1 || skillnum % 3 == -2) && (int)cooltime_b >= 20)
@@ -64,6 +65,7 @@ public class SkillChoose : MonoBehaviour
                 Debug.Log("RailGun”­“®");
                 playerrb2.gravityScale = 0.0f;
                 player.Railgun();
+                Invoke("Delay", 1);
                 cooltime_b = 0;
             } 
             if ((skillnum % 3 == 2 || skillnum % 3 == -1) && (int)cooltime_c >= 10)
@@ -88,10 +90,6 @@ public class SkillChoose : MonoBehaviour
             playerrb2.gravityScale = 3.0f;
         }
     }
-   
-
-    // ‘I‘ð’†‚ÌƒXƒLƒ‹
-
 
     private void Update()
     {
@@ -99,11 +97,23 @@ public class SkillChoose : MonoBehaviour
         cooltime_a += Time.deltaTime;
         cooltime_b += Time.deltaTime;
         cooltime_c += Time.deltaTime;
+
+        if (MagLiquid)
+        {
+            MLtime += Time.deltaTime;
+
+            if( MLtime > 5)
+            {
+                MagLiquid = false;
+                
+            }
+        }
         
         
     }
 
     
+
 
 
 }
