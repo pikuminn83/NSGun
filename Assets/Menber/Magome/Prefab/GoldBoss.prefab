@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2843033978512736445}
   - component: {fileID: 8195996582955724832}
-  - component: {fileID: 8411722717657664573}
   m_Layer: 0
   m_Name: BarrelMiddle
   m_TagString: Untagged
@@ -85,19 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8411722717657664573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1209365545362489769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcf4261bec3b56f47b5798c18ef7f78d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shotBullet: {fileID: 7509673425304788496, guid: 0f83abb049310f94b917d305fd0e6b4e, type: 3}
 --- !u!1 &1997852255367389274
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,12 +316,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 186669b5ce0917448b9c18ef89c835b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LaneBulletObj: {fileID: 4474691317175620545, guid: 2433db3b838567641abbe9617d2c9c51, type: 3}
+  BulletObj: {fileID: 4474691317175620545, guid: 2433db3b838567641abbe9617d2c9c51, type: 3}
   TopPosBarrel: {fileID: 1997852255367389274}
   MiddleBarrel: {fileID: 1209365545362489769}
   UnderBarrel: {fileID: 5725900176543449444}
   Speed: 1
   LiveGenerateTime: 0
+  tama: {fileID: 6270900774991881973, guid: 6f595cbd4d8b34c4fb92e034130fc176, type: 3}
 --- !u!1 &5725900176543449444
 GameObject:
   m_ObjectHideFlags: 0

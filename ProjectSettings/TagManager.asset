@@ -4,10 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Walltop
-  - Enemy
+
   - Bullet
+  - Enemy
+  - Walltop
   - BulletSpecial
+  - Bullet
+  - WallTop
+  - Enemy
   layers:
   - Default
   - TransparentFX
