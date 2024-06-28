@@ -3119,6 +3119,7 @@ MonoBehaviour:
   MobPos2: {fileID: 407990734}
   BossRespwan:
   - {fileID: 4799568696133722567, guid: 9f1792ca464e21e4481b16ba67316fcf, type: 3}
+  - {fileID: 3703509484589097191, guid: e19b37b540095bf409b6b78cbea54684, type: 3}
   BossPos1: {fileID: 98727239}
   BossPos2: {fileID: 63739963}
   MobgenerateTime: 3

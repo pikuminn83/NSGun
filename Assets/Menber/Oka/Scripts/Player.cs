@@ -86,7 +86,7 @@ public class Player : MonoBehaviour
         // 2Ž²“ü—Í‚ðŽó‚¯Žæ‚é
         var move = context.ReadValue<Vector2>();
 
-        print($"move:{move}");
+        //print($"move:{move}");
 
         MoveX = move.x;
         MoveY = move.y;
