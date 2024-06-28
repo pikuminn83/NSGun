@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
             {
                 rb2.gravityScale = -3.0f;
                 gage.fillAmount -= 0.05f;
-                Rotation = true;
+                
             }
         }
     }
@@ -72,7 +72,7 @@ public class Player : MonoBehaviour
             {
                 rb2.gravityScale = +3.0f;
                 gage.fillAmount -= 0.05f;
-                Rotation = false;
+                
             }
         }
     }
@@ -144,7 +144,7 @@ public class Player : MonoBehaviour
                     rb2.gravityScale = 3.0f;
                 }
             }
-        if (Rotation)
+        if (rb2.gravityScale < 0) 
         {
 
             tfz = Mathf.Clamp(tfz, 0.0f, 180.0f);
@@ -156,7 +156,7 @@ public class Player : MonoBehaviour
             }
             
         }
-        else
+        else if(rb2.gravityScale > 0 )
         {
             tfz = Mathf.Clamp(tfz, 0.0f, 180.0f);
             tf.eulerAngles = new Vector3(0,0,tfz);
@@ -209,7 +209,7 @@ public class Player : MonoBehaviour
     public void Railgun()
     {
         razerpoint = transform.Find("Razerpoint").localPosition;
-        GameObject childObject = Instantiate(RailGun, transform.position + razerpoint, Quaternion.identity);
+        GameObject childObject = Instantiate(RailGun, transform.position + razerpoint + new Vector3(7.5f,0,0), Quaternion.identity);
         childObject.transform.parent = this.transform;
     }
     public void Uniquemagnet()

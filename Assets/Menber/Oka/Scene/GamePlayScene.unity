@@ -148,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 247785131}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalPosition: {x: 2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -340,7 +340,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 15, y: 25}
   m_Direction: 0
 --- !u!212 &269550594
 SpriteRenderer:
@@ -383,7 +383,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2023ce32f9e90324a86b82fd3f3f2afc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -403,9 +403,9 @@ Transform:
   m_GameObject: {fileID: 269550591}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7, y: -0.8, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -6.691, y: -0.8, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 247785132}
   - {fileID: 1836528872}
@@ -431,7 +431,7 @@ MonoBehaviour:
   gage: {fileID: 1308971842}
   Nflag: 0
   Sflag: 0
-  magnetMode: 0
+  skillmanager: {fileID: 1785070737}
 --- !u!114 &269550597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,7 +480,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1844,6 +1844,7 @@ MonoBehaviour:
   cooltime_a: 15
   cooltime_b: 20
   cooltime_c: 10
+  MagLiquid: 0
 --- !u!4 &1785070739
 Transform:
   m_ObjectHideFlags: 0
@@ -2052,6 +2053,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 05650aac-e143-436d-8d07-8a1cb9481469
     m_ActionName: Player/Zerogravity[/Keyboard/s,/Keyboard/n]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 239729bd-3fc7-4b4a-9c78-88cee07af157
+    m_ActionName: Player/SetMagnet[/Keyboard/0]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -2082,7 +2087,7 @@ Transform:
   m_GameObject: {fileID: 1836528871}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.5, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
