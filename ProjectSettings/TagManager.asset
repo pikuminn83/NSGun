@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Bullet
+  - Walltop
   - Enemy
-
+  - Bullet
   - BulletSpecial
   layers:
   - Default
