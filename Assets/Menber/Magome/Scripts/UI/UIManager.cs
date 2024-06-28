@@ -68,7 +68,7 @@ public class UIManager : MonoBehaviour
         HitConboCount++;
         WidthAddConboCount++;
         //Å‘åƒRƒ“ƒ{”
-        if(TopConboCount < WidthAddConboCount)
+        if(TopConboCount <= WidthAddConboCount)
         {
             TopConboCount = WidthAddConboCount;
         }

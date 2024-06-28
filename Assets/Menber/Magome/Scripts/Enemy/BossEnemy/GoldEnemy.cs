@@ -6,12 +6,9 @@ public class GoldEnemy : MonoBehaviour
 {
     [SerializeField]
     GameObject LaneBulletObj;
-    [SerializeField]
-    GameObject BulletObj;
+
     [SerializeField]
     private GameObject TopPosBarrel;
-    [SerializeField]
-    private GameObject MiddleBarrel;
     [SerializeField]
     private GameObject UnderBarrel;
 
@@ -53,6 +50,5 @@ public class GoldEnemy : MonoBehaviour
         {
             transform.Translate(transform.right * Time.deltaTime * 3 * -1);
         }
-        //Instantiate(BulletObj, MiddleBarrel.transform.position, Quaternion.identity);
     }
 }
