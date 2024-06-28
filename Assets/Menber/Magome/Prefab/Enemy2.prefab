@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4a543fa27885f5143908039fb15dca86, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
   _uiManager: {fileID: 0}
   explosionRadius: 10
   explosionEnemy: {fileID: 1729384110685576284}
-  Deathparticl: {fileID: 2830412268615100687, guid: 37051ad14becf9a4198d5e99967a3404, type: 3}
+  DeathParticl: {fileID: 2830412268615100687, guid: 37051ad14becf9a4198d5e99967a3404, type: 3}
 --- !u!61 &4258211993086931985
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -141,14 +141,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.8, y: 0.8}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
 --- !u!114 &7910556613960509448
 MonoBehaviour:

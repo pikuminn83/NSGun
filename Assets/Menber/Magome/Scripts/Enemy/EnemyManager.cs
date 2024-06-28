@@ -1,22 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cysharp.Threading.Tasks;
 
 public class EnemyManager : MonoBehaviour
 {
-    //�G��̕��̃X�R�A
+    //自分のスコア
     public int Person_EnemyScore = 0;
-    //�GHP
+    //自分のHP
     public int HP = 0;
 
     public UIManager _uiManager;
 
     [SerializeField]
-    private float explosionRadius; // �������a
+    private float explosionRadius; //爆発ダメージ
     [SerializeField]
     public EnemyManager explosionEnemy;
 
-    public ParticleSystem Deathparticl;
+    public ParticleSystem DeathParticl;
     void Start()
     {
         GameObject _uiObj = GameObject.Find("Score");
@@ -59,20 +60,23 @@ public class EnemyManager : MonoBehaviour
                 EnemyScoreAdd();
                 Destroy(colliderAll.gameObject);
 
-                Debug.Log($"���o���ꂽ�I�u�W�F�N�g {colliderAll.name}");
-
             }
 
         }
 
     }
-    public void EnemyScoreAdd()
+    public async void EnemyScoreAdd()
     {
+        //HPが0になったらエフェクトと自分を消す
         if (HP == 0)
         {
-            Deathparticl.Play(true);
             _uiManager._EnemyScore = Person_EnemyScore;
             _uiManager.SumScore();
+            DeathParticl = Instantiate(DeathParticl, transform);
+            DeathParticl.Play(true);
+            //死んだときのエフェクトを出すために遅らせる
+            await UniTask.Delay(1000);
+            DeathParticl.Stop(false);
             Destroy(this.gameObject);
         }
 

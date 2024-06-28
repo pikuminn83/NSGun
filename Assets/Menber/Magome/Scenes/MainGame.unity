@@ -355,7 +355,7 @@ Transform:
   m_GameObject: {fileID: 460471657}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.14, y: -0.98, z: 0}
+  m_LocalPosition: {x: -15.46, y: -0.98, z: 0}
   m_LocalScale: {x: 1, y: 9.4625, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1484,7 +1484,7 @@ MonoBehaviour:
   BossPos2: {fileID: 1324924393}
   MobgenerateTime: 3
   CopperBossgenerateTime: 10
-  GoldBossgenerateTime: 30
+  GoldBossgenerateTime: 60
 --- !u!4 &1902493719
 Transform:
   m_ObjectHideFlags: 0
@@ -1727,7 +1727,7 @@ MonoBehaviour:
   _enemyEnd: {fileID: 460471661}
   ScoreText: {fileID: 846514226}
   TimerText: {fileID: 1136614276}
-  GameSetTimer: 10
+  GameSetTimer: 180
   ConboText: {fileID: 1013196741}
   CountConbo: 1
   WidthConboCount: 1
@@ -1762,11 +1762,11 @@ GameObject:
   - component: {fileID: 2114701881}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2114701877
 MonoBehaviour:
   m_ObjectHideFlags: 0
