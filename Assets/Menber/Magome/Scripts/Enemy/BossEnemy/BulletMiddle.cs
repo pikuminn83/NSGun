@@ -20,8 +20,8 @@ public class BulletMiddle : MonoBehaviour
         float zAngle = Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg - 90.0f;
         transform.rotation = Quaternion.Euler(0, 0, zAngle);
 
-        // 5•bŒã‚Éíœ
-        Destroy(gameObject, 5.0f);
+        // n•bŒã‚Éíœ
+        Destroy(gameObject, 6.0f);
     }
     void Update()
     {
