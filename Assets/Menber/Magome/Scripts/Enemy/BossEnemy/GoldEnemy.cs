@@ -10,6 +10,8 @@ public class GoldEnemy : MonoBehaviour
     [SerializeField]
     private GameObject TopPosBarrel;
     [SerializeField]
+    private GameObject MiddleBarrel;
+    [SerializeField]
     private GameObject UnderBarrel;
 
     float BulletTime;

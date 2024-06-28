@@ -5,12 +5,6 @@ using UnityEngine;
 public class EnemyBullet : MonoBehaviour
 {
     public int BulletSpeed;
-
-    public AudioSource SEBullet;
-    private void Start()
-    {
-        SEBullet.PlayOneShot(SEBullet.clip);
-    }
     // Update is called once per frame
     void Update()
     {
