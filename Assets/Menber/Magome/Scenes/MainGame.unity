@@ -198,37 +198,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 190944972}
   m_CullTransparentMesh: 1
---- !u!1 &400645086
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 400645087}
-  m_Layer: 0
-  m_Name: GoldenPos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &400645087
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 400645086}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1902493719}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &460471657
 GameObject:
   m_ObjectHideFlags: 0
@@ -1199,7 +1168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1225503800}
   m_Layer: 0
-  m_Name: BossPos1
+  m_Name: TurretEnemyPos1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1214,7 +1183,7 @@ Transform:
   m_GameObject: {fileID: 1225503799}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.49, y: 2.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1230,7 +1199,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1324924393}
   m_Layer: 0
-  m_Name: BossPos2
+  m_Name: TurretEnemyPos2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1245,7 +1214,7 @@ Transform:
   m_GameObject: {fileID: 1324924392}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.49, y: -3.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1261,7 +1230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1357134156}
   m_Layer: 0
-  m_Name: GoldPos
+  m_Name: BossPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1476,15 +1445,18 @@ MonoBehaviour:
   - {fileID: 3446174746347164504, guid: ea5ba2aa115b271438bba71180db5391, type: 3}
   MobPos1: {fileID: 1935184882}
   MobPos2: {fileID: 828888308}
+  TurretObj:
+  - {fileID: 551222267343136589, guid: 7827e30a046d52c4cae3b2fd273bb76a, type: 3}
+  TurretPosTop: {fileID: 1225503799}
+  TurretPosUnder: {fileID: 1324924392}
   BossObj:
   - {fileID: 4799568696133722567, guid: 9f1792ca464e21e4481b16ba67316fcf, type: 3}
   - {fileID: 3703509484589097191, guid: e19b37b540095bf409b6b78cbea54684, type: 3}
-  GoldBossRespwan: {fileID: 1357134155}
-  BossPos1: {fileID: 1225503800}
-  BossPos2: {fileID: 1324924393}
+  BossRespwan: {fileID: 1357134155}
   MobgenerateTime: 3
-  CopperBossgenerateTime: 10
-  GoldBossgenerateTime: 60
+  TurregenerateTime: 3
+  CopperBossgenerateTime: 100
+  GoldBossgenerateTime: 1000
 --- !u!4 &1902493719
 Transform:
   m_ObjectHideFlags: 0
@@ -1503,7 +1475,6 @@ Transform:
   - {fileID: 1225503800}
   - {fileID: 1324924393}
   - {fileID: 1357134156}
-  - {fileID: 400645087}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1935184881
@@ -1727,11 +1698,9 @@ MonoBehaviour:
   _enemyEnd: {fileID: 460471661}
   ScoreText: {fileID: 846514226}
   TimerText: {fileID: 1136614276}
-  GameSetTimer: 180
   ConboText: {fileID: 1013196741}
-  CountConbo: 1
+  GameSetTimer: 180
   WidthConboCount: 1
-  _EnemyScore: 0
 --- !u!4 &2034101644
 Transform:
   m_ObjectHideFlags: 0

@@ -67,22 +67,25 @@ public class EnemyManager : MonoBehaviour
         }
 
     }
-    public async void EnemyScoreAdd()
+    public void EnemyScoreAdd()
     {
         //HPが0になったらエフェクトと自分を消す
         if (HP == 0)
         {
             _uiManager._EnemyScore = Person_EnemyScore;
             _uiManager.SumScore();
+            //エフェクトが消えるまでの秒数
+            DeathActionEnemy(1000);
+        }
+    }
+    private async void DeathActionEnemy(int Delay)
+    {
             DeathParticl = Instantiate(DeathParticl, transform);
             DeathParticl.Play(true);
             DeathSE.Play();
             //死んだときのエフェクトを出すために遅らせる
-            await UniTask.Delay(1000);
-            DeathParticl.Stop(false);
+            await UniTask.Delay(Delay);
             Destroy(this.gameObject);
-        }
-
     }
 
 }
