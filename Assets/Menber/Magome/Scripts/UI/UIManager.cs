@@ -7,32 +7,23 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     public EnemyEnd _enemyEnd;
-    //スコア表示のテキスト
-    public TextMeshProUGUI ScoreText;
-    //全体のスコア
-    private int AllScore;
-    //タイマー表示のテキスト
-    public TextMeshProUGUI TimerText;
-    //Time.deltaTimeの変数
-    private float Timer;
-    //ゲームの終了時間
-    public float GameSetTimer = 0.0f;
-    //コンボ表示のテキスト
-    public TextMeshProUGUI ConboText;
-    [NonReorderable]
-    //コンボ倍率の初期値
-    public int CountConbo = 1;
-    //コンボ数
-    private int WidthAddConboCount;
-    //Hit時のコンボカウント
-    private int HitConboCount;
-    //最大コンボ数
-    private int TopConboCount = 0;
-    //コンボ倍率の変化する値
-    public int WidthConboCount;
-    [NonReorderable]
-    //初期スコア
-    public int _EnemyScore = 0;
+
+    public TextMeshProUGUI ScoreText;//スコア表示のテキスト    
+    public TextMeshProUGUI TimerText;//タイマー表示のテキスト
+    public TextMeshProUGUI ConboText;//コンボ表示のテキスト
+
+    private float Timer;　　　　　　　//タイマーの変数
+    public float GameSetTimer = 0.0f;//ゲームの終了時間
+
+    private int WidthAddConboCount;  //コンボ数
+    private int HitConboCount;　　　 //Hit時のコンボカウント
+    private int TopConboCount = 0;　//最大コンボ数
+    public int WidthConboCount;　　 //コンボ倍率の変化する値
+    private int AllScore;            //全体のスコア
+    [System.NonSerialized]
+    public int _EnemyScore = 0; //初期スコア
+    [System.NonSerialized]
+    public int CountConbo = 1; //コンボ倍率の初期値
     void Start()
     {
         AllScore = 0;
@@ -70,7 +61,7 @@ public class UIManager : MonoBehaviour
         HitConboCount++;
         WidthAddConboCount++;
         //最大コンボ数
-        if(TopConboCount <= WidthAddConboCount)
+        if (TopConboCount <= WidthAddConboCount)
         {
             TopConboCount = WidthAddConboCount;
         }

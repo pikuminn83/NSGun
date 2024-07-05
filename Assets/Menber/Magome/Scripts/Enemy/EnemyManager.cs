@@ -5,21 +5,23 @@ using Cysharp.Threading.Tasks;
 
 public class EnemyManager : MonoBehaviour
 {
-    //自分のスコア
-    public int Person_EnemyScore = 0;
-    //自分のHP
-    public int HP = 0;
+    
+    public int Person_EnemyScore = 0;//自分のスコア
+    
+    public int HP = 0;//自分のHP
 
     public UIManager _uiManager;
 
     [SerializeField]
-    private float explosionRadius; //爆発ダメージ
+    private float explosionRadius; //爆発範囲
     [SerializeField]
     public EnemyManager explosionEnemy;
-
-    public ParticleSystem DeathParticl;
+    
+    public ParticleSystem DeathParticl;//死んだ時のパーティクル
+    public AudioSource DeathSE;
     void Start()
     {
+        DeathSE = GetComponent<AudioSource>();
         GameObject _uiObj = GameObject.Find("Score");
         _uiManager = _uiObj.GetComponent<UIManager>();
     }
@@ -74,6 +76,7 @@ public class EnemyManager : MonoBehaviour
             _uiManager.SumScore();
             DeathParticl = Instantiate(DeathParticl, transform);
             DeathParticl.Play(true);
+            DeathSE.Play();
             //死んだときのエフェクトを出すために遅らせる
             await UniTask.Delay(1000);
             DeathParticl.Stop(false);
