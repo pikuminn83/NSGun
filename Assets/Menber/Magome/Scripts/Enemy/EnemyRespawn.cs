@@ -81,7 +81,8 @@ public class EnemyRespawn : MonoBehaviour
                     Instantiate(TurretObj[0],TurretPosTop.transform.position,Quaternion.identity);
                     break;
                 case 1:
-                    Instantiate(TurretObj[0], TurretPosUnder.transform.position, Quaternion.identity);
+
+                    Instantiate(TurretObj[0], TurretPosUnder.transform.position,Quaternion.Euler(0,0,180));
                     break;
             }
             TurretTime = 0;

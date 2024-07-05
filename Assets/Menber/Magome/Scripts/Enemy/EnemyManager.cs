@@ -5,18 +5,20 @@ using Cysharp.Threading.Tasks;
 
 public class EnemyManager : MonoBehaviour
 {
-    
+
     public int Person_EnemyScore = 0;//自分のスコア
-    
+
     public int HP = 0;//自分のHP
 
     public UIManager _uiManager;
 
+    private float AlphaTime;
+    private bool AlphaChange = false;
     [SerializeField]
     private float explosionRadius; //爆発範囲
     [SerializeField]
     public EnemyManager explosionEnemy;
-    
+
     public ParticleSystem DeathParticl;//死んだ時のパーティクル
     public AudioSource DeathSE;
     void Start()
@@ -24,6 +26,20 @@ public class EnemyManager : MonoBehaviour
         DeathSE = GetComponent<AudioSource>();
         GameObject _uiObj = GameObject.Find("Score");
         _uiManager = _uiObj.GetComponent<UIManager>();
+    }
+    private void Update()
+    {
+
+        if (AlphaChange == true)
+        {
+            AlphaTime += Time.deltaTime;
+            this.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f - AlphaTime);
+        }
+        else
+        {
+            AlphaTime = 0;
+        }
+
     }
     public void OnCollisionEnter2D(Collision2D Hit)
     {
@@ -33,15 +49,14 @@ public class EnemyManager : MonoBehaviour
         {
             HP--;
             EnemyScoreAdd();
+
         }
 
-        if(Hit.gameObject.CompareTag("BulletSpecial"))
-
+        if (Hit.gameObject.CompareTag("BulletSpecial"))
         {
-           Debug.Log("BulletSpecial");
-           BulletSpecial();
+            BulletSpecial();
         }
-        if(Hit.gameObject.CompareTag("Player"))
+        if (Hit.gameObject.CompareTag("Player"))
         {
             _uiManager.CountConbo = 1;
         }
@@ -49,18 +64,16 @@ public class EnemyManager : MonoBehaviour
     }
     public void BulletSpecial()
     {
-        // �����͈͓̔��̃I�u�W�F�N�g�����o
+
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
         foreach (Collider2D colliderAll in colliders)
         {
-            if(colliderAll.gameObject.CompareTag("Enemy"))
+            if (colliderAll.gameObject.CompareTag("Enemy"))
             {
-                //����ɔ����_���[�W
-                //��GlassRankEnemyParty�̓o�O��4�̂܂ł����|���Ȃ���X���؂ƏC��
                 explosionEnemy = colliderAll.gameObject.GetComponent<EnemyManager>();
                 explosionEnemy.HP--;
                 EnemyScoreAdd();
-                Destroy(colliderAll.gameObject);
+                //Destroy(colliderAll.gameObject, 1.0f);
 
             }
 
@@ -75,17 +88,19 @@ public class EnemyManager : MonoBehaviour
             _uiManager._EnemyScore = Person_EnemyScore;
             _uiManager.SumScore();
             //エフェクトが消えるまでの秒数
-            DeathActionEnemy(1000);
+            DeathActionEnemy(500);
         }
+
     }
     private async void DeathActionEnemy(int Delay)
     {
-            DeathParticl = Instantiate(DeathParticl, transform);
-            DeathParticl.Play(true);
-            DeathSE.Play();
-            //死んだときのエフェクトを出すために遅らせる
-            await UniTask.Delay(Delay);
-            Destroy(this.gameObject);
+        DeathParticl = Instantiate(DeathParticl, transform);
+        DeathParticl.Play(true);
+        DeathSE.Play();
+        AlphaChange = true;
+        //死んだときのエフェクトを出すために遅らせる
+        await UniTask.Delay(Delay);
+        AlphaChange = false;
     }
 
 }

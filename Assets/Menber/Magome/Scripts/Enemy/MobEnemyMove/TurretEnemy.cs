@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class TurretEnemy : MonoBehaviour
 {
-    private Vector2 TurretEnemyVec;
+    private Vector3 TurretEnemyVec;
+    public float Speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +15,8 @@ public class TurretEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TurretEnemyVec = this.gameObject.transform.position;
-        TurretEnemyVec.x += 2;
+        // ˆÚ“®‘¬“x‚ğ•Û
+        TurretEnemyVec = new Vector3(Speed, 0,0);
+        this.transform.position -= TurretEnemyVec * Time.deltaTime;
     }
 }

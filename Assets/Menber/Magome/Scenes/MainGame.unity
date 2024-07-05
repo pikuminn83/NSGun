@@ -1389,6 +1389,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 17889b07-f308-438b-8ad3-6e4bae3ff868
     m_ActionName: Player/Special[/DualShock4GamepadHID/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e3bb250c-9523-443c-a429-58cc2485536f
+    m_ActionName: Player/Decide
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player
@@ -1425,7 +1429,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1902493718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1454,9 +1458,9 @@ MonoBehaviour:
   - {fileID: 3703509484589097191, guid: e19b37b540095bf409b6b78cbea54684, type: 3}
   BossRespwan: {fileID: 1357134155}
   MobgenerateTime: 3
-  TurregenerateTime: 3
+  TurregenerateTime: 10
   CopperBossgenerateTime: 100
-  GoldBossgenerateTime: 1000
+  GoldBossgenerateTime: 300
 --- !u!4 &1902493719
 Transform:
   m_ObjectHideFlags: 0
@@ -1731,7 +1735,7 @@ GameObject:
   - component: {fileID: 2114701881}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Bullet
+  m_TagString: BulletSpecial
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
