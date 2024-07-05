@@ -33,8 +33,7 @@ public class Player : MonoBehaviour
     SkillChoose sc;
     GameObject Enemy;
     Transform tf;
-    bool Rotation = true;
-    float tfz = 0;
+    //float tfz = 0;
     SpriteRenderer sprite;
 
 
@@ -60,6 +59,8 @@ public class Player : MonoBehaviour
             {
                 rb2.gravityScale = -3.0f;
                 gage.fillAmount -= 0.05f;
+                tf.eulerAngles = Vector3.zero;
+                sprite.flipY = false;
                 
             }
         }
@@ -72,6 +73,7 @@ public class Player : MonoBehaviour
             {
                 rb2.gravityScale = +3.0f;
                 gage.fillAmount -= 0.05f;
+                sprite.flipY = true;
                 
             }
         }
@@ -144,32 +146,34 @@ public class Player : MonoBehaviour
                     rb2.gravityScale = 3.0f;
                 }
             }
-        if (rb2.gravityScale < 0) 
-        {
 
-            tfz = Mathf.Clamp(tfz, 0.0f, 180.0f);
-            tf.eulerAngles = new Vector3(0, 0, tfz);
-            tfz -= 0.5f;
-            if(tfz < 1.0)
-            {
-                tfz = 0;
-            }
+            //ゆっくりと回転してレーン移動するモーション（仕様書とは違う動き）
+        //if (rb2.gravityScale < 0) 
+        //{
+
+        //    tfz = Mathf.Clamp(tfz, 0.0f, 180.0f);
+        //    tf.eulerAngles = new Vector3(0, 0, tfz);
+        //    tfz -= 0.5f;
+        //    if(tfz < 1.0)
+        //    {
+        //        tfz = 0;
+        //    }
             
-        }
-        else if(rb2.gravityScale > 0 )
-        {
-            tfz = Mathf.Clamp(tfz, 0.0f, 180.0f);
-            tf.eulerAngles = new Vector3(0,0,tfz);
-            tfz += 0.5f;
-            if (tfz > 179)
-            {
-                tfz = 180;
-            }
-        }
-        if(tfz == 180)
-        { sprite.flipX = true; }
-        if (tfz == 0)
-        { sprite.flipX = false; }
+        //}
+        //else if(rb2.gravityScale > 0 )
+        //{
+        //    tfz = Mathf.Clamp(tfz, 0.0f, 180.0f);
+        //    tf.eulerAngles = new Vector3(0,0,tfz);
+        //    tfz += 0.5f;
+        //    if (tfz > 179)
+        //    {
+        //        tfz = 180;
+        //    }
+        //}
+        //if(tfz == 180)
+        //{ sprite.flipX = true; }
+        //if (tfz == 0)
+        //{ sprite.flipX = false; }
         
     }
     public void Atack(InputAction.CallbackContext context)

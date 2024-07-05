@@ -20,6 +20,6 @@ public class Skill2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        skill2.fillAmount = skill.cooltime_b / 20;
+        skill2.fillAmount = skill.cooltime_B / 20;
     }
 }

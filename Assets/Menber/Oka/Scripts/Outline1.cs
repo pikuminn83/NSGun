@@ -20,7 +20,7 @@ public class Outline1 : MonoBehaviour
     {
         if (skill.skillnum % 3 == 0)
         {
-            outline.effectColor = Color.black;
+            outline.effectColor = Color.blue;
         }
         else
         {
