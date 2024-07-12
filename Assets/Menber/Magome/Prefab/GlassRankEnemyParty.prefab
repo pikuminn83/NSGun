@@ -102,7 +102,7 @@ MonoBehaviour:
   Person_EnemyScore: 100
   HP: 1
   _uiManager: {fileID: 0}
-  explosionRadius: 10
+  explosionRadius: 2
   explosionEnemy: {fileID: 3610986092644470159}
   DeathParticl: {fileID: 2830412268615100687, guid: 37051ad14becf9a4198d5e99967a3404, type: 3}
   DeathSE: {fileID: 2402678801604929682}
@@ -339,10 +339,10 @@ MonoBehaviour:
   Person_EnemyScore: 100
   HP: 1
   _uiManager: {fileID: 0}
-  explosionRadius: 10
+  explosionRadius: 2
   explosionEnemy: {fileID: 6313920311489667199}
   DeathParticl: {fileID: 2830412268615100687, guid: 37051ad14becf9a4198d5e99967a3404, type: 3}
-  DeathSE: {fileID: 2402678801604929682}
+  DeathSE: {fileID: 2055657178160042805}
 --- !u!58 &7125385999511365716
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -627,10 +627,10 @@ MonoBehaviour:
   Person_EnemyScore: 100
   HP: 1
   _uiManager: {fileID: 0}
-  explosionRadius: 10
+  explosionRadius: 2
   explosionEnemy: {fileID: 5177194154062834628}
   DeathParticl: {fileID: 2830412268615100687, guid: 37051ad14becf9a4198d5e99967a3404, type: 3}
-  DeathSE: {fileID: 2402678801604929682}
+  DeathSE: {fileID: 5305671444720737347}
 --- !u!58 &6690473319789487544
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -864,10 +864,10 @@ MonoBehaviour:
   Person_EnemyScore: 100
   HP: 1
   _uiManager: {fileID: 0}
-  explosionRadius: 10
+  explosionRadius: 2
   explosionEnemy: {fileID: 7130122876665275011}
   DeathParticl: {fileID: 2830412268615100687, guid: 37051ad14becf9a4198d5e99967a3404, type: 3}
-  DeathSE: {fileID: 2402678801604929682}
+  DeathSE: {fileID: 2959691385509564295}
 --- !u!58 &1915664601759187457
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1101,10 +1101,10 @@ MonoBehaviour:
   Person_EnemyScore: 100
   HP: 1
   _uiManager: {fileID: 0}
-  explosionRadius: 10
+  explosionRadius: 2
   explosionEnemy: {fileID: 5406368482559711402}
   DeathParticl: {fileID: 2830412268615100687, guid: 37051ad14becf9a4198d5e99967a3404, type: 3}
-  DeathSE: {fileID: 2402678801604929682}
+  DeathSE: {fileID: 7674021248859353917}
 --- !u!58 &401700413354456885
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1338,10 +1338,10 @@ MonoBehaviour:
   Person_EnemyScore: 100
   HP: 1
   _uiManager: {fileID: 0}
-  explosionRadius: 10
+  explosionRadius: 2
   explosionEnemy: {fileID: 9217264437601370015}
   DeathParticl: {fileID: 2830412268615100687, guid: 37051ad14becf9a4198d5e99967a3404, type: 3}
-  DeathSE: {fileID: 2402678801604929682}
+  DeathSE: {fileID: 7781193604001645482}
 --- !u!58 &3571418490531290207
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -103,7 +103,7 @@ MonoBehaviour:
   Person_EnemyScore: 300
   HP: 1
   _uiManager: {fileID: 0}
-  explosionRadius: 10
+  explosionRadius: 2
   explosionEnemy: {fileID: 1729384110685576284}
   DeathParticl: {fileID: 2830412268615100687, guid: 37051ad14becf9a4198d5e99967a3404, type: 3}
   DeathSE: {fileID: 3104487574848640034}
