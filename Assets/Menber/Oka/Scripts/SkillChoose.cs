@@ -127,7 +127,7 @@ public class SkillChoose : MonoBehaviour
             }
         }
 
-        Debug.Log(AllSkillcooltime);
+        
     }
 
     
