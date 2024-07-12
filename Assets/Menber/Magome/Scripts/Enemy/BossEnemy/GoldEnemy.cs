@@ -58,4 +58,8 @@ public class GoldEnemy : MonoBehaviour
             
         //}
     }
+    private void OnDestroy()
+    {
+        EnemyRespawn.instance.BossNotLive();
+    }
 }

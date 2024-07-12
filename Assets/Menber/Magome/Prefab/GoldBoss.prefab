@@ -262,7 +262,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: c3df751105e96de4f8156e47538da960, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2f300b22e8a021e40b391e971f637988, type: 3}
   m_Color: {r: 0.9860512, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Person_EnemyScore: 1000
-  HP: 1000
+  HP: 100
   _uiManager: {fileID: 0}
   explosionRadius: 0
   explosionEnemy: {fileID: 8114034679906971693}

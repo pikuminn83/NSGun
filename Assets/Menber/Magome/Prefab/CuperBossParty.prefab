@@ -110,7 +110,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4757f08261ff1f54cb0e8c549217db48, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9aa3ffaa939701142a6f0f284a88aece, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -134,9 +134,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Person_EnemyScore: 500
-  HP: 1
+  HP: 50
   _uiManager: {fileID: 0}
-  explosionRadius: 10
+  explosionRadius: 0
   explosionEnemy: {fileID: 3954648574075370011}
   DeathParticl: {fileID: 2830412268615100687, guid: 37051ad14becf9a4198d5e99967a3404, type: 3}
   DeathSE: {fileID: 8432175101588741352}
@@ -211,7 +211,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 98728a632323e754293e942fb2f58f8d, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -373,7 +373,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4757f08261ff1f54cb0e8c549217db48, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9aa3ffaa939701142a6f0f284a88aece, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -397,9 +397,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Person_EnemyScore: 500
-  HP: 1
+  HP: 50
   _uiManager: {fileID: 0}
-  explosionRadius: 10
+  explosionRadius: 0
   explosionEnemy: {fileID: 324219798463456812}
   DeathParticl: {fileID: 2830412268615100687, guid: 37051ad14becf9a4198d5e99967a3404, type: 3}
   DeathSE: {fileID: 6609407887230663171}
@@ -474,7 +474,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 98728a632323e754293e942fb2f58f8d, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

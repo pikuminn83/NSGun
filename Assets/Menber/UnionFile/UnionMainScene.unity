@@ -672,9 +672,12 @@ MonoBehaviour:
   _moveAction: {fileID: -7735706955377854203, guid: 0f4d0373ee4660b4e9f72d23c381e4b9, type: 3}
   Bullet: {fileID: 6874475422756590391, guid: 5ada909f8be7cc2408a1657dd01e7cae, type: 3}
   Rocket: {fileID: 8977187795474880894, guid: 2290f2f909cc1d141977796f73e096a9, type: 3}
+  RailGun: {fileID: 0}
+  UniqueMagnet: {fileID: 0}
   gage: {fileID: 112411259}
   Nflag: 0
   Sflag: 0
+  skillmanager: {fileID: 0}
 --- !u!50 &761495126
 Rigidbody2D:
   serializedVersion: 4
@@ -1042,6 +1045,10 @@ MonoBehaviour:
   cooltime_a: 15
   cooltime_b: 20
   cooltime_c: 10
+  MagLiquid: 0
+  cooltime_A: 0
+  cooltime_B: 0
+  cooltime_C: 0
 --- !u!4 &761985042
 Transform:
   m_ObjectHideFlags: 0
@@ -2697,10 +2704,9 @@ MonoBehaviour:
   _enemyEnd: {fileID: 1874238145}
   ScoreText: {fileID: 1799275039}
   TimerText: {fileID: 805750210}
-  GameSetTimer: 60
   ConboText: {fileID: 2040575430}
+  GameSetTimer: 60
   WidthConboCount: 1
-  _EnemyScore: 0
 --- !u!4 &1886262055
 Transform:
   m_ObjectHideFlags: 0
@@ -3115,9 +3121,7 @@ MonoBehaviour:
   MobPos1: {fileID: 386159800}
   MobPos2: {fileID: 407990734}
   BossObj: []
-  GoldBossRespwan: {fileID: 0}
-  BossPos1: {fileID: 98727239}
-  BossPos2: {fileID: 63739963}
+  BossRespwan: {fileID: 0}
   MobgenerateTime: 3
   CopperBossgenerateTime: 0
   GoldBossgenerateTime: 0

@@ -59,6 +59,9 @@ public class EnemyManager : MonoBehaviour
         if (Hit.gameObject.CompareTag("Player"))
         {
             _uiManager.CountConbo = 1;
+            _uiManager.HitConboCount = 0;
+            Destroy(this.gameObject);
+
         }
 
     }
@@ -67,13 +70,13 @@ public class EnemyManager : MonoBehaviour
     {
 
         //HPが0になったらエフェクトと自分を消す
-        if (HP == 0)
+        if (HP < 0 || HP == 0)
         {
             _uiManager._EnemyScore = Person_EnemyScore;
             _uiManager.SumScore();
             //エフェクトが消えるまでの秒数
-            DeathActionEnemy(500);
-            Destroy(this.gameObject,0.5f);
+            DeathActionEnemy(600);
+            Destroy(this.gameObject,0.6f);
 
         }
 
@@ -91,9 +94,9 @@ public class EnemyManager : MonoBehaviour
                 {
                     _uiManager._EnemyScore = Person_EnemyScore;
                     _uiManager.SumScore();
-                    DeathActionEnemy(500);
+                    DeathActionEnemy(600);
                     DeathParticl = Instantiate(DeathParticl, colliderAll.transform);
-                    Destroy(colliderAll.gameObject,0.5f);
+                    Destroy(colliderAll.gameObject,0.6f);
                 }
             }
         }

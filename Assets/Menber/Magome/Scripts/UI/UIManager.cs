@@ -15,7 +15,8 @@ public class UIManager : MonoBehaviour
     public float GameSetTimer = 0.0f;//ゲームの終了時間
 
     private int WidthAddConboCount;  //コンボ数
-    private int HitConboCount;　　　 //Hit時のコンボカウント
+    [System.NonSerialized]
+    public int HitConboCount;　　　 //Hit時のコンボカウント
     private int TopConboCount;　//最大コンボ数
     public int WidthConboCount;　　 //コンボ倍率の変化する値
     private int AllScore;            //全体のスコア

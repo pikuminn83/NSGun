@@ -1,8 +1,8 @@
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
-using static UnityEditor.PlayerSettings;
+//using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
+//using static UnityEditor.PlayerSettings;
 using JetBrains.Annotations;
 
 public class Player : MonoBehaviour

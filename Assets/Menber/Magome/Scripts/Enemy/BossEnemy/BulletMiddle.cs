@@ -36,4 +36,11 @@ public class BulletMiddle : MonoBehaviour
         angle = input_angle;
         speed = input_speed;
     }
+    public void OnCollisionEnter2D(Collision2D PlayerHit)
+    {
+        if (PlayerHit.gameObject.CompareTag("Player"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }

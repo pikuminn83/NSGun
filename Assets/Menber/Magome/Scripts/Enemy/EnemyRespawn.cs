@@ -9,10 +9,10 @@ public class EnemyRespawn : MonoBehaviour
     //Mobのスポーン地点
     public Transform MobPos1;
     public Transform MobPos2;
-    //Turretの生成するオブジェクト
-    public List<GameObject> TurretObj = new List<GameObject>();
-    public GameObject TurretPosTop;
-    public GameObject TurretPosUnder;
+    //Turretの生成するオブジェクト   Turretは試遊会には出さない
+    //public List<GameObject> TurretObj = new List<GameObject>();
+    //public GameObject TurretPosTop;
+    //public GameObject TurretPosUnder;
     //Bossの生成するオブジェクト
     public List<GameObject> BossObj = new List<GameObject>();
     //Bossスポーン地点
@@ -23,11 +23,11 @@ public class EnemyRespawn : MonoBehaviour
 　　//Mobの生成する時間
     public float MobgenerateTime = 0;
     //Turret専用のTimer変数
-    float TurretTime;
+    //float TurretTime;
     //Turretの生成する時間
-    public float TurregenerateTime = 0;
+    //public float TurregenerateTime = 0;
     //Turretのランダム生成変数
-    int TurretRandom = 0;
+    //int TurretRandom = 0;
     //Boss専用のTimer変数
     float BossTime;
     //Bossの生成する時間
@@ -71,23 +71,23 @@ public class EnemyRespawn : MonoBehaviour
             Instantiate(MobObj[Mobindex], new Vector3(MobPosX, MobPosY, 0), Quaternion.identity);
             MobTime = 0;
         }
-        TurretTime += Time.deltaTime;
-        if (TurretTime>TurregenerateTime&&BossLive ==false)
-        {
-            TurretRandom = Random.Range(0,2);
-            switch(TurretRandom)
-            { 
-                case 0:
-                    Instantiate(TurretObj[0],TurretPosTop.transform.position,Quaternion.identity);
-                    break;
-                case 1:
+        //TurretTime += Time.deltaTime;
+        //if (TurretTime>TurregenerateTime&&BossLive ==false)
+        //{
+        //    TurretRandom = Random.Range(0,2);
+        //    switch(TurretRandom)
+        //    { 
+        //        case 0:
+        //            Instantiate(TurretObj[0],TurretPosTop.transform.position,Quaternion.identity);
+        //            break;
+        //        case 1:
 
-                    Instantiate(TurretObj[0], TurretPosUnder.transform.position,Quaternion.Euler(0,0,180));
-                    break;
-            }
-            TurretTime = 0;
+        //            Instantiate(TurretObj[0], TurretPosUnder.transform.position,Quaternion.Euler(0,0,180));
+        //            break;
+        //    }
+        //    TurretTime = 0;
                 
-        }
+        //}
         BossTime += Time.deltaTime;
         switch (BossAppearCount)
         {
