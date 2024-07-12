@@ -16,6 +16,7 @@ public class BulletMiddle : MonoBehaviour
         // Y•ûŒü‚ÌˆÚ“®—Ê‚ğİ’è‚·‚é
         velocity.y = speed * Mathf.Sin(angle * Mathf.Deg2Rad);
 
+
         // ’e‚ÌŒü‚«‚ğİ’è‚·‚é
         float zAngle = Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg - 90.0f;
         transform.rotation = Quaternion.Euler(0, 0, zAngle);
@@ -25,6 +26,7 @@ public class BulletMiddle : MonoBehaviour
     }
     void Update()
     {
+        this.gameObject.transform.Rotate(0, 0, 10 + Time.deltaTime);
         // –ˆƒtƒŒ[ƒ€A’e‚ğˆÚ“®‚³‚¹‚é
         transform.position += velocity * Time.deltaTime;
     }

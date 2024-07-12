@@ -1,25 +1,45 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Cysharp.Threading.Tasks;
 
 public class EnemyManager : MonoBehaviour
 {
-    //�G��̕��̃X�R�A
-    public int Person_EnemyScore = 0;
-    //�GHP
-    public int HP = 0;
+
+    public int Person_EnemyScore = 0;//自分のスコア
+
+    public int HP = 0;//自分のHP
 
     public UIManager _uiManager;
 
+    private float AlphaTime;
+    private bool AlphaChange = false;
     [SerializeField]
-    private float explosionRadius; // �������a
+    private float explosionRadius; //爆発範囲
     [SerializeField]
     public EnemyManager explosionEnemy;
+    public ParticleSystem DeathParticl;//死んだ時のパーティクル
+    public AudioSource DeathSE;
 
+    float alpha_Sin;
     void Start()
     {
+        DeathSE = GetComponent<AudioSource>();
         GameObject _uiObj = GameObject.Find("Score");
         _uiManager = _uiObj.GetComponent<UIManager>();
+    }
+    private void Update()
+    {
+        if (AlphaChange == true)
+        {
+            AlphaTime += Time.deltaTime;
+            this.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f - AlphaTime);
+            this.transform.position += new Vector3(0,0.5f*-Time.deltaTime);
+        }
+        else
+        {
+            AlphaTime = 0;
+        }
+
     }
     public void OnCollisionEnter2D(Collision2D Hit)
     {
@@ -29,53 +49,63 @@ public class EnemyManager : MonoBehaviour
         {
             HP--;
             EnemyScoreAdd();
+
         }
 
-        if(Hit.gameObject.CompareTag("BulletSpecial"))
-
+        if (Hit.gameObject.CompareTag("BulletSpecial"))
         {
-           Debug.Log("BulletSpecial");
-           BulletSpecial();
+            BulletSpecialScore();
         }
-
-        if(Hit.gameObject.CompareTag("Player"))
-
+        if (Hit.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player Hit");
+            _uiManager.CountConbo = 1;
         }
 
     }
-    public void BulletSpecial()
-    {
-        // �����͈͓̔��̃I�u�W�F�N�g�����o
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
-        foreach (Collider2D colliderAll in colliders)
-        {
-            if(colliderAll.gameObject.CompareTag("Enemy"))
-            {
-                //����ɔ����_���[�W
-                //��GlassRankEnemyParty�̓o�O��4�̂܂ł����|���Ȃ���X���؂ƏC��
-                explosionEnemy = colliderAll.gameObject.GetComponent<EnemyManager>();
-                explosionEnemy.HP--;
-                EnemyScoreAdd();
-                Destroy(colliderAll.gameObject);
 
-                Debug.Log($"���o���ꂽ�I�u�W�F�N�g {colliderAll.name}");
-
-            }
-
-        }
-
-    }
     public void EnemyScoreAdd()
     {
+
+        //HPが0になったらエフェクトと自分を消す
         if (HP == 0)
         {
             _uiManager._EnemyScore = Person_EnemyScore;
             _uiManager.SumScore();
-            Destroy(this.gameObject);
+            //エフェクトが消えるまでの秒数
+            DeathActionEnemy(500);
+            Destroy(this.gameObject,0.5f);
+
         }
 
+    }
+    public void BulletSpecialScore()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
+        foreach (Collider2D colliderAll in colliders)
+        {
+            if (colliderAll.gameObject.CompareTag("Enemy"))
+            {
+                explosionEnemy = colliderAll.gameObject.GetComponent<EnemyManager>();
+                explosionEnemy.HP--;
+                if (HP < 0 || HP == 0)
+                {
+                    _uiManager._EnemyScore = Person_EnemyScore;
+                    _uiManager.SumScore();
+                    DeathActionEnemy(500);
+                    DeathParticl = Instantiate(DeathParticl, colliderAll.transform);
+                    Destroy(colliderAll.gameObject,0.5f);
+                }
+            }
+        }
+    }
+    private async void DeathActionEnemy(int Delay)
+    {
+        DeathParticl = Instantiate(DeathParticl, transform);
+        DeathParticl.Play(true);
+        DeathSE.Play();
+        AlphaChange = true;
+        await UniTask.Delay(Delay);
+        AlphaChange = false;
     }
 
 }

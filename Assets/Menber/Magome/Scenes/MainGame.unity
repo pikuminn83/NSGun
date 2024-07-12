@@ -123,7 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &400645086
+--- !u!1 &190944972
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,29 +131,73 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 400645087}
-  m_Layer: 0
-  m_Name: GoldenPos
+  - component: {fileID: 190944973}
+  - component: {fileID: 190944975}
+  - component: {fileID: 190944974}
+  m_Layer: 5
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &400645087
-Transform:
+--- !u!224 &190944973
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 400645086}
-  serializedVersion: 2
+  m_GameObject: {fileID: 190944972}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1902493719}
+  m_Father: {fileID: 784169656}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &190944974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190944972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 5360c718da05d034b864d4f4740328a8, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &190944975
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190944972}
+  m_CullTransparentMesh: 1
 --- !u!1 &460471657
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,7 +324,7 @@ Transform:
   m_GameObject: {fileID: 460471657}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.14, y: -0.98, z: 0}
+  m_LocalPosition: {x: -15.46, y: -0.98, z: 0}
   m_LocalScale: {x: 1, y: 9.4625, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -486,7 +530,7 @@ Canvas:
   m_GameObject: {fileID: 784169652}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -512,6 +556,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 190944973}
   - {fileID: 846514225}
   - {fileID: 1136614275}
   - {fileID: 1013196740}
@@ -1123,7 +1168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1225503800}
   m_Layer: 0
-  m_Name: BossPos1
+  m_Name: TurretEnemyPos1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1138,7 +1183,7 @@ Transform:
   m_GameObject: {fileID: 1225503799}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.49, y: 2.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1154,7 +1199,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1324924393}
   m_Layer: 0
-  m_Name: BossPos2
+  m_Name: TurretEnemyPos2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1169,7 +1214,7 @@ Transform:
   m_GameObject: {fileID: 1324924392}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.49, y: -3.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1185,7 +1230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1357134156}
   m_Layer: 0
-  m_Name: GoldPos
+  m_Name: BossPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1344,6 +1389,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 17889b07-f308-438b-8ad3-6e4bae3ff868
     m_ActionName: Player/Special[/DualShock4GamepadHID/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e3bb250c-9523-443c-a429-58cc2485536f
+    m_ActionName: Player/Decide
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player
@@ -1394,21 +1443,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MobObj:
-  - {fileID: 5469442076240324776, guid: bd93458a465a02649a4b5bb05eeb5f20, type: 3}
-  - {fileID: 5894818405537397165, guid: 92c0ad0739e71694fa2e4c49a27c8761, type: 3}
   - {fileID: 7504156755176161065, guid: 181602085c419e042a4d9f386396f50a, type: 3}
   - {fileID: 3446174746347164504, guid: ea5ba2aa115b271438bba71180db5391, type: 3}
+  - {fileID: 5894818405537397165, guid: 30f1e1e0b1b728d41a3bd45b739fbe22, type: 3}
+  - {fileID: 5469442076240324776, guid: c0a378e634808a1439266cb9fede6ff0, type: 3}
   MobPos1: {fileID: 1935184882}
   MobPos2: {fileID: 828888308}
+  TurretObj:
+  - {fileID: 551222267343136589, guid: 7827e30a046d52c4cae3b2fd273bb76a, type: 3}
+  TurretPosTop: {fileID: 1225503799}
+  TurretPosUnder: {fileID: 1324924392}
   BossObj:
   - {fileID: 4799568696133722567, guid: 9f1792ca464e21e4481b16ba67316fcf, type: 3}
   - {fileID: 3703509484589097191, guid: e19b37b540095bf409b6b78cbea54684, type: 3}
-  GoldBossRespwan: {fileID: 1357134155}
-  BossPos1: {fileID: 1225503800}
-  BossPos2: {fileID: 1324924393}
+  BossRespwan: {fileID: 1357134155}
   MobgenerateTime: 3
-  CopperBossgenerateTime: 10
-  GoldBossgenerateTime: 90
+  TurregenerateTime: 10
+  CopperBossgenerateTime: 20
+  GoldBossgenerateTime: 30
 --- !u!4 &1902493719
 Transform:
   m_ObjectHideFlags: 0
@@ -1427,7 +1479,6 @@ Transform:
   - {fileID: 1225503800}
   - {fileID: 1324924393}
   - {fileID: 1357134156}
-  - {fileID: 400645087}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1935184881
@@ -1651,10 +1702,9 @@ MonoBehaviour:
   _enemyEnd: {fileID: 460471661}
   ScoreText: {fileID: 846514226}
   TimerText: {fileID: 1136614276}
-  GameSetTimer: 180
   ConboText: {fileID: 1013196741}
+  GameSetTimer: 180
   WidthConboCount: 1
-  _EnemyScore: 0
 --- !u!4 &2034101644
 Transform:
   m_ObjectHideFlags: 0
@@ -1664,7 +1714,7 @@ Transform:
   m_GameObject: {fileID: 2034101642}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.6269193, y: 3.5943742, z: -0.08083345}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1685,7 +1735,7 @@ GameObject:
   - component: {fileID: 2114701881}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1763,7 +1813,7 @@ Transform:
   m_GameObject: {fileID: 2114701876}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 7.31, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
