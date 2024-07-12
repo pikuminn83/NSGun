@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Menber/Magome/Scenes/Title.unity
-    guid: 7ede4f535408ab84ca28b83876b8920d
+    path: Assets/Menber/UnionFile/UnionTitle.unity
+    guid: 1bb369119328e0349a2f2a560628b30c
   - enabled: 1
-    path: Assets/Menber/Magome/Scenes/MainGame.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Menber/UnionFile/UnionPrototypeMainGame.unity
+    guid: 5016b11b94beaeb4d969d3f00bed8b8d
   - enabled: 1
     path: Assets/Menber/Magome/Scenes/EndGame.unity
     guid: a31ee982e9eb27143a546994168e37e7
