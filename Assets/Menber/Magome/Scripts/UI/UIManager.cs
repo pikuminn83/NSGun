@@ -72,7 +72,7 @@ public class UIManager : MonoBehaviour
         //textにスコア表示
         ScoreText.text = "Score:" + AllScore;
         PlayerPrefs.SetInt("SCORE", AllScore);
-        PlayerPrefs.SetInt("CONBO", TopConboCount);
+        PlayerPrefs.SetInt("COMBO", TopConboCount);
         PlayerPrefs.Save();
 
     }

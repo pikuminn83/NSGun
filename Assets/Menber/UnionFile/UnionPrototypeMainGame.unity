@@ -626,8 +626,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 53.65509, y: 0}
+  m_SizeDelta: {x: 107.309784, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &234205787
 MonoBehaviour:
@@ -1611,7 +1611,7 @@ MonoBehaviour:
   - {fileID: 3703509484589097191, guid: e19b37b540095bf409b6b78cbea54684, type: 3}
   BossRespwan: {fileID: 1763578183}
   MobgenerateTime: 3
-  CopperBossgenerateTime: 20
+  CopperBossgenerateTime: 15
   GoldBossgenerateTime: 45
 --- !u!4 &1238963553
 Transform:
@@ -2221,7 +2221,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5360c718da05d034b864d4f4740328a8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 91c8747d1f44084448f7a8a6a3188edc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2429,6 +2429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a85ec891a6064014a9f9b49b40650c83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1908978901}
 --- !u!50 &1908978904
 Rigidbody2D:
   serializedVersion: 4
@@ -2989,8 +2990,8 @@ MonoBehaviour:
   ScoreText: {fileID: 2103147481}
   TimerText: {fileID: 234205787}
   ConboText: {fileID: 2103711871}
-  GameSetTimer: 120
-  WidthConboCount: 25
+  GameSetTimer: 60
+  WidthConboCount: 10
 --- !u!4 &2082901702
 Transform:
   m_ObjectHideFlags: 0

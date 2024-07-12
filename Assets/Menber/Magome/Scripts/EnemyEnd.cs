@@ -13,5 +13,9 @@ public class EnemyEnd : MonoBehaviour
             OutsideCamera = true;
             Destroy(HitEnemy.gameObject);
         }
+        else
+        {
+            Destroy(HitEnemy.gameObject);
+        }
     }
 }

@@ -8,7 +8,7 @@ public class EnemyManager : MonoBehaviour
     public int Person_EnemyScore = 0;//自分のスコア
 
     public int HP = 0;//自分のHP
-
+    [System.NonSerialized]
     public UIManager _uiManager;
 
     private float AlphaTime;

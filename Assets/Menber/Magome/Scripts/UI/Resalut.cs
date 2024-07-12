@@ -18,8 +18,8 @@ public class Resalut : MonoBehaviour
     void Start()
     {
         int resruto = PlayerPrefs.GetInt("SCORE");
-        int conbo = PlayerPrefs.GetInt("CONBO");
-        ConoboText.text = "MaxConbo:" + conbo;
+        int combo = PlayerPrefs.GetInt("COMBO");
+        ConoboText.text = "MaxCombo:" + combo;
         ResultText.text = "ResultScore:" + resruto;
         if(ResulutAreaSS<=resruto)
         {

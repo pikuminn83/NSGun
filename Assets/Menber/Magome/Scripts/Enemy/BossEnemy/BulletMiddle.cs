@@ -7,9 +7,14 @@ public class BulletMiddle : MonoBehaviour
     [SerializeField] float angle; // Šp“x
     [SerializeField] float speed; // ‘¬“x
     Vector3 velocity; // ˆÚ“®—Ê
-
+    [System.NonSerialized]
+    public UIManager _uiManager;
     void Start()
     {
+        GameObject _uiObj = GameObject.Find("Score");
+        _uiManager = _uiObj.GetComponent<UIManager>();
+
+
         // X•ûŒü‚ÌˆÚ“®—Ê‚ğİ’è‚·‚é
         velocity.x = speed * Mathf.Cos(angle * Mathf.Deg2Rad);
 
@@ -40,6 +45,8 @@ public class BulletMiddle : MonoBehaviour
     {
         if (PlayerHit.gameObject.CompareTag("Player"))
         {
+            _uiManager.CountConbo = 1;
+            _uiManager.HitConboCount = 0;
             Destroy(this.gameObject);
         }
     }

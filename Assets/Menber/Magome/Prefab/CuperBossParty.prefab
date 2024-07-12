@@ -133,8 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a03b0959a4941f24ab58f5c232ca4e56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Person_EnemyScore: 500
-  HP: 50
+  Person_EnemyScore: 250
+  HP: 25
   _uiManager: {fileID: 0}
   explosionRadius: 0
   explosionEnemy: {fileID: 3954648574075370011}
@@ -396,8 +396,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a03b0959a4941f24ab58f5c232ca4e56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Person_EnemyScore: 500
-  HP: 50
+  Person_EnemyScore: 250
+  HP: 25
   _uiManager: {fileID: 0}
   explosionRadius: 0
   explosionEnemy: {fileID: 324219798463456812}
