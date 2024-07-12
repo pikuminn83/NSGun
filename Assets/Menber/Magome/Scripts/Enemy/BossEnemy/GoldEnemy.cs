@@ -20,7 +20,7 @@ public class GoldEnemy : MonoBehaviour
 
     public float LiveGenerateTime;
 
-    bool StepGoldBoss = true;
+    //bool StepGoldBoss = true;
 
     // Update is called once per frame
     void Update()
@@ -47,15 +47,15 @@ public class GoldEnemy : MonoBehaviour
             }
         }
 
-        if (pos.x >= 5)
+        if (pos.x >= 9)
         {
             transform.Translate(transform.right * Time.deltaTime * 3 * -1);
-
+            
         }
-        if(pos.x <= 8)
-        {
-            transform.Translate(transform.right * Time.deltaTime * 3 * 1);
-            StepGoldBoss = false;
-        }
+       // if (pos.x >= 8)
+      //  {
+      //      transform.Translate(transform.right * Time.deltaTime * 3 * 1);
+            
+        //}
     }
 }

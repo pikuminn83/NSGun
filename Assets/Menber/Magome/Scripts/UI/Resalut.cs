@@ -19,7 +19,6 @@ public class Resalut : MonoBehaviour
     {
         int resruto = PlayerPrefs.GetInt("SCORE");
         int conbo = PlayerPrefs.GetInt("CONBO");
-        conbo -= 4;
         ConoboText.text = "MaxConbo:" + conbo;
         ResultText.text = "ResultScore:" + resruto;
         if(ResulutAreaSS<=resruto)
