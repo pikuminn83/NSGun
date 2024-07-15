@@ -29,8 +29,8 @@ public class UIManager : MonoBehaviour
         TopConboCount = 0;
         AllScore = 0;
         ScoreText.text = "Score:" + AllScore;
-        PlayerPrefs.SetInt("CONBO", TopConboCount);
         PlayerPrefs.SetInt("SCORE", AllScore);
+        PlayerPrefs.SetInt("COMBO", TopConboCount);
         PlayerPrefs.Save();
 
     }
