@@ -20,9 +20,9 @@ public class EnemyGlassMove : MonoBehaviour
         if(Wallhit == true)
         {
             // �ړ����x��ێ�
-            _EnemyMove = new Vector3(Speed, -Speed, 0);
+            _EnemyMove = new Vector3(-Speed, Speed, 0);
             // �I�u�W�F�N�g�ړ�
-            this.transform.position -= _EnemyMove * Time.deltaTime;
+            this.transform.position += _EnemyMove * Time.deltaTime;
         }
     }
     void OnCollisionEnter2D(Collision2D hit)
