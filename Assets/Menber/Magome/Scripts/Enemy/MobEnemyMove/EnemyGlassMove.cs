@@ -29,7 +29,6 @@ public class EnemyGlassMove : MonoBehaviour
     {
 
         if(hit.gameObject.CompareTag("Walltop"))
-
         {
             Wallhit = false;
         }

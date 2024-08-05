@@ -324,8 +324,8 @@ Transform:
   m_GameObject: {fileID: 460471657}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.46, y: -0.98, z: 0}
-  m_LocalScale: {x: 1, y: 9.4625, z: 1}
+  m_LocalPosition: {x: -11.49, y: -0.57, z: 0}
+  m_LocalScale: {x: 1, y: 12.3012495, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1459,7 +1459,7 @@ MonoBehaviour:
   BossRespwan: {fileID: 1357134155}
   MobgenerateTime: 3
   TurregenerateTime: 10
-  CopperBossgenerateTime: 100
+  CopperBossgenerateTime: 15
   GoldBossgenerateTime: 200
 --- !u!4 &1902493719
 Transform:
@@ -1739,7 +1739,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2114701877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1813,7 +1813,7 @@ Transform:
   m_GameObject: {fileID: 2114701876}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.31, y: 0, z: 0}
+  m_LocalPosition: {x: -1.76, y: -0.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
