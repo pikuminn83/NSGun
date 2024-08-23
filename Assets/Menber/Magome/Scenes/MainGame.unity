@@ -1442,6 +1442,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97608137302d5664eac3d7e66d552e42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ModStop: 1
+  TurretStop: 0
+  BossStop: 1
   MobObj:
   - {fileID: 5469442076240324776, guid: bd93458a465a02649a4b5bb05eeb5f20, type: 3}
   - {fileID: 5894818405537397165, guid: 92c0ad0739e71694fa2e4c49a27c8761, type: 3}
@@ -1454,13 +1457,15 @@ MonoBehaviour:
   TurretPosTop: {fileID: 1225503799}
   TurretPosUnder: {fileID: 1324924392}
   BossObj:
+  - {fileID: 8932510958238004643, guid: ca69729398dce214bb28277974e90f35, type: 3}
   - {fileID: 4799568696133722567, guid: 9f1792ca464e21e4481b16ba67316fcf, type: 3}
   - {fileID: 3703509484589097191, guid: e19b37b540095bf409b6b78cbea54684, type: 3}
   BossRespwan: {fileID: 1357134155}
   MobgenerateTime: 3
   TurregenerateTime: 10
-  CopperBossgenerateTime: 15
-  GoldBossgenerateTime: 200
+  FirstBossgenerateTime: 10
+  SecondBossgenerateTime: 90
+  ThirdBossgenerateTime: 150
 --- !u!4 &1902493719
 Transform:
   m_ObjectHideFlags: 0
@@ -1813,7 +1818,7 @@ Transform:
   m_GameObject: {fileID: 2114701876}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.76, y: -0.67, z: 0}
+  m_LocalPosition: {x: -1.76, y: 0.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

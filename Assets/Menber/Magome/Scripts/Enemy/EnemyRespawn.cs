@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemyRespawn : MonoBehaviour
 {
+    public bool ModStop = false;
+    public bool TurretStop = false;
+    public bool BossStop = false;
     //Mobの生成するオブジェクトリスト
     public List<GameObject> MobObj = new List<GameObject>();
     //Mobのスポーン地点
@@ -26,13 +29,14 @@ public class EnemyRespawn : MonoBehaviour
     float TurretTime;
     //Turretの生成する時間
     public float TurregenerateTime = 0;
-    //Turretのランダム生成変数
-    int TurretRandom = 0;
+    //Turretの生成位置　天井なら0　地面なら1
+    int TurretGenerationPos = 0;
     //Boss専用のTimer変数
     float BossTime;
     //Bossの生成する時間
-    public int CopperBossgenerateTime = 0;
-    public int GoldBossgenerateTime = 0;
+    public int FirstBossgenerateTime = 0;
+    public int SecondBossgenerateTime = 0;
+    public int ThirdBossgenerateTime = 0;
     //ボスがステージにいるかの確認
     private bool BossLive = false;
     // ボスの出てきた回数
@@ -62,7 +66,7 @@ public class EnemyRespawn : MonoBehaviour
 
         MobTime += Time.deltaTime;
 
-        if (MobTime > MobgenerateTime && BossLive ==false)
+        if (MobTime > MobgenerateTime && BossLive ==false && ModStop==false)
         {
             int Mobindex = Random.Range(0, MobObj.Count);
             float MobPosX = Random.Range(MaxX, Minx);
@@ -72,17 +76,18 @@ public class EnemyRespawn : MonoBehaviour
             MobTime = 0;
         }
         TurretTime += Time.deltaTime;
-        if (TurretTime>TurregenerateTime&&BossLive ==false)
+        if (TurretTime>TurregenerateTime&&BossLive ==false && TurretStop == false)
         {
-            TurretRandom = Random.Range(0,2);
-            switch(TurretRandom)
+            switch(TurretGenerationPos)
             { 
                 case 0:
                     Instantiate(TurretObj[0],TurretPosTop.transform.position,Quaternion.identity);
+                    TurretGenerationPos = 1;
                     break;
                 case 1:
 
                     Instantiate(TurretObj[0], TurretPosUnder.transform.position,Quaternion.Euler(0,0,180));
+                    TurretGenerationPos = 0;
                     break;
             }
             TurretTime = 0;
@@ -92,7 +97,7 @@ public class EnemyRespawn : MonoBehaviour
         switch (BossAppearCount)
         {
             case 0:
-                if (BossTime > CopperBossgenerateTime&&BossAppearCount==0)
+                if (BossTime > FirstBossgenerateTime&&BossAppearCount== 0 && BossStop == false)
                 {
 
                     Instantiate(BossObj[0], BossRespwan.transform.position, Quaternion.identity);
@@ -101,11 +106,20 @@ public class EnemyRespawn : MonoBehaviour
                 }
                 break;
             case 1:
-                if (BossTime > GoldBossgenerateTime && BossAppearCount == 1)
+                if (BossTime > SecondBossgenerateTime && BossAppearCount == 1)
                 {
 
                     Instantiate(BossObj[1], BossRespwan.transform.position, Quaternion.identity);
                     BossAppearCount = 2;
+                    BossLive = true;
+                }
+                break;
+            case 2:
+                if (BossTime > ThirdBossgenerateTime && BossAppearCount == 2)
+                {
+
+                    Instantiate(BossObj[2], BossRespwan.transform.position, Quaternion.identity);
+                    BossAppearCount = 3;
                     BossLive = true;
                 }
                 break;

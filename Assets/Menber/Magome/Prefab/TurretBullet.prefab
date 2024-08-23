@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 5802075557710419680}
   - component: {fileID: 8389507677906280267}
   - component: {fileID: 3676357868952701528}
+  - component: {fileID: 2591798530827080205}
   m_Layer: 0
-  m_Name: BulletMiddleObj
+  m_Name: TurretBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c849c19980f73f94d87e549ccae34fd9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6b114804c7e29d0459b4cf9c6d7fe9c7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -120,3 +121,16 @@ CircleCollider2D:
   m_Offset: {x: 0.02, y: 0.04}
   serializedVersion: 2
   m_Radius: 0.3
+--- !u!114 &2591798530827080205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7509673425304788496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc90404ba3eb5034092651863b03f671, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 2
