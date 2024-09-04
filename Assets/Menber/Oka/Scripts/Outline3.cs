@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class Outline3 : MonoBehaviour
 {
     SkillChoose skill;
-    Outline outline;
+    [SerializeField] private Image image;
     // Start is called before the first frame update
     void Start()
     {
         GameObject skillmanager = GameObject.Find("SkillManager");
         skill = skillmanager.GetComponent<SkillChoose>();
-        outline = this.gameObject.GetComponent<Outline>();
+        image = GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -20,11 +20,11 @@ public class Outline3 : MonoBehaviour
     {
         if (skill.skillnum % 3 == 2 || skill.skillnum % 3 == -1)
         {
-            outline.effectColor = Color.blue;
+            image.color = Color.green;
         }
         else
         {
-            outline.effectColor = Color.clear;
+            image.color = Color.white;
         }
     }
 }
