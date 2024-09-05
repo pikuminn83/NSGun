@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.5, y: 1, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2398569435011856635}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f29ac4d4c6d20ac498065944413c6d35, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 763f93150b90df94cae4e9b4270b25d8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,7 +101,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Person_EnemyScore: 100
   HP: 1
-  _uiManager: {fileID: 0}
   explosionRadius: 2
   explosionEnemy: {fileID: 3610986092644470159}
   DeathParticl: {fileID: 2830412268615100687, guid: 37051ad14becf9a4198d5e99967a3404, type: 3}
@@ -140,7 +139,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.704
+  m_Radius: 0.5
 --- !u!82 &2402678801604929682
 AudioSource:
   m_ObjectHideFlags: 0
@@ -267,7 +266,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.5, y: 0.5, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2398569435011856635}
@@ -313,7 +312,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f29ac4d4c6d20ac498065944413c6d35, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 763f93150b90df94cae4e9b4270b25d8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -338,7 +337,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Person_EnemyScore: 100
   HP: 1
-  _uiManager: {fileID: 0}
   explosionRadius: 2
   explosionEnemy: {fileID: 6313920311489667199}
   DeathParticl: {fileID: 2830412268615100687, guid: 37051ad14becf9a4198d5e99967a3404, type: 3}
@@ -377,7 +375,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.704
+  m_Radius: 0.5
 --- !u!82 &2055657178160042805
 AudioSource:
   m_ObjectHideFlags: 0
@@ -555,7 +553,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.5, y: -1, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2398569435011856635}
@@ -601,7 +599,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f29ac4d4c6d20ac498065944413c6d35, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 763f93150b90df94cae4e9b4270b25d8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -626,7 +624,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Person_EnemyScore: 100
   HP: 1
-  _uiManager: {fileID: 0}
   explosionRadius: 2
   explosionEnemy: {fileID: 5177194154062834628}
   DeathParticl: {fileID: 2830412268615100687, guid: 37051ad14becf9a4198d5e99967a3404, type: 3}
@@ -665,7 +662,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.704
+  m_Radius: 0.5
 --- !u!82 &5305671444720737347
 AudioSource:
   m_ObjectHideFlags: 0
@@ -792,7 +789,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.5, y: -0.5, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2398569435011856635}
@@ -838,7 +835,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f29ac4d4c6d20ac498065944413c6d35, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 763f93150b90df94cae4e9b4270b25d8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -863,7 +860,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Person_EnemyScore: 100
   HP: 1
-  _uiManager: {fileID: 0}
   explosionRadius: 2
   explosionEnemy: {fileID: 7130122876665275011}
   DeathParticl: {fileID: 2830412268615100687, guid: 37051ad14becf9a4198d5e99967a3404, type: 3}
@@ -902,7 +898,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.704
+  m_Radius: 0.5
 --- !u!82 &2959691385509564295
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1029,7 +1025,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.5, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2398569435011856635}
@@ -1075,7 +1071,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f29ac4d4c6d20ac498065944413c6d35, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 763f93150b90df94cae4e9b4270b25d8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1100,7 +1096,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Person_EnemyScore: 100
   HP: 1
-  _uiManager: {fileID: 0}
   explosionRadius: 2
   explosionEnemy: {fileID: 5406368482559711402}
   DeathParticl: {fileID: 2830412268615100687, guid: 37051ad14becf9a4198d5e99967a3404, type: 3}
@@ -1139,7 +1134,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.704
+  m_Radius: 0.5
 --- !u!82 &7674021248859353917
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1266,7 +1261,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.5, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2398569435011856635}
@@ -1312,7 +1307,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f29ac4d4c6d20ac498065944413c6d35, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 763f93150b90df94cae4e9b4270b25d8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1337,7 +1332,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Person_EnemyScore: 100
   HP: 1
-  _uiManager: {fileID: 0}
   explosionRadius: 2
   explosionEnemy: {fileID: 9217264437601370015}
   DeathParticl: {fileID: 2830412268615100687, guid: 37051ad14becf9a4198d5e99967a3404, type: 3}
@@ -1376,7 +1370,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.704
+  m_Radius: 0.5
 --- !u!82 &7781193604001645482
 AudioSource:
   m_ObjectHideFlags: 0

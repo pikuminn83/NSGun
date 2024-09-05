@@ -212,8 +212,8 @@ Transform:
   m_GameObject: {fileID: 3703509484589097191}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9, y: -0.67, z: 0}
-  m_LocalScale: {x: 7, y: 7.7, z: 2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7706561228408995785}
@@ -262,7 +262,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 2f300b22e8a021e40b391e971f637988, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8344a90d6ad55994f8723ac52756a1d4, type: 3}
   m_Color: {r: 0.9860512, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -305,8 +305,8 @@ EdgeCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
+  m_Offset: {x: -1.75, y: 0}
+  m_EdgeRadius: 0.09
   m_Points:
   - {x: -0.5014574, y: 0.014129287}
   - {x: -0.25831297, y: 0.44117945}
@@ -351,7 +351,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Person_EnemyScore: 800
   HP: 50
-  _uiManager: {fileID: 0}
   explosionRadius: 0
   explosionEnemy: {fileID: 8114034679906971693}
   DeathParticl: {fileID: 2830412268615100687, guid: 37051ad14becf9a4198d5e99967a3404, type: 3}

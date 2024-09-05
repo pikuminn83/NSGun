@@ -8,6 +8,9 @@ public class Player : MonoBehaviour
     Rigidbody2D rb2;
     // InputActionAssetへの参照
     [SerializeField] private InputActionReference _moveAction;
+    [SerializeField] private GameObject player;
+    [SerializeField] private Sprite NtoS;
+    [SerializeField] private Sprite StoN;
     //入力値をx座標y座標に分けて格納する変数
     float MoveX;
     float MoveY;
@@ -57,6 +60,8 @@ public class Player : MonoBehaviour
                 rb2.gravityScale = -3.0f;
                 gage.fillAmount -= 0.05f;
                 tf.eulerAngles = Vector3.zero;
+                var spriteRenderer = player.GetComponent<SpriteRenderer>();
+                spriteRenderer.sprite = StoN;
                 sprite.flipY = false;
                 
             }
@@ -70,6 +75,8 @@ public class Player : MonoBehaviour
             {
                 rb2.gravityScale = +3.0f;
                 gage.fillAmount -= 0.05f;
+                var spriteRenderer = player.GetComponent<SpriteRenderer>();
+                spriteRenderer.sprite = NtoS;
                 sprite.flipY = true;
                 
             }
