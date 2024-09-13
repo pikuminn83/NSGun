@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f29ac4d4c6d20ac498065944413c6d35, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 17edd38684791e9468981ac0cbf3a158, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -313,7 +313,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f29ac4d4c6d20ac498065944413c6d35, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 17edd38684791e9468981ac0cbf3a158, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -525,6 +525,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc4a3ce0bde15149b47983a537e1e63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Person_EnemyScore: 0
+  HP: 0
+  _uiManager: {fileID: 0}
+  explosionRadius: 0
+  explosionEnemy: {fileID: 0}
+  DeathParticl: {fileID: 0}
+  DeathSE: {fileID: 0}
   Speed: 2
 --- !u!61 &9118823213719314417
 BoxCollider2D:
@@ -647,7 +654,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f29ac4d4c6d20ac498065944413c6d35, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 17edd38684791e9468981ac0cbf3a158, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -884,7 +891,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f29ac4d4c6d20ac498065944413c6d35, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 17edd38684791e9468981ac0cbf3a158, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1121,7 +1128,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f29ac4d4c6d20ac498065944413c6d35, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 17edd38684791e9468981ac0cbf3a158, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1358,7 +1365,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f29ac4d4c6d20ac498065944413c6d35, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 17edd38684791e9468981ac0cbf3a158, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

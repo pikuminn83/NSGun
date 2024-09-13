@@ -71,9 +71,9 @@ public class EnemyManager : MonoBehaviour
         {
             _uiManager._EnemyScore = Person_EnemyScore;
             _uiManager.SumScore();
-            //エフェクトが消えるまでの秒数
-            DeathActionEnemy(500);
-            Destroy(this.gameObject,0.5f);
+            //エフェクト・SEの時間管理
+            DeathActionEnemy(1000);
+            Destroy(this.gameObject,1.0f);
 
         }
 
@@ -91,9 +91,10 @@ public class EnemyManager : MonoBehaviour
                 {
                     _uiManager._EnemyScore = Person_EnemyScore;
                     _uiManager.SumScore();
-                    DeathActionEnemy(500);
+                    //エフェクト・SEの時間管理
+                    DeathActionEnemy(1000);
                     DeathParticl = Instantiate(DeathParticl, colliderAll.transform);
-                    Destroy(colliderAll.gameObject,0.5f);
+                    Destroy(colliderAll.gameObject,1.0f);
                 }
             }
         }

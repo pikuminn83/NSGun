@@ -10,11 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6756718202843165974}
   - component: {fileID: 8069119313434741154}
-  - component: {fileID: 1135707368691321470}
   - component: {fileID: 1436114809282540323}
   - component: {fileID: 480422044485390415}
   - component: {fileID: 8772227760172081052}
-  - component: {fileID: 7123922063666836995}
+  - component: {fileID: 617516537004755651}
   m_Layer: 0
   m_Name: GlassEnemy
   m_TagString: Enemy
@@ -78,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f29ac4d4c6d20ac498065944413c6d35, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 17edd38684791e9468981ac0cbf3a158, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -89,25 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1135707368691321470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7504156755176161065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a03b0959a4941f24ab58f5c232ca4e56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Person_EnemyScore: 100
-  HP: 1
-  _uiManager: {fileID: 0}
-  explosionRadius: 2
-  explosionEnemy: {fileID: 1135707368691321470}
-  DeathParticl: {fileID: 2830412268615100687, guid: 37051ad14becf9a4198d5e99967a3404, type: 3}
-  DeathSE: {fileID: 8772227760172081052}
 --- !u!114 &1436114809282540323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,24 +232,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &7123922063666836995
-Animator:
-  serializedVersion: 5
+--- !u!114 &617516537004755651
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7504156755176161065}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e8e54158ee21dfc4784915e0c7df7b94, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a03b0959a4941f24ab58f5c232ca4e56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Person_EnemyScore: 100
+  HP: 1
+  _uiManager: {fileID: 0}
+  explosionRadius: 2
+  explosionEnemy: {fileID: 617516537004755651}
+  DeathParticl: {fileID: 2830412268615100687, guid: 37051ad14becf9a4198d5e99967a3404, type: 3}
+  DeathSE: {fileID: 8772227760172081052}

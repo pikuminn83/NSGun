@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyWood : MonoBehaviour
+public class EnemyWood : EnemyManager
 {
     Vector3 _EnemyMove;
     public float Speed;
