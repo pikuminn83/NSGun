@@ -5,12 +5,7 @@ using UnityEngine;
 public class SilverEnemy : MonoBehaviour
 {
     public GameObject Tama;
-    private float Timer; 
-    // Start is called before the first frame update
-    void Start()
-    {
-         
-    }
+    private float Timer;
 
     // Update is called once per frame
     void Update()

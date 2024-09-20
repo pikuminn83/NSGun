@@ -20,8 +20,6 @@ public class GoldEnemy : MonoBehaviour
 
     public float LiveGenerateTime;
 
-    //bool StepGoldBoss = true;
-
     // Update is called once per frame
     void Update()
     {
@@ -52,10 +50,5 @@ public class GoldEnemy : MonoBehaviour
             transform.Translate(transform.right * Time.deltaTime * 3 * -1);
             
         }
-       // if (pos.x >= 8)
-      //  {
-      //      transform.Translate(transform.right * Time.deltaTime * 3 * 1);
-            
-        //}
     }
 }

@@ -11,6 +11,9 @@ public class SilverEnemyWay : MonoBehaviour
     //移動スピード
     [SerializeField]
     float Speed;
+
+    float LiveTimer;
+    public float LiveGenerateTime;
     //子要素のPointsを格納するリスト
     List<Transform> Points;
     //Pointの順番用
@@ -56,6 +59,18 @@ public class SilverEnemyWay : MonoBehaviour
                 NextPos = Points[PointIndex].position;
             }
 
+        }
+        //ボスの生存時間
+        LiveTimer += Time.deltaTime;
+        if (LiveTimer > LiveGenerateTime)
+        {
+            Destroy(this.gameObject);
+        }
+        //ボスがフィールドにいるときの行動
+        if (this.transform.position.x > 7.5)
+        {
+            // +X方向に移動する。
+            transform.Translate(transform.right * Time.deltaTime * 3 * -1);
         }
     }
 
