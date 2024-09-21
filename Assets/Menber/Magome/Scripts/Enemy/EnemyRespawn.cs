@@ -81,12 +81,12 @@ public class EnemyRespawn : MonoBehaviour
             switch(TurretGenerationPos)
             { 
                 case 0:
-                    Instantiate(TurretObj[0],TurretPosTop.transform.position,Quaternion.identity);
+                    Instantiate(TurretObj[0],TurretPosTop.transform.position,Quaternion.Euler(0,0,180));
                     TurretGenerationPos = 1;
                     break;
                 case 1:
 
-                    Instantiate(TurretObj[0], TurretPosUnder.transform.position,Quaternion.Euler(0,0,180));
+                    Instantiate(TurretObj[0], TurretPosUnder.transform.position,Quaternion.identity);
                     TurretGenerationPos = 0;
                     break;
             }

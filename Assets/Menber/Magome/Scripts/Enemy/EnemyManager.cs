@@ -19,8 +19,7 @@ public class EnemyManager : MonoBehaviour
     public EnemyManager explosionEnemy;
     public ParticleSystem DeathParticl;//死んだ時のパーティクル
     public AudioSource DeathSE;
-
-    float alpha_Sin;
+    
     void Start()
     {
         DeathSE = GetComponent<AudioSource>();

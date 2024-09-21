@@ -62,16 +62,22 @@ public class SilverEnemyWay : MonoBehaviour
         }
         //ボスの生存時間
         LiveTimer += Time.deltaTime;
-        if (LiveTimer > LiveGenerateTime)
+        if (LiveTimer >= LiveGenerateTime)
         {
-            Destroy(this.gameObject);
+            // -X方向に移動する。
+            transform.Translate(transform.right * Time.deltaTime * 5);
+            Invoke("EnemyDeath",5.0f);
+            
         }
         //ボスがフィールドにいるときの行動
-        if (this.transform.position.x > 7.5)
+        if (this.transform.position.x > 7.5 && LiveTimer < LiveGenerateTime)
         {
             // +X方向に移動する。
-            transform.Translate(transform.right * Time.deltaTime * 3 * -1);
+            transform.Translate(transform.right * Time.deltaTime * -3);
         }
     }
-
+    void EnemyDeath()
+    {
+     Destroy(this.gameObject);
+    }
 }

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class TurretEnemy : MonoBehaviour
 {
-    private Vector3 TurretEnemyVec;
-    public float Speed;
     private float Timer;
     private GameObject Target;
     public GameObject TurretBullet;
@@ -19,9 +17,8 @@ public class TurretEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // à⁄ìÆë¨ìxÇï€éù
-        TurretEnemyVec = new Vector3(Speed, 0, 0);
-        this.transform.position -= TurretEnemyVec * Time.deltaTime;
+
+
         Vector3 diff = (Target.gameObject.transform.position - this.transform.position);
         this.transform.rotation = Quaternion.FromToRotation(Vector3.up, diff);
         Timer += Time.deltaTime;
