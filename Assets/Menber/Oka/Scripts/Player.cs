@@ -150,11 +150,18 @@ public class Player : MonoBehaviour
                 if (pos.y > -0.75)
                 {
                     rb2.gravityScale = -3.0f;
-                }
+                var spriteRenderer = player.GetComponent<SpriteRenderer>();
+                spriteRenderer.sprite = StoN;
+                sprite.flipY = false;
+
+            }
                 if (pos.y < -0.75)
                 {
                     rb2.gravityScale = 3.0f;
-                }
+                var spriteRenderer = player.GetComponent<SpriteRenderer>();
+                spriteRenderer.sprite = NtoS;
+                sprite.flipY = true;
+            }
             }
 
             //ゆっくりと回転してレーン移動するモーション（仕様書とは違う動き）
