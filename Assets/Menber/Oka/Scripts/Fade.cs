@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
+
 public class Fade : MonoBehaviour
 {
     [SerializeField] Image fade;
@@ -26,7 +28,7 @@ public class Fade : MonoBehaviour
     }
     private void ChangeScene()
     {
-        SceneManager.LoadScene("Scene");
+        SceneManager.LoadScene("GamePlayScene");
     }
     public void PushButton()
     {

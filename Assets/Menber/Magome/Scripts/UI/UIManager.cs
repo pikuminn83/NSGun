@@ -7,45 +7,39 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     public EnemyEnd _enemyEnd;
-    //スコア表示のテキスト
-    public TextMeshProUGUI ScoreText;
-    //全体のスコア
-    private int AllScore;
-    //タイマー表示のテキスト
-    public TextMeshProUGUI TimerText;
-    //Time.deltaTimeの変数
-    private float Timer;
-    //ゲームの終了時間
-    public float GameSetTimer = 0.0f;
-    //コンボ表示のテキスト
-    public TextMeshProUGUI ConboText;
-    //コンボ倍率の初期値
-    private int CountConbo = 1;
-    //コンボ数
-    private int WidthAddConboCount;
-    //Hit時のコンボカウント
-    private int HitConboCount;
-    //最大コンボ数
-    private int TopConboCount = 0;
-    //コンボ倍率の変化する値
-    public int WidthConboCount;
-    //初期スコア
-    public int _EnemyScore = 0;
+
+    public TextMeshProUGUI ScoreText;//スコア表示のテキスト    
+    public TextMeshProUGUI TimerText;//タイマー表示のテキスト
+    public TextMeshProUGUI ConboText;//コンボ表示のテキスト
+
+    public float GameSetTimer = 0.0f;//ゲームの終了時間
+
+    private int WidthAddConboCount;  //コンボ数
+    private int HitConboCount;　　　 //Hit時のコンボカウント
+    private int TopConboCount;　//最大コンボ数
+    public int WidthConboCount;　　 //コンボ倍率の変化する値
+    private int AllScore;            //全体のスコア
+    [System.NonSerialized]
+    public int _EnemyScore = 0; //初期スコア
+    [System.NonSerialized]
+    public int CountConbo = 1; //コンボ倍率の初期値
     void Start()
     {
+        TopConboCount = 0;
         AllScore = 0;
         ScoreText.text = "Score:" + AllScore;
+        PlayerPrefs.SetInt("CONBO", TopConboCount);
         PlayerPrefs.SetInt("SCORE", AllScore);
         PlayerPrefs.Save();
 
     }
     void FixedUpdate()
     {
-        Timer += Time.deltaTime;
-        TimerText.text = "TImer:" + Timer.ToString("F1");
+        GameSetTimer -= Time.deltaTime;
+        TimerText.text = "Timer:" + GameSetTimer.ToString("F1");
         ConboText.text = "×" + CountConbo.ToString("F1");
         //タイムオーバー時の処理
-        if (Timer > GameSetTimer)
+        if (0 > GameSetTimer)
         {
             SceneManager.LoadScene("EndGame");
         }
@@ -68,7 +62,7 @@ public class UIManager : MonoBehaviour
         HitConboCount++;
         WidthAddConboCount++;
         //最大コンボ数
-        if(TopConboCount < WidthAddConboCount)
+        if (TopConboCount <= WidthAddConboCount)
         {
             TopConboCount = WidthAddConboCount;
         }

@@ -1,60 +1,111 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Cysharp.Threading.Tasks;
 
 public class EnemyManager : MonoBehaviour
 {
-    //“Gˆê‘Ì•ª‚ÌƒXƒRƒA
-    public int Person_EnemyScore = 0;
-    //“GHP
-    public int HP=0;
+
+    public int Person_EnemyScore = 0;//è‡ªåˆ†ã®ã‚¹ã‚³ã‚¢
+
+    public int HP = 0;//è‡ªåˆ†ã®HP
 
     public UIManager _uiManager;
 
+    private float AlphaTime;
+    private bool AlphaChange = false;
     [SerializeField]
-    private float explosionRadius; // ”š”­”¼Œa
-
+    private float explosionRadius; //çˆ†ç™ºç¯„å›²
+    [SerializeField]
+    public EnemyManager explosionEnemy;
+    public ParticleSystem DeathParticl;//æ­»ã‚“ã æ™‚ã®ãƒ‘ãƒ¼ãƒ†ã‚£ã‚¯ãƒ«
+    public AudioSource DeathSE;
+    
     void Start()
     {
+        DeathSE = GetComponent<AudioSource>();
         GameObject _uiObj = GameObject.Find("Score");
         _uiManager = _uiObj.GetComponent<UIManager>();
     }
-    void Update()
+    private void Update()
     {
+        if (AlphaChange == true)
+        {
+            AlphaTime += Time.deltaTime;
+            this.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f - AlphaTime);
+            this.transform.position += new Vector3(0,0.5f*-Time.deltaTime);
+        }
+        else
+        {
+            AlphaTime = 0;
+        }
 
     }
     public void OnCollisionEnter2D(Collision2D Hit)
     {
-        //Œ»İ‚ÍƒvƒŒƒCƒ„[‚ğBullet‚É‚µ‚Ä‚¢‚é
+        //Bulletï¿½Ìê‡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ÌƒXï¿½Rï¿½Aï¿½ï¿½UIManagerï¿½Éƒvï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½
         if (Hit.gameObject.CompareTag("Bullet"))
         {
-
+            HP--;
             EnemyScoreAdd();
+
+        }
+
+        if (Hit.gameObject.CompareTag("BulletSpecial"))
+        {
+            BulletSpecialScore();
+        }
+        if (Hit.gameObject.CompareTag("Player"))
+        {
+            _uiManager.CountConbo = 1;
         }
 
     }
-    public void BulletSpecial()
-    {
 
-    }
     public void EnemyScoreAdd()
     {
-        // ”š•—‚Ì”ÍˆÍ“à‚ÌƒIƒuƒWƒFƒNƒg‚ğŒŸo
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
-        foreach (Collider2D collider in colliders)
+
+        //HPãŒ0ã«ãªã£ãŸã‚‰ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã¨è‡ªåˆ†ã‚’æ¶ˆã™
+        if (HP == 0)
         {
-            //“G‚ğ“|‚µ‚½‚Ìƒ|ƒCƒ“ƒg‰ÁZ
-            if (collider.gameObject.CompareTag("Enemy"))
+            _uiManager._EnemyScore = Person_EnemyScore;
+            _uiManager.SumScore();
+            //ã‚¨ãƒ•ã‚§ã‚¯ãƒˆãƒ»SEã®æ™‚é–“ç®¡ç†
+            DeathActionEnemy(1000);
+            Destroy(this.gameObject,1.0f);
+
+        }
+
+    }
+    public void BulletSpecialScore()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
+        foreach (Collider2D colliderAll in colliders)
+        {
+            if (colliderAll.gameObject.CompareTag("Enemy"))
             {
-                HP--;
-                if(HP == 0)
+                explosionEnemy = colliderAll.gameObject.GetComponent<EnemyManager>();
+                explosionEnemy.HP--;
+                if (HP < 0 || HP == 0)
                 {
                     _uiManager._EnemyScore = Person_EnemyScore;
-                   _uiManager.SumScore();
-                   Destroy(this.gameObject);
+                    _uiManager.SumScore();
+                    //ã‚¨ãƒ•ã‚§ã‚¯ãƒˆãƒ»SEã®æ™‚é–“ç®¡ç†
+                    DeathActionEnemy(1000);
+                    DeathParticl = Instantiate(DeathParticl, colliderAll.transform);
+                    Destroy(colliderAll.gameObject,1.0f);
                 }
             }
         }
+    }
+    private async void DeathActionEnemy(int Delay)
+    {
+        DeathParticl = Instantiate(DeathParticl, transform);
+        DeathParticl.Play(true);
+        DeathSE.Play();
+        AlphaChange = true;
+        await UniTask.Delay(Delay);
+        AlphaChange = false;
     }
 
 }

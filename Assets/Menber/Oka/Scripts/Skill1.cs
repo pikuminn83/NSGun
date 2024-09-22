@@ -21,6 +21,6 @@ public class Skill1 : MonoBehaviour
     void Update()
     {
         
-        skill1.fillAmount = skill.cooltime_a / 15;
+        skill1.fillAmount = skill.cooltime_A / 15;
     }
 }

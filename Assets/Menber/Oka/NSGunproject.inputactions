@@ -105,9 +105,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Decision",
+                    "name": "SetMagnet",
                     "type": "Button",
-                    "id": "0c3b37fb-f13b-4514-bb37-96bbc8cc981f",
+                    "id": "239729bd-3fc7-4b4a-9c78-88cee07af157",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -557,12 +557,12 @@
                 },
                 {
                     "name": "",
-                    "id": "cc10bbfb-26f7-4088-8866-bb96643e3668",
-                    "path": "<Gamepad>/buttonEast",
+                    "id": "fb743538-926f-4716-8fa4-34db3f4c5ec5",
+                    "path": "<Keyboard>/0",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Decision",
+                    "groups": "",
+                    "action": "SetMagnet",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -2,15 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyWood : MonoBehaviour
+public class EnemyWood : EnemyManager
 {
     Vector3 _EnemyMove;
     public float Speed;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

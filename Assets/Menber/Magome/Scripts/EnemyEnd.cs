@@ -14,4 +14,12 @@ public class EnemyEnd : MonoBehaviour
             Destroy(HitEnemy.gameObject);
         }
     }
+    //集団をまとめているオブジェクトを消す
+    public void OnTriggerEnter2D(Collider2D TrigerEnemy)
+    {
+        if(TrigerEnemy.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(TrigerEnemy.gameObject);
+        }
+    }
 }

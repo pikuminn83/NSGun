@@ -13,12 +13,13 @@ public class Resalut : MonoBehaviour
     public int ResulutAreaS;
     public int ResulutAreaA;
     public int ResulutAreaB;
+
     // Start is called before the first frame update
     void Start()
     {
         int resruto = PlayerPrefs.GetInt("SCORE");
         int conbo = PlayerPrefs.GetInt("CONBO");
-        ConoboText.text = "MaxCono:" + conbo;
+        ConoboText.text = "MaxConbo:" + conbo;
         ResultText.text = "ResultScore:" + resruto;
         if(ResulutAreaSS<=resruto)
         {
@@ -47,9 +48,4 @@ public class Resalut : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
