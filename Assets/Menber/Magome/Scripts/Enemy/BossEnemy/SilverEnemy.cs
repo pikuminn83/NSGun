@@ -5,6 +5,7 @@ using UnityEngine;
 public class SilverEnemy : MonoBehaviour
 {
     public GameObject Tama;
+    public GameObject TamaPos;
     private float Timer;
 
     // Update is called once per frame
@@ -13,7 +14,7 @@ public class SilverEnemy : MonoBehaviour
         Timer += Time.deltaTime;
         if(Timer > 3 )
         {
-          Instantiate(Tama,this.transform.position,Quaternion.identity);
+          Instantiate(Tama, TamaPos.transform.position,Quaternion.identity);
            Timer = 0;
         }
     }

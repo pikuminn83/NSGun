@@ -12,32 +12,28 @@ public class SilverBullet : MonoBehaviour
     {
         if (Wallhit == false)
         {
-            //
             _EnemyMove = new Vector3(Speed, Speed, 0);
-            //
             this.transform.position -= _EnemyMove * Time.deltaTime;
         }
         if (Wallhit == true)
         {
-            //
             _EnemyMove = new Vector3(Speed, -Speed, 0);
-            //
             this.transform.position -= _EnemyMove * Time.deltaTime;
         }
     }
     void OnCollisionEnter2D(Collision2D hit)
     {
-        if(hit.gameObject.CompareTag("Player"))
-        {
-            Destroy(this.gameObject);
-        }
-        if (hit.gameObject.CompareTag("Walltop"))
+        if (hit.gameObject.CompareTag("NRail"))
         {
             Wallhit = false;
         }
-        else
+        else if (hit.gameObject.CompareTag("SRail"))
         {
             Wallhit = true;
+        }
+        else if(hit.gameObject.CompareTag("Bullet")&&hit.gameObject.CompareTag("SpecialBullet"))
+        {
+            return;
         }
     }
 }

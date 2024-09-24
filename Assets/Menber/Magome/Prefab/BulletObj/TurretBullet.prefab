@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2591798530827080205}
   m_Layer: 0
   m_Name: TurretBullet
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6b114804c7e29d0459b4cf9c6d7fe9c7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 558e823baf5f8894e83af3bb1f3f9af6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

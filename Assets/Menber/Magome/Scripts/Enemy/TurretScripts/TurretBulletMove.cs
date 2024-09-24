@@ -17,4 +17,19 @@ public class TurretBulletMove : MonoBehaviour
         this.transform.Translate(Vector3.up * Time.deltaTime * Speed);
 
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Bullet"))
+        {
+            Destroy(this.gameObject);
+        }
+        else if(collision.gameObject.CompareTag("BulletSpecial"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
+    private void OnBecameInvisible()
+    {
+        Destroy(this.gameObject);
+    }
 }

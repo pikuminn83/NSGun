@@ -42,8 +42,7 @@ public class EnemyManager : MonoBehaviour
     }
     public void OnCollisionEnter2D(Collision2D Hit)
     {
-        //Bullet�̏ꍇ���������I�u�W�F�N�g����������
-        //�����̃X�R�A��UIManager�Ƀv���X����
+        //TagがBulletの場合のみ
         if (Hit.gameObject.CompareTag("Bullet"))
         {
             HP--;
@@ -61,17 +60,27 @@ public class EnemyManager : MonoBehaviour
         }
 
     }
+    public void OnTriggerEnter2D(Collider2D StayHit)
+    {
+        //TagがBulletの場合のみ
+        if (StayHit.gameObject.CompareTag("RailGun"))
+        {
+            HP = HP - 10;
+            EnemyScoreAdd();
+        }
+    }
+
 
     public void EnemyScoreAdd()
     {
 
         //HPが0になったらエフェクトと自分を消す
-        if (HP == 0)
+        if (HP < 0||HP == 0)
         {
             _uiManager._EnemyScore = Person_EnemyScore;
             _uiManager.SumScore();
             //エフェクト・SEの時間管理
-            DeathActionEnemy(1000);
+            DeathActionEnemy(990);
             Destroy(this.gameObject,1.0f);
 
         }
@@ -91,7 +100,7 @@ public class EnemyManager : MonoBehaviour
                     _uiManager._EnemyScore = Person_EnemyScore;
                     _uiManager.SumScore();
                     //エフェクト・SEの時間管理
-                    DeathActionEnemy(1000);
+                    DeathActionEnemy(990);
                     DeathParticl = Instantiate(DeathParticl, colliderAll.transform);
                     Destroy(colliderAll.gameObject,1.0f);
                 }

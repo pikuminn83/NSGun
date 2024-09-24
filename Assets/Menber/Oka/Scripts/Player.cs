@@ -1,9 +1,6 @@
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
-using static UnityEditor.PlayerSettings;
-using JetBrains.Annotations;
 
 public class Player : MonoBehaviour
 {
@@ -148,7 +145,7 @@ public class Player : MonoBehaviour
 
 
         Vector2 pos = transform.position;
-        pos.x += MoveX / 100;
+        pos.x += MoveX / 85;
 
         if (rb2.gravityScale == 0)
         {
@@ -174,33 +171,6 @@ public class Player : MonoBehaviour
             }
         }
 
-        //ゆっくりと回転してレーン移動するモーション（仕様書とは違う動き）
-        //if (rb2.gravityScale < 0) 
-        //{
-
-        //    tfz = Mathf.Clamp(tfz, 0.0f, 180.0f);
-        //    tf.eulerAngles = new Vector3(0, 0, tfz);
-        //    tfz -= 0.5f;
-        //    if(tfz < 1.0)
-        //    {
-        //        tfz = 0;
-        //    }
-
-        //}
-        //else if(rb2.gravityScale > 0 )
-        //{
-        //    tfz = Mathf.Clamp(tfz, 0.0f, 180.0f);
-        //    tf.eulerAngles = new Vector3(0,0,tfz);
-        //    tfz += 0.5f;
-        //    if (tfz > 179)
-        //    {
-        //        tfz = 180;
-        //    }
-        //}
-        //if(tfz == 180)
-        //{ sprite.flipX = true; }
-        //if (tfz == 0)
-        //{ sprite.flipX = false; }
 
     }
     public void Atack(InputAction.CallbackContext context)
@@ -250,7 +220,8 @@ public class Player : MonoBehaviour
 
 
     }
-    public void OnTriggerEnter2D(Collider2D collision)
+
+    public void OnCollisionEnter2D(Collision2D collision)
     {
         if (sc.MagLiquid)
         {

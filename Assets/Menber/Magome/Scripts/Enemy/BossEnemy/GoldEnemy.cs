@@ -45,7 +45,7 @@ public class GoldEnemy : MonoBehaviour
             }
         }
 
-        if (pos.x >= 9)
+        if (pos.x >= 7)
         {
             transform.Translate(transform.right * Time.deltaTime * 3 * -1);
             
