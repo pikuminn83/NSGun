@@ -5,6 +5,8 @@ using Cysharp.Threading.Tasks;
 public class EnemyManager : MonoBehaviour
 {
 
+    GameObject skillManager;
+    SkillChoose sc;
     public int Person_EnemyScore = 0;//自分のスコア
 
     public int HP = 0;//自分のHP
@@ -25,6 +27,8 @@ public class EnemyManager : MonoBehaviour
         DeathSE = GetComponent<AudioSource>();
         GameObject _uiObj = GameObject.Find("Score");
         _uiManager = _uiObj.GetComponent<UIManager>();
+        skillManager = GameObject.Find("SkillManager");
+        sc = skillManager.GetComponent<SkillChoose>();
     }
     private void Update()
     {
@@ -56,7 +60,10 @@ public class EnemyManager : MonoBehaviour
         }
         if (Hit.gameObject.CompareTag("Player"))
         {
-            _uiManager.CountConbo = 1;
+            if (sc.mgliqOn == false)
+            {
+                _uiManager.CountConbo = 1;
+            }
         }
 
     }

@@ -7,25 +7,27 @@ using UnityEngine.UI;
 public class MagneticGage : MonoBehaviour
 {
 
+    [SerializeField] GameObject player;
+    Player playerscript;
     Image gage;
-    public bool flag = false;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         gage = GetComponent<Image>();
-
+        playerscript = player.GetComponent<Player>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (flag == true)
+        if (playerscript.Nflag || playerscript.Sflag)
         {
 
             float a = Time.deltaTime;
 
-            gage.fillAmount += a/10;
+            gage.fillAmount += a/5;
         }
         
     }

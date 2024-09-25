@@ -9,7 +9,7 @@ public class Collision : MonoBehaviour
     [SerializeField] GameObject player;
     MagneticGage mg;
     SpriteRenderer sprite;
-    bool damageFlag = false;
+    public bool damageFlag = false;
     int alpha = 255;
     float time = 0;
     // Start is called before the first frame update
@@ -23,18 +23,20 @@ public class Collision : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        mg.flag = true;
-        if (collision.gameObject.tag == "Enemy")
+        
+        if (damageFlag == false)
         {
-            damageFlag = true;
-            time = 0;
-            Invoke("FlagOff", 2);
+            
+            if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyBullet")
+            {
+                damageFlag = true;
+                time = 0;
+                Invoke("FlagOff", 2);
+            }
+
         }
     }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        mg.flag = false;
-    }
+    
     // Update is called once per frame
     void Update()
     {
@@ -49,7 +51,7 @@ public class Collision : MonoBehaviour
                 alpha *= -1;
             }  
         }
-       // Debug.Log(damageFlag);
+        //Debug.Log(damageFlag);
     }
 
     void FlagOff()

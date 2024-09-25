@@ -8,7 +8,7 @@ public class EnemyEnd : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D HitEnemy)
     {
-        if(HitEnemy.gameObject.CompareTag("Enemy"))
+        if(HitEnemy.gameObject.CompareTag("Enemy") || HitEnemy.gameObject.CompareTag("EnemyBullet"))
         {
             OutsideCamera = true;
             Destroy(HitEnemy.gameObject);

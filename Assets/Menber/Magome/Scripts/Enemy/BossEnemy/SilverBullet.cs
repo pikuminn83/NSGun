@@ -31,9 +31,6 @@ public class SilverBullet : MonoBehaviour
         {
             Wallhit = true;
         }
-        else if(hit.gameObject.CompareTag("Bullet")&&hit.gameObject.CompareTag("SpecialBullet"))
-        {
-            return;
-        }
+        
     }
 }

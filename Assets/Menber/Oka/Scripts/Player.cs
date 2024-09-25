@@ -8,8 +8,8 @@ public class Player : MonoBehaviour
     Rigidbody2D rb2;
     // InputActionAsset‚Ö‚ÌŽQÆ
     [SerializeField] private GameObject player;
-    [SerializeField] private Sprite NtoS;
-    [SerializeField] private Sprite StoN;
+    [SerializeField] public Sprite NtoS;
+    [SerializeField] public Sprite StoN;
 
     [SerializeField] private InputActionReference _moveAction;
     //“ü—Í’l‚ðxÀ•WyÀ•W‚É•ª‚¯‚ÄŠi”[‚·‚é•Ï”
@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
     Transform tf;
     //float tfz = 0;
     SpriteRenderer sprite;
+    public bool RailGunFlag;
 
 
 
@@ -55,33 +56,38 @@ public class Player : MonoBehaviour
 
     public void RailChange_To_N(InputAction.CallbackContext context)
     {
-
-        if (context.performed)
+        if (RailGunFlag == false)
         {
-            if (gage.fillAmount >= 0.09f && Nflag == false)
+            if (context.performed)
             {
-                rb2.gravityScale = -3.0f;
-                gage.fillAmount -= 0.05f;
-                tf.eulerAngles = Vector3.zero;
-                var spriteRenderer = player.GetComponent<SpriteRenderer>();
-                spriteRenderer.sprite = StoN;
-                sprite.flipY = false;
+                if (gage.fillAmount >= 0.09f && Nflag == false)
+                {
+                    rb2.gravityScale = -3.0f;
+                    gage.fillAmount -= 0.05f;
+                    tf.eulerAngles = Vector3.zero;
+                    var spriteRenderer = player.GetComponent<SpriteRenderer>();
+                    spriteRenderer.sprite = StoN;
+                    sprite.flipY = false;
 
+                }
             }
         }
     }
     public void RailChange_To_S(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (RailGunFlag == false)
         {
-            if (gage.fillAmount >= 0.09f && Sflag == false)
+            if (context.performed)
             {
-                rb2.gravityScale = +3.0f;
-                gage.fillAmount -= 0.05f;
-                var spriteRenderer = player.GetComponent<SpriteRenderer>();
-                spriteRenderer.sprite = NtoS;
-                sprite.flipY = true;
+                if (gage.fillAmount >= 0.09f && Sflag == false)
+                {
+                    rb2.gravityScale = +3.0f;
+                    gage.fillAmount -= 0.05f;
+                    var spriteRenderer = player.GetComponent<SpriteRenderer>();
+                    spriteRenderer.sprite = NtoS;
+                    sprite.flipY = true;
 
+                }
             }
         }
     }
@@ -140,36 +146,19 @@ public class Player : MonoBehaviour
 
 
     }
-    private void Update()
+    private void FixedUpdate()
     {
 
 
         Vector2 pos = transform.position;
-        pos.x += MoveX / 85;
+        pos.x += MoveX / 10;
 
         if (rb2.gravityScale == 0)
         {
-            pos.y += MoveY / 100;
+            pos.y += MoveY / 10;
         }
         transform.position = pos;
-        if (gage.fillAmount <= 0.03)
-        {
-            if (pos.y > -0.75)
-            {
-                rb2.gravityScale = -3.0f;
-                var spriteRenderer = player.GetComponent<SpriteRenderer>();
-                spriteRenderer.sprite = StoN;
-                sprite.flipY = false;
-
-            }
-            if (pos.y < -0.75)
-            {
-                rb2.gravityScale = 3.0f;
-                var spriteRenderer = player.GetComponent<SpriteRenderer>();
-                spriteRenderer.sprite = NtoS;
-                sprite.flipY = true;
-            }
-        }
+        
 
 
     }
@@ -221,17 +210,7 @@ public class Player : MonoBehaviour
 
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (sc.MagLiquid)
-        {
-            if (collision.gameObject.CompareTag("Enemy"))
-            {
-                Destroy(collision.gameObject);
-            }
-
-        }
-    }
+    
 
 
 }

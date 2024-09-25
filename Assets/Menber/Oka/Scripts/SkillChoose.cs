@@ -23,6 +23,7 @@ public class SkillChoose : MonoBehaviour
     public float cooltime_A ;                             
     public float cooltime_B ;　　　　　　　　　　　　　　 //  クールタイムを実際に計測する変数たち
     public float cooltime_C ;
+    public bool mgliqOn = false;
 
 
 
@@ -38,6 +39,7 @@ public class SkillChoose : MonoBehaviour
         cooltime_A = cooltime_a;
         cooltime_B = cooltime_b;
         cooltime_C = cooltime_c;
+        
 
     }
 
@@ -69,15 +71,20 @@ public class SkillChoose : MonoBehaviour
                 cooltime_A = 0;
                 MLtime = 0;
                 AllSkillcooltime = 50 - 5;
+                mgliqOn = true;
             }
             if ((skillnum % 3 == 1 || skillnum % 3 == -2) && cooltime_B >= cooltime_b && AllSkillcooltime >= 50)
             {
-                Debug.Log("RailGun発動");
-                playerrb2.gravityScale = 0.0f;
-                player.Railgun();
-                Invoke("Delay", 1);
-                cooltime_B = 0;
-                AllSkillcooltime = 50 - 1;
+                
+                { 
+                    Debug.Log("RailGun発動");
+                    playerrb2.velocity = Vector3.zero;
+                    playerrb2.gravityScale = 0.0f;
+                    player.Railgun();
+                    Invoke("Delay", 1);
+                    cooltime_B = 0;
+                    AllSkillcooltime = 50 - 1;
+                }
             } 
             if ((skillnum % 3 == 2 || skillnum % 3 == -1) && cooltime_C >= cooltime_c && AllSkillcooltime >= 50)
             {
@@ -123,6 +130,7 @@ public class SkillChoose : MonoBehaviour
             {
                 MagLiquid = false;
                 playercolor.color = Color.white;
+                mgliqOn = false;
             }
         }
 

@@ -9,11 +9,11 @@ public class SceneChenge : MonoBehaviour
     [SerializeField] Image fade;
     public bool fadeout = false;
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (fadeout == true)
         {
-            fade.color += new Color(0.0f, 0.0f, 0.0f, 0.004f);
+            fade.color += new Color(0.0f, 0.0f, 0.0f, 0.024f);
 
             Invoke("ChangeScene", 0.7f);
         }

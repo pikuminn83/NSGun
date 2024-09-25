@@ -14,11 +14,18 @@ public class NRailCollision : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        player.Nflag = true;
+        if (collision.gameObject.tag == "Player")
+        {
+            player.Nflag = true;
+        }
     }
-    private void OnCollisionExit2D(Collision2D collision)
+
+        private void OnCollisionExit2D(Collision2D collision)
     {
-        player.Nflag = false;
+        if (collision.gameObject.tag == "Player")
+        {
+            player.Nflag = false;
+        }
     }
     // Update is called once per frame
     void Update()

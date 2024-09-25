@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2695338103660458556}
   - component: {fileID: 1460589544940908375}
+  - component: {fileID: -3821987716046732632}
   m_Layer: 0
   m_Name: Silver_Way
   m_TagString: Untagged
@@ -53,6 +54,25 @@ MonoBehaviour:
   moveSkin: {fileID: 3075672037746289939}
   Speed: 4
   LiveGenerateTime: 10
+--- !u!114 &-3821987716046732632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226225824258438360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a03b0959a4941f24ab58f5c232ca4e56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Person_EnemyScore: 3000
+  HP: 30
+  _uiManager: {fileID: 0}
+  explosionRadius: 0
+  explosionEnemy: {fileID: 0}
+  DeathParticl: {fileID: 2830412268615100687, guid: 37051ad14becf9a4198d5e99967a3404, type: 3}
+  DeathSE: {fileID: 4388683186208505287}
 --- !u!1 &3130362115436491025
 GameObject:
   m_ObjectHideFlags: 0
@@ -69,7 +89,7 @@ GameObject:
   - component: {fileID: 4388683186208505287}
   m_Layer: 0
   m_Name: Silver
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

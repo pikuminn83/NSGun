@@ -18,7 +18,7 @@ public class UniqueMagnet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Enemys = GameObject.FindGameObjectsWithTag("Enemy");
+        
         
 
     }
@@ -26,6 +26,7 @@ public class UniqueMagnet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Enemys = GameObject.FindGameObjectsWithTag("Enemy");
 
         foreach (GameObject Enemy in Enemys)
         {

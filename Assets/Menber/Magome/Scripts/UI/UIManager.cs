@@ -4,8 +4,14 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+
 public class UIManager : MonoBehaviour
 {
+    [SerializeField] GameObject player;
+    [SerializeField] GameObject skillManager;
+    Collision collisionScripts;
+    Player playerscript;
+    SkillChoose sc; 
     public EnemyEnd _enemyEnd;
 
     public TextMeshProUGUI ScoreText;//スコア表示のテキスト    
@@ -31,6 +37,10 @@ public class UIManager : MonoBehaviour
         PlayerPrefs.SetInt("CONBO", TopConboCount);
         PlayerPrefs.SetInt("SCORE", AllScore);
         PlayerPrefs.Save();
+        collisionScripts = player.GetComponent<Collision>();
+        playerscript = player.GetComponent<Player>();
+        sc = skillManager.GetComponent<SkillChoose>();
+
 
     }
     void FixedUpdate()
@@ -44,17 +54,29 @@ public class UIManager : MonoBehaviour
             SceneManager.LoadScene("EndGame");
         }
         //コンボ倍率をあげる
-        if (HitConboCount == WidthConboCount && CountConbo < 4)
+        if (HitConboCount >= WidthConboCount && CountConbo < 4)
         {
             CountConbo++;
             HitConboCount = 0;
         }
-        if (_enemyEnd.OutsideCamera == true)
+
+        if (sc.mgliqOn == false)
         {
-            CountConbo = 1;
-            HitConboCount = 0;
-            _enemyEnd.OutsideCamera = false;
+            if (_enemyEnd.OutsideCamera == true)
+            {
+                CountConbo = 1;
+                HitConboCount = 0;
+                _enemyEnd.OutsideCamera = false;
+            }
+            if (collisionScripts.damageFlag)
+            {
+                CountConbo = 1;
+                HitConboCount = 0;
+            }
+           
         }
+        Debug.Log(CountConbo);
+        
     }
     //スコアの加算
     public void SumScore()

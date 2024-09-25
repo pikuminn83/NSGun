@@ -10,6 +10,8 @@ TagManager:
   - RailGun
   - SRail
   - NRail
+  - EnemyBullet
+  - SpecialBullet
   layers:
   - Default
   - TransparentFX
@@ -46,4 +48,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: playerlayer
+    uniqueID: 381237821
     locked: 0

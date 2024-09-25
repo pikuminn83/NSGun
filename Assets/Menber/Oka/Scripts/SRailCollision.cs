@@ -14,11 +14,17 @@ public class SRailCollision : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        player.Sflag = true;
+        if (collision.gameObject.tag == "Player")
+        {
+            player.Sflag = true;
+        }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        player.Sflag = false;
+        if (collision.gameObject.tag == "Player")
+        {
+            player.Sflag = false;
+        }
     }
     // Update is called once per frame
     void Update()
