@@ -21,6 +21,7 @@ public class EnemyManager : MonoBehaviour
     public EnemyManager explosionEnemy;
     public ParticleSystem DeathParticl;//死んだ時のパーティクル
     public AudioSource DeathSE;
+    SpriteRenderer sprite;
     
     void Start()
     {
@@ -29,6 +30,7 @@ public class EnemyManager : MonoBehaviour
         _uiManager = _uiObj.GetComponent<UIManager>();
         skillManager = GameObject.Find("SkillManager");
         sc = skillManager.GetComponent<SkillChoose>();
+        sprite = GetComponent<SpriteRenderer>();
     }
     private void Update()
     {
@@ -64,6 +66,10 @@ public class EnemyManager : MonoBehaviour
             {
                 _uiManager.CountConbo = 1;
             }
+        }
+        if (Hit.gameObject.CompareTag("RailGun") || Hit.gameObject.CompareTag("Bullet")||Hit.gameObject.CompareTag("BulletSpecial"))
+        {
+            StartCoroutine("HitEffect");
         }
 
     }
@@ -122,6 +128,16 @@ public class EnemyManager : MonoBehaviour
         AlphaChange = true;
         await UniTask.Delay(Delay);
         AlphaChange = false;
+    }
+    IEnumerator HitEffect()
+    {
+        sprite.color = Color.red;
+
+        yield return new WaitForSeconds(0.3f);
+
+        sprite.color = Color.white;
+
+        yield break;
     }
 
 }
