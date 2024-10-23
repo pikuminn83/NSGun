@@ -2,14 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D;
+using UnityEngine.UI;
 
 public class RailGun : MonoBehaviour
 {
+
+    [SerializeField] private Sprite[] images;
     private GameObject pl;
     Player player;
     Rigidbody2D rb2;
     Transform pltf;
     SpriteRenderer sprite;
+    SpriteRenderer mysprite;
+
     float a = 0; //Œø‰ÊŽžŠÔ—p
 
     private void Start()
@@ -17,9 +22,11 @@ public class RailGun : MonoBehaviour
         pl = GameObject.Find("Player");
         player = pl.GetComponent<Player>();
         rb2 = pl.GetComponent <Rigidbody2D>();
+        mysprite = GetComponent<SpriteRenderer>();
         sprite = pl.GetComponent<SpriteRenderer>();
         pltf = pl.transform;
         player.RailGunFlag = true;
+        StartCoroutine("RailGunEffect");
     }
     private void Update()
     {
@@ -47,4 +54,17 @@ public class RailGun : MonoBehaviour
         }
     }
 
+    private IEnumerator RailGunEffect()
+    {
+        for(int i = 0; i < 10; i++ )
+        {
+            mysprite.sprite = images[i];
+
+            yield return new WaitForSeconds(0.1f);
+            Debug.Log(i);
+        }
+
+
+        yield break;
+    }
 }

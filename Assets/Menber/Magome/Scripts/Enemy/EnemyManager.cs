@@ -22,6 +22,7 @@ public class EnemyManager : MonoBehaviour
     public ParticleSystem DeathParticl;//死んだ時のパーティクル
     public AudioSource DeathSE;
     SpriteRenderer sprite;
+    private bool dead;
     
     void Start()
     {
@@ -49,7 +50,7 @@ public class EnemyManager : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D Hit)
     {
         //TagがBulletの場合のみ
-        if (Hit.gameObject.CompareTag("Bullet"))
+        if (Hit.gameObject.CompareTag("Bullet")&&dead == false)
         {
             HP--;
             EnemyScoreAdd();
@@ -95,7 +96,7 @@ public class EnemyManager : MonoBehaviour
             //エフェクト・SEの時間管理
             DeathActionEnemy(990);
             Destroy(this.gameObject,1.0f);
-
+            dead = true;
         }
 
     }
